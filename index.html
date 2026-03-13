@@ -33,10 +33,9 @@
 --accent:#1fa37f;
 }
 
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-margin:0;
 font-family:'Poppins',system-ui;
 background:var(--bg);
 color:var(--text);
@@ -64,18 +63,17 @@ gap:12px;
 }
 
 .brand img{
-width:44px;
+width:38px;
 }
 
 .brand-title{
-font-size:22px;
+font-size:20px;
 font-weight:600;
 }
 
 .controls{
 display:flex;
 gap:10px;
-flex-wrap:wrap;
 }
 
 input{
@@ -94,15 +92,14 @@ border:1px solid var(--border);
 background:var(--card);
 color:var(--text);
 cursor:pointer;
-font-family:'Poppins';
 }
 
-/* FILTER CHIPS */
+/* FILTERS */
 
 .filters{
 display:flex;
 gap:8px;
-margin-bottom:18px;
+margin-bottom:15px;
 flex-wrap:wrap;
 }
 
@@ -113,11 +110,6 @@ font-size:12px;
 border:1px solid var(--border);
 cursor:pointer;
 background:var(--card);
-transition:.2s;
-}
-
-.chip:hover{
-border-color:var(--accent);
 }
 
 .chip.active{
@@ -126,12 +118,20 @@ border:none;
 color:white;
 }
 
+/* STATS */
+
+.stats{
+margin-bottom:15px;
+font-size:13px;
+color:var(--muted);
+}
+
 /* GRID */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
-gap:18px;
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+gap:16px;
 }
 
 /* CARD */
@@ -141,11 +141,11 @@ background:var(--card);
 border:1px solid var(--border);
 border-radius:14px;
 padding:18px;
-transition:.25s;
+transition:.2s;
 }
 
 .card:hover{
-transform:translateY(-4px);
+transform:translateY(-3px);
 border-color:var(--accent);
 }
 
@@ -161,24 +161,18 @@ border-radius:999px;
 font-weight:600;
 color:white;
 margin-bottom:12px;
-box-shadow:
-0 4px 10px rgba(0,0,0,.25),
-inset 0 1px 0 rgba(255,255,255,.15);
 }
 
 .badge-ed{
 background:linear-gradient(135deg,#c084fc,#9333ea);
-box-shadow:0 4px 14px rgba(168,85,247,.45);
 }
 
 .badge-diabetes{
 background:linear-gradient(135deg,#f87171,#ef4444);
-box-shadow:0 4px 14px rgba(239,68,68,.45);
 }
 
 .badge-memoria{
 background:linear-gradient(135deg,#60a5fa,#3b82f6);
-box-shadow:0 4px 14px rgba(59,130,246,.45);
 }
 
 .name{
@@ -214,51 +208,56 @@ border:none;
 color:white;
 }
 
+/* PAGINATION */
+
+.pagination{
+margin-top:25px;
+display:flex;
+justify-content:center;
+gap:6px;
+flex-wrap:wrap;
+}
+
+.page-btn{
+padding:6px 10px;
+border-radius:6px;
+border:1px solid var(--border);
+cursor:pointer;
+font-size:12px;
+}
+
+.page-btn.active{
+background:var(--accent);
+border:none;
+color:white;
+}
+
 /* PREVIEW */
 
 .preview{
 position:fixed;
-width:300px;
-border-radius:12px;
+width:340px;
+height:420px;
+border-radius:10px;
 overflow:hidden;
 border:1px solid var(--border);
-box-shadow:0 12px 40px rgba(0,0,0,.4);
-background:#000;
+box-shadow:0 10px 30px rgba(0,0,0,.35);
+background:#fff;
 pointer-events:none;
 opacity:0;
-transition:.15s;
 z-index:999;
 }
 
-.browser-bar{
-height:26px;
-background:#1f1f1f;
-display:flex;
-align-items:center;
-gap:6px;
-padding-left:10px;
-}
-
-.browser-dot{
-width:9px;
-height:9px;
-border-radius:50%;
-}
-
-.dot-red{background:#ff5f57}
-.dot-yellow{background:#febc2e}
-.dot-green{background:#28c840}
-
 .preview-inner{
-width:1280px;
-height:800px;
-transform:scale(.22);
+width:1200px;
+height:900px;
+transform:scale(.28);
 transform-origin:top left;
 }
 
 .preview iframe{
-width:1280px;
-height:800px;
+width:1200px;
+height:900px;
 border:none;
 }
 
@@ -266,7 +265,7 @@ border:none;
 
 .toast{
 position:fixed;
-bottom:30px;
+bottom:25px;
 left:50%;
 transform:translateX(-50%);
 background:var(--card);
@@ -274,7 +273,6 @@ border:1px solid var(--border);
 padding:8px 16px;
 border-radius:8px;
 opacity:0;
-transition:.3s;
 font-size:13px;
 }
 
@@ -320,11 +318,11 @@ color:var(--muted);
 
 </div>
 
-<div class="stats">
-<span id="count"></span>
-</div>
+<div class="stats" id="stats"></div>
 
 <div id="grid" class="grid"></div>
+
+<div id="pagination" class="pagination"></div>
 
 <div class="footer">
 nativehub.space
@@ -335,22 +333,15 @@ nativehub.space
 <div id="toast" class="toast">Link copiado</div>
 
 <div id="preview" class="preview">
-
-<div class="browser-bar">
-<div class="browser-dot dot-red"></div>
-<div class="browser-dot dot-yellow"></div>
-<div class="browser-dot dot-green"></div>
-</div>
-
 <div class="preview-inner">
 <iframe id="previewFrame"></iframe>
 </div>
-
 </div>
 
 <script>
 
 const BASE_URL="https://nativehub.space/"
+const CARDS_PER_PAGE=25
 
 const folders=[
 "CBS",
@@ -377,9 +368,7 @@ return {tag:"",emoji:"",class:""}
 }
 
 const pages=folders.map(f=>{
-
 const tag=detectTag(f)
-
 return{
 name:f,
 path:f+"/",
@@ -387,68 +376,54 @@ tag:tag.tag,
 emoji:tag.emoji,
 tagClass:tag.class
 }
-
 })
 
 const grid=document.getElementById("grid")
 const search=document.getElementById("search")
-const count=document.getElementById("count")
-const toast=document.getElementById("toast")
+const stats=document.getElementById("stats")
+const pagination=document.getElementById("pagination")
 
 const preview=document.getElementById("preview")
 const frame=document.getElementById("previewFrame")
+const toast=document.getElementById("toast")
 
-let previewTimer=null
 let activeTag="all"
-
-/* chips */
+let timer=null
+let currentPage=1
 
 document.querySelectorAll(".chip").forEach(chip=>{
-
 chip.onclick=()=>{
-
 document.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"))
-
 chip.classList.add("active")
-
 activeTag=chip.dataset.tag
-
+currentPage=1
 render()
-
 }
-
 })
 
-/* toast */
-
 function showToast(){
-
 toast.classList.add("show")
-
-setTimeout(()=>{
-toast.classList.remove("show")
-},1500)
-
+setTimeout(()=>toast.classList.remove("show"),1200)
 }
-
-/* render */
 
 function render(){
 
 const q=search.value.toLowerCase()
 
-let list=pages.filter(p=>{
-
-const matchName=p.name.toLowerCase().includes(q)
-const matchTag=(activeTag==="all"||p.tag===activeTag)
-
-return matchName && matchTag
-
+const filtered=pages.filter(p=>{
+const nameMatch=p.name.toLowerCase().includes(q)
+const tagMatch=activeTag==="all"||p.tag===activeTag
+return nameMatch&&tagMatch
 })
 
-grid.innerHTML=""
+const totalPages=Math.ceil(filtered.length/CARDS_PER_PAGE)
 
-count.innerText=list.length+" páginas"
+const start=(currentPage-1)*CARDS_PER_PAGE
+const list=filtered.slice(start,start+CARDS_PER_PAGE)
+
+stats.innerText=`${filtered.length} páginas • página ${currentPage} de ${totalPages||1}`
+
+grid.innerHTML=""
 
 list.forEach(p=>{
 
@@ -465,62 +440,65 @@ ${p.emoji} ${p.tag}
 <div class="path">${p.path}</div>
 
 <div class="actions">
-
 <a class="btn open" href="${BASE_URL+p.path}" target="_blank">Abrir</a>
-
 <button class="btn copy">Copiar</button>
-
 </div>
 `
 
 el.querySelector(".copy").onclick=()=>{
-
 navigator.clipboard.writeText(BASE_URL+p.path)
-
 showToast()
-
 }
 
-/* preview */
-
-el.onmouseenter=(e)=>{
-
-previewTimer=setTimeout(()=>{
-
+el.onmouseenter=()=>{
+timer=setTimeout(()=>{
 frame.src=BASE_URL+p.path
 preview.style.opacity=1
-
 },300)
-
 }
 
 el.onmousemove=(e)=>{
-
 preview.style.left=(e.clientX+20)+"px"
 preview.style.top=(e.clientY+20)+"px"
-
 }
 
 el.onmouseleave=()=>{
-
-clearTimeout(previewTimer)
-
+clearTimeout(timer)
 preview.style.opacity=0
 frame.src=""
-
 }
 
 grid.appendChild(el)
 
 })
 
+pagination.innerHTML=""
+
+for(let i=1;i<=totalPages;i++){
+
+const btn=document.createElement("div")
+btn.className="page-btn"+(i===currentPage?" active":"")
+
+btn.innerText=i
+
+btn.onclick=()=>{
+currentPage=i
+render()
+window.scrollTo({top:0,behavior:"smooth"})
 }
 
-search.oninput=render
+pagination.appendChild(btn)
+
+}
+
+}
+
+search.oninput=()=>{
+currentPage=1
+render()
+}
 
 render()
-
-/* theme */
 
 const themeBtn=document.getElementById("theme")
 
@@ -540,5 +518,4 @@ setTheme(localStorage.getItem("theme")||"dark")
 </script>
 
 </body>
-
 </html>
