@@ -47,6 +47,8 @@ margin:auto;
 padding:40px 20px;
 }
 
+/* HEADER */
+
 .header{
 display:flex;
 justify-content:space-between;
@@ -169,6 +171,7 @@ margin-bottom:12px;
 .badge-ed{background:linear-gradient(135deg,#c084fc,#9333ea);}
 .badge-diabetes{background:linear-gradient(135deg,#f87171,#ef4444);}
 .badge-memoria{background:linear-gradient(135deg,#60a5fa,#3b82f6);}
+.badge-weight{background:linear-gradient(135deg,#f59e0b,#ef4444);}
 
 .name{
 font-weight:500;
@@ -202,6 +205,8 @@ background:var(--accent);
 border:none;
 color:white;
 }
+
+/* PAGINATION */
 
 .pagination{
 margin-top:25px;
@@ -299,6 +304,7 @@ color:var(--muted);
 <div class="chip" data-tag="ED">⚡ ED</div>
 <div class="chip" data-tag="Diabetes">🩸 Diabetes</div>
 <div class="chip" data-tag="Memória">🧠 Memória</div>
+<div class="chip" data-tag="Emagrecimento">🔥 Emagrecimento</div>
 
 </div>
 
@@ -348,12 +354,14 @@ const n=name.toLowerCase()
 if(n.includes("ed")) return {tag:"ED",emoji:"⚡",class:"badge-ed"}
 if(n.includes("cnn")||n.includes("fox")) return {tag:"Diabetes",emoji:"🩸",class:"badge-diabetes"}
 if(n.includes("cbs")) return {tag:"Memória",emoji:"🧠",class:"badge-memoria"}
+if(n.includes("white")||n.includes("fit")||n.includes("slim"))
+return {tag:"Emagrecimento",emoji:"🔥",class:"badge-weight"}
 
 return {tag:"",emoji:"",class:""}
 
 }
 
-/* 🔥 AUTO DETECT PASTAS */
+/* AUTO DETECT */
 
 async function loadFolders(){
 
