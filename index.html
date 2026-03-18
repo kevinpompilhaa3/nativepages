@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>Páginas Native</title>
 
 <link rel="icon" href="a3.png">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -47,8 +43,6 @@ margin:auto;
 padding:40px 20px;
 }
 
-/* HEADER */
-
 .header{
 display:flex;
 justify-content:space-between;
@@ -64,35 +58,18 @@ align-items:center;
 gap:12px;
 }
 
-.brand img{
-width:38px;
-}
+.brand img{width:38px;}
+.brand-title{font-size:20px;font-weight:600;}
 
-.brand-title{
-font-size:20px;
-font-weight:600;
-}
+.controls{display:flex;gap:10px;}
 
-.controls{
-display:flex;
-gap:10px;
-}
-
-input{
-padding:10px 14px;
-border-radius:8px;
-border:1px solid var(--border);
-background:var(--card);
-color:var(--text);
-font-family:'Poppins';
-}
-
-button{
+input,button{
 padding:10px 12px;
 border-radius:8px;
 border:1px solid var(--border);
 background:var(--card);
 color:var(--text);
+font-family:'Poppins';
 cursor:pointer;
 }
 
@@ -120,21 +97,12 @@ border:none;
 color:white;
 }
 
-/* STATS */
-
-.stats{
-margin-bottom:15px;
-font-size:13px;
-color:var(--muted);
-}
-
-/* LAYOUT */
+/* GRID */
 
 .layout{
 display:grid;
 grid-template-columns:1fr 420px;
 gap:25px;
-align-items:start;
 }
 
 .grid{
@@ -144,6 +112,7 @@ gap:16px;
 }
 
 .card{
+position:relative;
 background:var(--card);
 border:1px solid var(--border);
 border-radius:14px;
@@ -155,6 +124,23 @@ transition:.2s;
 transform:translateY(-3px);
 border-color:var(--accent);
 }
+
+/* FAVORITE */
+
+.star{
+position:absolute;
+top:10px;
+right:12px;
+font-size:18px;
+cursor:pointer;
+opacity:.5;
+}
+
+.star.active{
+opacity:1;
+}
+
+/* BADGES */
 
 .badge{
 display:inline-flex;
@@ -173,58 +159,21 @@ margin-bottom:12px;
 .badge-memoria{background:linear-gradient(135deg,#60a5fa,#3b82f6);}
 .badge-weight{background:linear-gradient(135deg,#f59e0b,#ef4444);}
 
-.name{
-font-weight:500;
-font-size:18px;
-margin-bottom:6px;
-}
+.name{font-weight:500;font-size:18px;margin-bottom:6px;}
+.path{font-size:12px;color:var(--muted);margin-bottom:14px;}
 
-.path{
-font-size:12px;
-color:var(--muted);
-margin-bottom:14px;
-}
-
-.actions{
-display:flex;
-gap:8px;
-}
+.actions{display:flex;gap:8px;}
 
 .btn{
 flex:1;
 padding:8px;
 border-radius:8px;
 border:1px solid var(--border);
-cursor:pointer;
 font-size:12px;
 text-align:center;
 }
 
 .open{
-background:var(--accent);
-border:none;
-color:white;
-}
-
-/* PAGINATION */
-
-.pagination{
-margin-top:25px;
-display:flex;
-justify-content:center;
-gap:6px;
-flex-wrap:wrap;
-}
-
-.page-btn{
-padding:6px 10px;
-border-radius:6px;
-border:1px solid var(--border);
-cursor:pointer;
-font-size:12px;
-}
-
-.page-btn.active{
 background:var(--accent);
 border:none;
 color:white;
@@ -245,9 +194,32 @@ height:520px;
 .preview-panel iframe{
 width:1200px;
 height:900px;
-border:none;
 transform:scale(.36);
 transform-origin:top left;
+border:none;
+}
+
+/* PAGINATION */
+
+.pagination{
+margin-top:25px;
+display:flex;
+justify-content:center;
+gap:6px;
+flex-wrap:wrap;
+}
+
+.page-btn{
+padding:6px 10px;
+border-radius:6px;
+border:1px solid var(--border);
+cursor:pointer;
+}
+
+.page-btn.active{
+background:var(--accent);
+border:none;
+color:white;
 }
 
 /* TOAST */
@@ -262,19 +234,9 @@ border:1px solid var(--border);
 padding:8px 16px;
 border-radius:8px;
 opacity:0;
-font-size:13px;
 }
 
-.toast.show{
-opacity:1;
-}
-
-.footer{
-text-align:center;
-margin-top:40px;
-font-size:13px;
-color:var(--muted);
-}
+.toast.show{opacity:1;}
 
 </style>
 
@@ -285,45 +247,38 @@ color:var(--muted);
 <div class="container">
 
 <div class="header">
-
 <div class="brand">
 <img src="a3.png">
 <div class="brand-title">Páginas Native</div>
 </div>
 
 <div class="controls">
-<input id="search" placeholder="Buscar página...">
+<input id="search" placeholder="Buscar...">
 <button id="theme">🌙</button>
 </div>
-
 </div>
 
 <div class="filters">
-
 <div class="chip active" data-tag="all">Todas</div>
+<div class="chip" data-tag="favorites">⭐ Favoritos</div>
 <div class="chip" data-tag="ED">⚡ ED</div>
 <div class="chip" data-tag="Diabetes">🩸 Diabetes</div>
 <div class="chip" data-tag="Memória">🧠 Memória</div>
 <div class="chip" data-tag="Emagrecimento">🔥 Emagrecimento</div>
-
 </div>
 
-<div class="stats" id="stats">Carregando...</div>
+<div id="stats"></div>
 
 <div class="layout">
-
 <div>
 <div id="grid" class="grid"></div>
 <div id="pagination" class="pagination"></div>
 </div>
 
 <div class="preview-panel">
-<iframe id="previewFrame"></iframe>
+<iframe id="frame"></iframe>
 </div>
-
 </div>
-
-<div class="footer">nativehub.space</div>
 
 </div>
 
@@ -336,16 +291,14 @@ const API_URL="https://api.github.com/repos/kevinpompilhaa3/nativepages/contents
 const CARDS_PER_PAGE=25
 
 let pages=[]
-let activeTag="all"
 let currentPage=1
-let timer=null
+let activeTag="all"
 
-const grid=document.getElementById("grid")
-const search=document.getElementById("search")
-const stats=document.getElementById("stats")
-const pagination=document.getElementById("pagination")
-const frame=document.getElementById("previewFrame")
-const toast=document.getElementById("toast")
+let favorites=JSON.parse(localStorage.getItem("favorites")||"[]")
+
+function saveFav(){
+localStorage.setItem("favorites",JSON.stringify(favorites))
+}
 
 function detectTag(name){
 
@@ -361,17 +314,10 @@ return {tag:"",emoji:"",class:""}
 
 }
 
-/* AUTO DETECT */
-
 async function loadFolders(){
-
 const res=await fetch(API_URL)
 const data=await res.json()
-
-return data
-.filter(item=>item.type==="dir" && !item.name.startsWith("."))
-.map(item=>item.name)
-
+return data.filter(i=>i.type==="dir").map(i=>i.name)
 }
 
 async function init(){
@@ -393,48 +339,43 @@ render()
 
 }
 
-/* UI */
-
-document.querySelectorAll(".chip").forEach(chip=>{
-chip.onclick=()=>{
-document.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"))
-chip.classList.add("active")
-activeTag=chip.dataset.tag
-currentPage=1
-render()
-}
-})
-
-function showToast(){
-toast.classList.add("show")
-setTimeout(()=>toast.classList.remove("show"),1200)
-}
-
 function render(){
 
-const q=search.value.toLowerCase()
+const q=document.getElementById("search").value.toLowerCase()
 
-const filtered=pages.filter(p=>{
-const nameMatch=p.name.toLowerCase().includes(q)
-const tagMatch=activeTag==="all"||p.tag===activeTag
-return nameMatch&&tagMatch
+let filtered=pages.filter(p=>p.name.toLowerCase().includes(q))
+
+if(activeTag==="favorites"){
+filtered=filtered.filter(p=>favorites.includes(p.name))
+}else if(activeTag!=="all"){
+filtered=filtered.filter(p=>p.tag===activeTag)
+}
+
+filtered.sort((a,b)=>{
+const fa=favorites.includes(a.name)?-1:1
+const fb=favorites.includes(b.name)?-1:1
+return fa-fb
 })
 
 const totalPages=Math.ceil(filtered.length/CARDS_PER_PAGE)
-
 const start=(currentPage-1)*CARDS_PER_PAGE
 const list=filtered.slice(start,start+CARDS_PER_PAGE)
 
-stats.innerText=`${filtered.length} páginas • página ${currentPage} de ${totalPages||1}`
+document.getElementById("stats").innerText=`${filtered.length} páginas • página ${currentPage} de ${totalPages||1}`
 
+const grid=document.getElementById("grid")
 grid.innerHTML=""
 
 list.forEach(p=>{
+
+const isFav=favorites.includes(p.name)
 
 const el=document.createElement("div")
 el.className="card"
 
 el.innerHTML=`
+<div class="star ${isFav?"active":""}">⭐</div>
+
 <div class="badge ${p.tagClass}">
 ${p.emoji} ${p.tag}
 </div>
@@ -453,44 +394,63 @@ navigator.clipboard.writeText(BASE_URL+p.path)
 showToast()
 }
 
+el.querySelector(".star").onclick=(e)=>{
+e.stopPropagation()
+
+if(favorites.includes(p.name)){
+favorites=favorites.filter(x=>x!==p.name)
+}else{
+favorites.push(p.name)
+}
+
+saveFav()
+render()
+}
+
 el.onmouseenter=()=>{
-clearTimeout(timer)
-timer=setTimeout(()=>{
-frame.src=BASE_URL+p.path
-},250)
+document.getElementById("frame").src=BASE_URL+p.path
 }
 
 grid.appendChild(el)
 
 })
 
+const pagination=document.getElementById("pagination")
 pagination.innerHTML=""
 
 for(let i=1;i<=totalPages;i++){
-
 const btn=document.createElement("div")
 btn.className="page-btn"+(i===currentPage?" active":"")
-
 btn.innerText=i
-
 btn.onclick=()=>{
 currentPage=i
 render()
-window.scrollTo({top:0,behavior:"smooth"})
 }
-
 pagination.appendChild(btn)
-
 }
 
 }
 
-search.oninput=()=>{
+function showToast(){
+const t=document.getElementById("toast")
+t.classList.add("show")
+setTimeout(()=>t.classList.remove("show"),1000)
+}
+
+document.getElementById("search").oninput=()=>{
 currentPage=1
 render()
 }
 
-/* THEME */
+document.querySelectorAll(".chip").forEach(c=>{
+c.onclick=()=>{
+document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"))
+c.classList.add("active")
+activeTag=c.dataset.tag
+currentPage=1
+render()
+}
+})
 
 const themeBtn=document.getElementById("theme")
 
