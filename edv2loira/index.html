@@ -1,801 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Latest News</title>
-  <meta name="robots" content="index, follow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Description" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://infotodayz.online/ps2-turmeric" />
-  <meta property="og:title" content="Breaking News" />
-  <meta property="og:image" content="https://media.atomicatpages.net/Images/ogimage.png" />
-  <meta name="author" content="Dr. Julia Fischer" />
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecg.woff2" crossorigin />
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2" crossorigin />
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2" crossorigin />
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmUiAo.woff2" crossorigin />
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDGUmdTQ3jw.woff2" crossorigin />
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/notosansgeorgian/v48/PlIVFke5O6RzLfvNNVSitxkr76PRHBC4Ytyq-Gof7PUs4S7zcHOUkQ.woff2" crossorigin />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>What Actors and Doctors Have in Common? - CBS News</title>
+  <meta name="description" content="A Hollywood expert reveals the trick used by actors." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cbs: {
+              black: '#000000',
+              gray: '#666666',
+              lightgray: '#e5e5e5',
+              red: '#cc0000',
+              link: '#005599'
+            }
+          },
+          fontFamily: {
+            sans: ['"Inter"', 'Helvetica', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter (muito semelhante à fonte usada pela CBS News) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#ffffff;
-      --text:#292929;
-      --red:#850506;
-      --accent:#c10000;
-      --muted:#a0a3ad;
-      --card-radius:4px;
-      --container:1100px;
-      --content:980px;
+    body {
+      background-color: #FFFFFF;
+      color: #333333;
+      -webkit-font-smoothing: antialiased;
     }
 
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
+    /* Animação Pulse para o CTA */
+    @keyframes ctaPulse {
+      0% { transform: scale(1); box-shadow: 0 4px 10px rgba(204, 0, 0, 0.2); }
+      50% { transform: scale(1.03); box-shadow: 0 8px 20px rgba(204, 0, 0, 0.4); }
+      100% { transform: scale(1); box-shadow: 0 4px 10px rgba(204, 0, 0, 0.2); }
+    }
+    .cta-pulse {
+      animation: ctaPulse 2s infinite ease-in-out;
+    }
+    .cta-pulse:hover {
+      animation: none;
+      transform: translateY(-2px);
     }
 
-    html{
-      scroll-behavior:smooth;
+    /* Estilização específica do conteúdo do artigo */
+    .article-content p {
+      margin-bottom: 1.5rem;
+      font-size: 1.125rem; /* 18px */
+      line-height: 1.7;
+      color: #292929;
     }
-
-    body{
-      font-family:Roboto,sans-serif;
-      min-height:100vh;
-      -webkit-font-smoothing:antialiased;
-      overflow-x:hidden;
-      background:#fff;
-      color:var(--text);
-    }
-
-    img{
-      display:block;
-      max-width:100%;
-      height:auto;
-      border:0;
-    }
-
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    .page{
-      width:100%;
-      overflow:hidden;
-    }
-
-    .top-strip{
-      background:var(--red);
-      color:#fff;
-      overflow:hidden;
-      padding:5px 0;
-    }
-
-    .ticker{
-      display:flex;
-      width:max-content;
-      animation:marquee 64s linear infinite;
-      gap:0;
-      white-space:nowrap;
-    }
-
-    .ticker-item{
-      min-width:100vw;
-      text-align:center;
-      font-family:Poppins,sans-serif;
-      font-size:14px;
-      font-weight:400;
-      line-height:34px;
-      letter-spacing:3px;
-      padding:0 10px;
-    }
-
-    @keyframes marquee{
-      from{transform:translateX(0)}
-      to{transform:translateX(-50%)}
-    }
-
-    .outer{
-      width:100%;
-      max-width:var(--container);
-      margin:0 auto;
-      padding:0 16px;
-    }
-
-    .spacer-top{
-      height:15px;
-    }
-
-    .card{
-      width:95%;
-      max-width:var(--content);
-      margin:0 auto;
-      background:#fff;
-      border-radius:var(--card-radius);
-      padding:32px 64px 48px;
-    }
-
-    .headline-wrap h1,
-    .sub-wrap h2,
-    .text-block,
-    .center-call,
-    .mini-title,
-    .footer-note,
-    .footer-links a{
-      font-family:"Noto Sans Georgian",sans-serif;
-      word-break:break-word;
-    }
-
-    .headline-wrap{
-      padding-bottom:16px;
-    }
-
-    .headline-wrap h1{
-      font-size:37px;
-      line-height:1.2;
-      font-weight:700;
-      text-align:left;
-    }
-
-    .headline-wrap .red{
-      color:red;
-    }
-
-    .sub-wrap{
-      padding-bottom:16px;
-    }
-
-    .sub-wrap h2{
-      font-size:24px;
-      line-height:1.45;
-      font-weight:500;
-      text-align:left;
-    }
-
-    .divider{
-      padding:10px 0;
-    }
-
-    .divider span{
-      display:block;
-      width:100%;
-      border-top:1px solid #000;
-    }
-
-    .space-19{
-      height:19px;
-    }
-
-    .text-block{
-      margin-top:24px;
-      padding-bottom:24px;
-      font-size:22px;
-      line-height:1.55;
-      font-weight:500;
-      color:var(--text);
-      white-space:pre-line;
-    }
-
-    .center-call{
-      margin-top:10px;
-      padding-bottom:10px;
-      text-align:center;
-      font-size:26px;
-      line-height:1.35;
-      font-weight:500;
-      color:var(--accent);
-    }
-
-    .media{
-      margin:0 auto;
-    }
-
-    .media img{
-      margin:0 auto;
-    }
-
-    .media-80 img{
-      width:80%;
-    }
-
-    .media-73 img{
-      width:73%;
-    }
-
-    .cta-section{
-      max-width:var(--content);
-      margin:0 auto;
-      padding:0 16px 30px;
-    }
-
-    .cta-primary-wrap{
-      margin-top:20px;
-      padding-bottom:5px;
-      padding-left:150px;
-    }
-
-    .cta-button{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      background:var(--accent);
-      color:#fff;
-      font-family:"Noto Sans Georgian",sans-serif;
-      font-weight:700;
-      font-size:40px;
-      padding:15px;
-      border-radius:5px;
-      text-align:center;
-    }
-
-    .comments{
-      display:none;
-    }
-
-    .promo-stack{
-      max-width:var(--content);
-      margin:0 auto;
-      padding:0 16px;
-    }
-
-    .promo-img{
-      text-align:left;
-      padding-left:150px;
-    }
-
-    .promo-img img{
-      width:32%;
-      margin:0;
-    }
-
-    .promo-text{
-      margin-top:24px;
-      padding-bottom:24px;
-    }
-
-    .promo-text h3{
-      font-family:"Noto Sans Georgian",sans-serif;
-      font-size:22px;
-      font-weight:500;
-      line-height:1.5;
-      color:var(--text);
-      text-align:center;
-      font-style:italic;
-    }
-
-    .spacer-10{
-      height:10px;
-    }
-
-    .cta-secondary-wrap{
-      max-width:var(--content);
-      margin:0 auto;
-      padding:0 16px;
-    }
-
-    .cta-secondary-inner{
-      margin-top:20px;
-      padding-bottom:5px;
-      padding-left:150px;
-    }
-
-    .bottom-light{
-      background:#f5f5f5;
-      margin-top:24px;
-      padding:24px 0;
-    }
-
-    .bottom-inner{
-      max-width:var(--content);
-      margin:0 auto;
-      padding:0 16px;
-    }
-
-    .footer-note{
-      font-family:Poppins,sans-serif;
-      font-size:12px;
-      line-height:1.7;
-      text-align:center;
-      color:var(--muted);
-    }
-
-    .footer-links{
-      display:flex;
-      justify-content:center;
-      gap:32px;
-      margin-top:24px;
-      flex-wrap:wrap;
-    }
-
-    .footer-links a{
-      font-family:Poppins,sans-serif;
-      font-size:12px;
-      color:var(--muted);
-    }
-
-    @media screen and (max-width: 768px){
-      .outer,
-      .cta-section,
-      .promo-stack,
-      .cta-secondary-wrap,
-      .bottom-inner{
-        padding-left:12px;
-        padding-right:12px;
-      }
-
-      .card{
-        width:100%;
-        padding:24px 18px 34px;
-      }
-
-      .headline-wrap h1{
-        font-size:28px;
-      }
-
-      .sub-wrap h2{
-        font-size:18px;
-      }
-
-      .text-block{
-        font-size:18px;
-      }
-
-      .center-call{
-        font-size:24px;
-      }
-
-      .cta-button{
-        font-size:28px;
-      }
-
-      .cta-primary-wrap,
-      .cta-secondary-inner,
-      .promo-img{
-        padding-left:0;
-      }
-
-      .promo-img img{
-        width:50%;
-        margin:0 auto;
-      }
-    }
-
-    @media screen and (max-width: 480px){
-      .ticker-item{
-        font-size:10px;
-      }
-
-      .spacer-top{
-        height:0;
-      }
-
-      .outer,
-      .cta-section,
-      .promo-stack,
-      .cta-secondary-wrap,
-      .bottom-inner{
-        padding-left:10px;
-        padding-right:10px;
-      }
-
-      .card{
-        width:100%;
-        padding:20px 12px 30px;
-      }
-
-      .headline-wrap{
-        padding-bottom:13px;
-        margin-top:-5px;
-      }
-
-      .headline-wrap h1{
-        font-size:23px;
-        line-height:32px;
-      }
-
-      .sub-wrap{
-        padding-bottom:0;
-        padding-top:0;
-      }
-
-      .sub-wrap h2{
-        font-size:15px;
-        line-height:25px;
-        font-weight:400;
-      }
-
-      .text-block{
-        font-size:17px;
-        padding-bottom:24px;
-      }
-
-      .center-call{
-        margin-top:5px;
-        padding-bottom:5px;
-        font-size:24px;
-      }
-
-      .media-80 img,
-      .media-73 img{
-        width:100%;
-      }
-
-      .cta-primary-wrap,
-      .cta-secondary-inner{
-        margin-top:10px;
-        padding-left:0;
-      }
-
-      .cta-button{
-        width:100%;
-        font-size:20px;
-      }
-
-      .promo-img{
-        padding-left:0;
-        text-align:center;
-      }
-
-      .promo-img img{
-        width:50%;
-        margin:0 auto;
-      }
-
-      .promo-text h3{
-        font-size:17px;
-      }
+    .article-content strong {
+      font-weight: 700;
+      color: #000000;
     }
   </style>
+
+  <!-- Script UTM (Repassa parâmetros da URL para os links) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const LINKS_CONFIG = {
+        "CTA_LINK": "https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&rtkck=1770902641"
+      };
+
+      document.querySelectorAll("[data-link]").forEach(el => {
+        const key = el.getAttribute("data-link");
+        const url = LINKS_CONFIG[key] || LINKS_CONFIG["CTA_LINK"]; // Fallback para o link principal
+        if (!url) return;
+
+        if (el.tagName.toLowerCase() === "a") {
+          el.setAttribute("href", url);
+        } else {
+          el.addEventListener("click", () => { window.location.href = url; });
+        }
+        el.classList.add("cursor-pointer");
+        el.setAttribute("rel", "nofollow");
+      });
+
+      const qs = window.location.search;
+      if (qs) {
+        document.querySelectorAll('a[href^="http"]').forEach(a => {
+          const href = a.getAttribute("href");
+          if (!href) return;
+          const sep = href.includes("?") ? "&" : "?";
+          a.setAttribute("href", href + sep + qs.slice(1));
+        });
+      }
+    });
+  </script>
 </head>
-<body>
-  <div class="page">
 
-    <header class="top-strip">
-      <div class="ticker">
-        <div class="ticker-item">LATEST NEWS - LATEST NEWS - LATEST NEWS - LATEST NEWS - LATEST NEWS</div>
-        <div class="ticker-item">LATEST NEWS - LATEST NEWS - LATEST NEWS - LATEST NEWS - LATEST NEWS</div>
+<body class="font-sans">
+
+  <!-- CABEÇALHO (Mimetizando a imagem enviada: CBS News) -->
+  <header class="w-full bg-white border-b border-cbs-lightgray sticky top-0 z-50">
+    
+    <!-- Top Bar (Logotipo e Menus principais) -->
+    <div class="max-w-[1200px] mx-auto px-4 py-3 flex items-center justify-between">
+      
+      <!-- Menus (Esquerda) -->
+      <nav class="hidden md:flex items-center gap-5 text-[13px] font-semibold text-cbs-black">
+        <a href="#" class="hover:text-cbs-gray flex items-center gap-1">Latest <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+        <a href="#" class="hover:text-cbs-gray flex items-center gap-1">Local News <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+        <a href="#" class="hover:text-cbs-gray flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-cbs-red"></span> Live <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+        <a href="#" class="hover:text-cbs-gray flex items-center gap-1">Shows <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+      </nav>
+
+      <!-- Menu Mobile Sanduíche -->
+      <button class="md:hidden p-1 text-cbs-black">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+
+      <!-- Logotipo CBS NEWS centralizado no mobile, alinhado no desktop -->
+      <div class="flex items-center justify-center gap-1.5 cursor-pointer absolute left-1/2 transform -translate-x-1/2">
+        <!-- Ícone do Olho (Símbolo CBS) -->
+        <svg viewBox="0 0 200 200" class="w-6 h-6 fill-black">
+          <path d="M100,15C44.8,15,0,100,0,100s44.8,85,100,85s100-85,100-85S155.2,15,100,15z M100,150.3c-27.8,0-50.3-22.5-50.3-50.3 S72.2,49.7,100,49.7S150.3,72.2,150.3,100S127.8,150.3,100,150.3z M100,75.1c-13.7,0-24.9,11.1-24.9,24.9s11.1,24.9,24.9,24.9 s24.9-11.1,24.9-24.9S113.7,75.1,100,75.1z"/>
+        </svg>
+        <span class="font-bold text-[22px] tracking-tighter">CBS NEWS</span>
       </div>
-    </header>
 
-    <div class="outer">
-      <div class="spacer-top"></div>
+      <!-- Lupa de Pesquisa (Direita) -->
+      <button class="p-1 text-cbs-black">
+        <svg class="w-5 h-5 font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      </button>
+    </div>
 
-      <main class="card">
-        <section class="headline-wrap">
-          <h1>
-            <span class="red">More powerful than Viagra? </span>
-            <span>A Hollywood expert reveals the "golden trick" used by actors to maintain an erection for hours.</span>
-          </h1>
-        </section>
+    <!-- Bottom Bar (Submenus) -->
+    <div class="hidden md:flex max-w-[1200px] mx-auto px-4 py-2 items-center gap-4 text-[13px] font-semibold text-cbs-gray border-t border-cbs-lightgray">
+      <a href="#" class="text-cbs-black font-bold">CBS Mornings</a>
+      <span class="text-cbs-lightgray">|</span>
+      <a href="#" class="hover:text-cbs-black">Eye Opener</a>
+      <a href="#" class="hover:text-cbs-black">Politics</a>
+      <a href="#" class="hover:text-cbs-black">Health</a>
+      <a href="#" class="hover:text-cbs-black">Note to Self</a>
+    </div>
+  </header>
 
-        <section class="sub-wrap">
-          <h2><strong>Miracle or myth?</strong> In recent months, thousands of men in the United States have been discreetly sharing a peculiar natural method that promises to restore male performance—without prescriptions, injections, or embarrassing doctor visits.</h2>
-        </section>
+  <!-- CONTEÚDO PRINCIPAL (Pre-sell) -->
+  <main class="max-w-[800px] mx-auto px-4 sm:px-6 pt-8 pb-20">
+    
+    <article>
+      <!-- Headline -->
+      <header class="mb-6">
+        <h1 class="text-3xl sm:text-[40px] font-bold text-cbs-black leading-[1.1] tracking-tight mb-4">
+          More powerful than Viagra? A Hollywood expert reveals the "golden trick" used by actors to maintain an erection for hours.
+        </h1>
+        
+        <!-- Linha do Autor e Data -->
+        <div class="text-[13px] text-cbs-gray flex items-center gap-2 mt-6">
+          <span>By <strong>Health Correspondent</strong></span>
+          <span>|</span>
+          <!-- A DATA DINÂMICA ENTRA AQUI -->
+          <span id="dynamic-date" class="font-medium"></span>
+        </div>
+      </header>
 
-        <section class="sub-wrap">
-          <h2>The method went viral after being discussed on a popular podcast episode with actor and actress and former Fox News model Ali Larter, who surprised viewers with the live revelation.</h2>
-        </section>
+      <!-- Conteúdo do Artigo -->
+      <div class="article-content mt-8">
+        
+        <p class="text-[22px] sm:text-2xl font-medium leading-snug mb-8 border-l-4 border-cbs-red pl-4">
+          <strong>Miracle or myth?</strong> In recent months, thousands of men in the United States have been discreetly sharing a peculiar natural method that promises to restore male performance—without prescriptions, injections, or embarrassing doctor visits.
+        </p>
 
-        <div class="divider"><span></span></div>
-        <div class="space-19"></div>
+        <!-- Imagem 1 (Casal/Hemsworth Style) -->
+        <a data-link="CTA_LINK" class="block mb-8">
+          <img
+            src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/16.png?quality=73#483703"
+            srcset="
+              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/puLvFW4048972.png?width=300&height=160&quality=80#459272 300w,
+              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/puLvFW4048972.png?width=768&height=409&quality=70#649992 768w,
+              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/puLvFW4048972.png?width=1024&height=545&quality=77#369844 1024w,
+              https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/16.png?quality=73#483703 1200w
+            "
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            width="1200"
+            height="765"
+            alt="Main Story Image"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            class="w-full rounded shadow-sm hover:opacity-95 transition"
+          />
+        </a>
 
-        <section class="media media-80">
-          <a href="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&amp;rtkck=1770902641">
-            <img
-              src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/16.png?quality=73#483703"
-              srcset="
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/puLvFW4048972.png?width=300&amp;height=160&amp;quality=80#459272 300w,
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/puLvFW4048972.png?width=768&amp;height=409&amp;quality=70#649992 768w,
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/puLvFW4048972.png?width=1024&amp;height=545&amp;quality=77#369844 1024w,
-                https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/16.png?quality=73#483703 1200w
-              "
-              sizes="(max-width: 1200px) 100vw, 1200px"
-              width="1200"
-              height="765"
-              alt=""
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-            />
-          </a>
-        </section>
+        <p>
+          The method went viral after being discussed on a popular podcast episode with an actress and former model, who surprised viewers with the live revelation.
+        </p>
 
-        <section class="text-block">If you suffer from low stamina, weak erections, performance anxiety, or declining libido… you might want to read this carefully.
+        <p>
+          If you suffer from low stamina, weak erections, performance anxiety, or declining libido… you might want to read this carefully.
+        </p>
 
-Why is everyone talking about this "golden root" method?
+        <p>
+          <strong>Why is everyone talking about this "golden root" method?</strong>
+        </p>
 
-Discussions on social media exploded after several health professionals began comparing this natural protocol to pharmaceutical solutions—but without the common side effects that men fear.
+        <p>
+          Discussions on social media exploded after several health professionals began comparing this natural protocol to pharmaceutical solutions—but without the common side effects that men fear.
+        </p>
 
-According to inside sources, this same approach has been discreetly circulating among high-performance actors who need to maintain stamina during long shoots.
+        <p>
+          According to inside sources, this same approach has been discreetly circulating among high-performance actors who need to maintain stamina during long shoots. But is it really true… or just another internet rumor?
+        </p>
 
-But is it really true… or just another internet rumor?
+        <h2 class="text-2xl font-bold mt-10 mb-4 text-cbs-black">The Interview That Sparked the Controversy</h2>
 
-The Interview That Sparked the Controversy</section>
+        <p>
+          To find out the truth, a popular podcast invited a health expert to discuss the growing buzz surrounding what many call a “natural performance reset.”
+        </p>
 
-        <section class="center-call"><strong>But is it really true?</strong></section>
+        <p>
+          During the conversation, they explained why so many men experience a sudden drop in performance after age 30—even when they feel healthy. What happened next surprised even the host.
+        </p>
 
-        <section class="text-block">To find out the truth, podcast host Joe Rogan invited to discuss the growing buzz surrounding what many call a “natural performance reset.”
-
-During the conversation, actress Ali Larter joined the discussion to explain why so many men experience a sudden drop in performance after age 30—even when they feel healthy.
-
-What happened next surprised even the host.</section>
-
-        <section class="media">
+        <!-- Imagem 2 (Joe Rogan) -->
+        <a data-link="CTA_LINK" class="block mb-8 mt-6">
           <img
             src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/19.png?quality=83#709603"
             srcset="
-              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/kcEQtg0644944.webp?width=300&amp;height=160&amp;quality=75#720311 300w,
+              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/kcEQtg0644944.webp?width=300&height=160&quality=75#720311 300w,
               https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/19.png?quality=83#709603 692w
             "
             sizes="(max-width: 692px) 100vw, 692px"
             width="692"
             height="389"
-            alt=""
+            alt="Podcast Interview"
             loading="lazy"
             decoding="async"
+            class="w-full rounded shadow-sm hover:opacity-95 transition"
           />
-        </section>
+        </a>
 
-        <section class="text-block"><strong>Joe Rogan:</strong>"A lot of people asked me to bring you here because this went viral… they're saying guys are lasting longer and feeling stronger again. Is that really true?"
+        <p>
+          <strong>Host:</strong> "A lot of people asked me to bring you here because this went viral… they're saying guys are lasting longer and feeling stronger again. Is that really true?"
+        </p>
 
-A Specialist's Perspective Shocked Male Viewers
+        <h2 class="text-2xl font-bold mt-10 mb-4 text-cbs-black">A Specialist's Perspective Shocked Male Viewers</h2>
 
-Ali Larter explained that what most men believe to be a testosterone problem is often something completely different.
+        <p>
+          The expert explained that what most men believe to be a testosterone problem is often something completely different. According to her:
+        </p>
 
-According to her:</section>
-
-        <section class="media">
+        <!-- Imagem 3 (Ali Larter) -->
+        <a data-link="CTA_LINK" class="block mb-8 mt-6">
           <img
             src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/17.png?quality=71#171761"
             srcset="
-              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/DalIGN1805855.jpeg?width=300&amp;height=160&amp;quality=87#647863 300w,
+              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/DalIGN1805855.jpeg?width=300&height=160&quality=87#647863 300w,
               https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/17.png?quality=71#171761 663w
             "
             sizes="(max-width: 663px) 100vw, 663px"
             width="663"
             height="372"
-            alt=""
+            alt="Guest Explaining"
             loading="lazy"
             decoding="async"
+            class="w-full sm:w-3/4 mx-auto rounded shadow-sm hover:opacity-95 transition"
           />
-        </section>
+        </a>
 
-        <section class="text-block">“Many men don’t lose performance because of age… they lose it because blood flow signaling weakens over time. Correct that—and everything changes.”
+        <p>
+          “Many men don’t lose performance because of age… they lose it because blood flow signaling weakens over time. Correct that—and everything changes.”
+        </p>
 
-The studio's reaction was immediate.
+        <p>
+          The studio's reaction was immediate.
+        </p>
 
-“So you’re saying it’s not about pills… but about restoring a natural response?”
+        <p>
+          “So you’re saying it’s not about pills… but about restoring a natural response?”
+        </p>
 
-“Exactly. Once the circulation pathways are reactivated, the body remembers what it used to do naturally.”
+        <p>
+          “Exactly. Once the circulation pathways are reactivated, the body remembers what it used to do naturally.”
+        </p>
 
-then shared something rarely discussed publicly.</section>
-
-        <section class="media">
-          <img
-            src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/19.png?quality=88#454532"
-            srcset="
-              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/kcEQtg0644944.webp?width=300&amp;height=160&amp;quality=76#556800 300w,
-              https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/19.png?quality=88#454532 692w
-            "
-            sizes="(max-width: 692px) 100vw, 692px"
-            width="692"
-            height="389"
-            alt=""
-            loading="lazy"
-            decoding="async"
-          />
-        </section>
-
-        <section class="text-block"><strong>Joe Rogan:</strong> "Caramba, cara... essa receita parece insana.
-
-Is it really easy to do?"</section>
-
-        <section class="media media-73">
+        <!-- Imagem 4 (Meme/Reaction) -->
+        <a data-link="CTA_LINK" class="block mb-8 mt-6">
           <img
             src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/18.png?quality=71#207715"
             srcset="
-              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/tbMQsA1937746.jpeg?width=300&amp;height=160&amp;quality=71#811599 300w,
-              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/tbMQsA1937746.jpeg?width=768&amp;height=409&amp;quality=83#390066 768w,
-              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/tbMQsA1937746.jpeg?width=1024&amp;height=545&amp;quality=72#771835 1024w,
+              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/tbMQsA1937746.jpeg?width=300&height=160&quality=71#811599 300w,
+              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/tbMQsA1937746.jpeg?width=768&height=409&quality=83#390066 768w,
+              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/tbMQsA1937746.jpeg?width=1024&height=545&quality=72#771835 1024w,
               https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/18.png?quality=71#207715 1280w
             "
             sizes="(max-width: 1280px) 100vw, 1280px"
             width="1280"
             height="720"
-            alt=""
+            alt="Reaction"
             loading="lazy"
             decoding="async"
+            class="w-full rounded shadow-sm hover:opacity-95 transition"
           />
-        </section>
+        </a>
 
-        <section class="text-block">"Yeah, man… I didn’t believe it at first either. But after long periods of filming, the energy drops. I tried supplements, medications… nothing seemed natural"
+        <p>
+          "Yeah, man… I didn’t believe it at first either. But after long periods of filming, the energy drops. I tried supplements, medications… nothing seemed natural."
+        </p>
 
-He explained that a colleague introduced him to a simple mixture using a specific root compound combined with a common mineral.
+        <p>
+          He explained that a colleague introduced him to a simple mixture using a specific root compound combined with a common mineral. Within a few weeks, he noticed changes.
+        </p>
 
-Within a few weeks, he noticed changes.</section>
+        <p>
+          <strong>“It was like regaining my confidence. More energy. More control. No pressure.”</strong>
+        </p>
 
-        <section class="media">
+        <h2 class="text-2xl font-bold mt-10 mb-4 text-cbs-black">Why adult film professionals discreetly use similar protocols</h2>
+
+        <p>
+          According to experts in the adult entertainment industry, stamina and recovery are more important than anything else. Several professionals report using natural compounds that improve blood circulation before demanding shoots, helping to maintain firmness and stamina consistently.
+        </p>
+
+        <p>
+          And, unlike medication, this method works in harmony with the body, rather than forcing a temporary reaction.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-10 mb-4 text-cbs-black">Why Doctors Are Paying Attention</h2>
+
+        <p>
+          Recent discussions suggest that certain plant compounds may help activate nitric oxide pathways, responsible for blood flow and erection response.
+        </p>
+
+        <p>
+          When activated correctly, many men report:
+        </p>
+        <ul class="list-disc pl-6 mb-6 space-y-2 text-lg text-[#292929]">
+          <li>Stronger natural erections</li>
+          <li>Faster response time</li>
+          <li>Increased stamina</li>
+          <li>Increased self-confidence</li>
+        </ul>
+
+        <p>
+          Without relying on medication.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-10 mb-4 text-cbs-black text-center border-t border-cbs-lightgray pt-8">Watch the full discussion</h2>
+
+        <p class="text-center">
+          The complete podcast segment, where they explain the method step-by-step, is still available online.
+        </p>
+        <p class="text-center font-bold text-cbs-red mb-8">
+          Due to the nature of the discussion, viewers are advised to watch in private mode.
+        </p>
+
+        <!-- CTA IMAGE GIF -->
+        <a data-link="CTA_LINK" class="block mb-8">
           <img
-            src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/19.png?quality=80#983499"
+            src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/Native%20%5BKF%5D%20(3).gif?quality=87#976408"
             srcset="
-              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/kcEQtg0644944.webp?width=300&amp;height=160&amp;quality=79#596564 300w,
-              https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/19.png?quality=80#983499 692w
+              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/LDjwAE4218880.gif?width=300&height=160&quality=73#990191 300w,
+              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/LDjwAE4218880.gif?width=768&height=409&quality=88#840213 768w,
+              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/LDjwAE4218880.gif?width=1024&height=545&quality=84#59434 1024w,
+              https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/Native%20%5BKF%5D%20(3).gif?quality=87#976408 1200w
             "
-            sizes="(max-width: 692px) 100vw, 692px"
-            width="692"
-            height="389"
-            alt=""
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            width="1200"
+            height="765"
+            alt="Watch Video"
             loading="lazy"
             decoding="async"
+            class="w-full rounded shadow-md hover:shadow-xl transition"
           />
-        </section>
+        </a>
 
-        <section class="text-block">“It was like regaining my confidence. More energy. More control. No pressure.”
-
-Why adult film professionals discreetly use similar protocols
-
-According to experts in the adult entertainment industry, stamina and recovery are more important than anything else.
-
-Several professionals report using natural compounds that improve blood circulation before demanding shoots, helping to maintain firmness and stamina consistently.
-
-And, unlike medication, this method works in harmony with the body, rather than forcing a temporary reaction.
-
-Joe Rogan's reaction
-
-After hearing the explanation, Rogan laughed and said:
-
-"So you're telling me this costs less than five dollars and guys are opting for pills?"
-
-The room erupted in laughter.
-
-Why Doctors Are Paying Attention
-
-Recent discussions suggest that certain plant compounds may help activate nitric oxide pathways, responsible for blood flow and erection response.
-
-When activated correctly, many men report:
-
-Stronger natural erections
-
-Faster response time
-
-Increased stamina
-
-Increased self-confidence
-
-Without relying on medication.
-
-Watch the full discussion
-
-The complete podcast segment, where and Ali Larter explain the method step-by-step, is still available online.
-
-Due to the nature of the discussion, viewers are advised to watch in private mode.
-
-Tap below to watch the full video explanation</section>
-
-        <section class="media media-80">
-          <a href="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&amp;rtkck=1770902641">
-            <img
-              src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/Native%20%5BKF%5D%20(3).gif?quality=87#976408"
-              srcset="
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/LDjwAE4218880.gif?width=300&amp;height=160&amp;quality=73#990191 300w,
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/LDjwAE4218880.gif?width=768&amp;height=409&amp;quality=88#840213 768w,
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/LDjwAE4218880.gif?width=1024&amp;height=545&amp;quality=84#59434 1024w,
-                https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/Native%20%5BKF%5D%20(3).gif?quality=87#976408 1200w
-              "
-              sizes="(max-width: 1200px) 100vw, 1200px"
-              width="1200"
-              height="765"
-              alt=""
-              loading="lazy"
-              decoding="async"
-            />
+        <!-- BIG CTA BUTTON -->
+        <div class="text-center mt-10 mb-16">
+          <a data-link="CTA_LINK" class="inline-block w-full sm:w-auto bg-[#c10000] hover:bg-[#a30000] text-white font-bold text-xl sm:text-2xl py-5 px-10 rounded shadow-lg cta-pulse transition">
+            CLICK HERE TO WATCH THE VIDEO
           </a>
-        </section>
-      </main>
-    </div>
+        </div>
 
-    <section class="cta-section">
-      <div class="cta-primary-wrap">
-        <a class="cta-button" href="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&amp;rtkck=1770902641">
-          WATCH THE VIDEO NOW
-        </a>
-      </div>
-    </section>
-
-    <section class="promo-stack">
-      <div class="promo-img">
-        <a href="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&amp;rtkck=1770902641">
-          <img
-            src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dYFuWr2021288.webp?quality=78#140768"
-            srcset="
-              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dYFuWr2021288.webp?width=300&amp;height=160&amp;quality=71#125920 300w,
-              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dYFuWr2021288.webp?quality=78#140768 505w
-            "
-            sizes="(max-width: 505px) 100vw, 505px"
-            width="505"
-            height="653"
-            alt=""
-            loading="lazy"
-            decoding="async"
-          />
-        </a>
       </div>
 
-      <div class="promo-text">
-        <h3><strong><em>"Thousands of men are already discreetly testing this approach."</em></strong></h3>
-      </div>
-
-      <div class="promo-img">
-        <a href="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&amp;rtkck=1770902641">
-          <img
-            src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dsNPCd2021288.webp?quality=81#765011"
-            srcset="
-              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dsNPCd2021288.webp?width=300&amp;height=160&amp;quality=82#445468 300w,
-              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dsNPCd2021288.webp?quality=81#765011 704w
-            "
-            sizes="(max-width: 704px) 100vw, 704px"
-            width="704"
-            height="844"
-            alt=""
-            loading="lazy"
-            decoding="async"
-          />
-        </a>
-      </div>
-
-      <div class="promo-text">
-        <h3><strong><em>The question is simple:</em></strong></h3>
-      </div>
-
-      <div class="promo-img">
-        <a href="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&amp;rtkck=1770902641">
-          <img
-            src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/qLzMgh2021288.webp?quality=89#293852"
-            srcset="
-              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/qLzMgh2021288.webp?width=300&amp;height=160&amp;quality=83#354540 300w,
-              https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/qLzMgh2021288.webp?quality=89#293852 686w
-            "
-            sizes="(max-width: 686px) 100vw, 686px"
-            width="686"
-            height="859"
-            alt=""
-            loading="lazy"
-            decoding="async"
-          />
-        </a>
-      </div>
-
-      <div class="promo-text">
-        <h3><strong><em>Will you continue guessing…<br>or finally understand what they've discovered?</em></strong></h3>
-      </div>
-    </section>
-
-    <div class="spacer-10"></div>
-
-    <section class="cta-secondary-wrap">
-      <div class="cta-secondary-inner">
-        <a class="cta-button" href="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&amp;rtkck=1770902641">
-          Click here to watch the video.
-        </a>
-      </div>
-    </section>
-
-    <footer class="bottom-light">
-      <div class="bottom-inner">
+      <!-- Social Proof / Promo Stack (Estilo "Trending") -->
+      <div class="border-t border-cbs-lightgray pt-10">
+        <h3 class="text-center font-bold text-xl text-cbs-gray mb-8 uppercase tracking-widest">Trending Now</h3>
         
+        <div class="flex flex-col items-center gap-6">
+          
+          <a data-link="CTA_LINK" class="block w-3/4 sm:w-1/2">
+            <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dYFuWr2021288.webp?quality=78#140768" alt="Promo 1" loading="lazy" class="w-full rounded shadow hover:opacity-90 transition">
+          </a>
+          <p class="text-center italic font-medium text-lg mb-4 text-cbs-black">
+            "Thousands of men are already discreetly testing this approach."
+          </p>
 
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
+          <a data-link="CTA_LINK" class="block w-3/4 sm:w-1/2">
+            <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dsNPCd2021288.webp?quality=81#765011" alt="Promo 2" loading="lazy" class="w-full rounded shadow hover:opacity-90 transition">
+          </a>
+          <p class="text-center italic font-medium text-lg mb-4 text-cbs-black">
+            The question is simple:
+          </p>
+
+          <a data-link="CTA_LINK" class="block w-3/4 sm:w-1/2">
+            <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/qLzMgh2021288.webp?quality=89#293852" alt="Promo 3" loading="lazy" class="w-full rounded shadow hover:opacity-90 transition">
+          </a>
+          <p class="text-center italic font-medium text-lg mb-10 text-cbs-black">
+            Will you continue guessing…<br>or finally understand what they've discovered?
+          </p>
+
         </div>
       </div>
-    </footer>
 
-  </div>
+    </article>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-[#f5f5f5] py-10 mt-10">
+    <div class="max-w-[1200px] mx-auto px-4 text-center">
+      <div class="font-bold text-2xl tracking-tighter text-cbs-black mb-6">
+        CBS NEWS
+      </div>
+      <div class="flex justify-center gap-6 text-[13px] text-cbs-gray font-medium mb-4">
+        <a href="#" class="hover:underline">Privacy Policy</a>
+        <a href="#" class="hover:underline">Terms of Use</a>
+        <a href="#" class="hover:underline">Contact Us</a>
+      </div>
+      <p class="text-xs text-[#999999] max-w-2xl mx-auto leading-relaxed">
+        © <span id="ano-footer"></span> CBS Interactive Inc. All Rights Reserved. This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. This is an advertorial page. The information provided here does not substitute professional medical advice.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Script da Data Dinâmica (Formato EUA: March 17, 2026) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hoje = new Date();
+      
+      // Atualizar Ano no Rodapé
+      document.getElementById('ano-footer').textContent = hoje.getFullYear();
+
+      // Formatar Data (Inglês) para o Artigo
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const dateFormatted = hoje.toLocaleDateString('en-US', options);
+      
+      const articleDateEl = document.getElementById('dynamic-date');
+      if (articleDateEl) {
+        // Ex: "Updated on: March 17, 2026"
+        articleDateEl.textContent = `Updated on: ${dateFormatted}`;
+      }
+    });
+  </script>
+
 </body>
 </html>

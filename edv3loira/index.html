@@ -1,319 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Latest News</title>
-  <meta name="description" content="Advertorial" />
-  <meta name="robots" content="index,follow" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Hollywood Insider Exposes The “Golden Root Trick” - NBC News</title>
+  <meta name="description" content="A Hollywood expert reveals the trick used by actors to maintain performance." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Tailwind CSS via CDN com configuração de cores da NBC -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nbc: {
+              black: '#000000',
+              dark: '#1a1a1a',
+              gray: '#555555',
+              lightgray: '#e6e6e6',
+              bg: '#f4f4f4',
+              blue: '#002f6c',
+              red: '#d50000'
+            }
+          },
+          fontFamily: {
+            sans: ['"Roboto"', 'Helvetica', 'Arial', 'sans-serif'],
+            headline: ['"Roboto Slab"', 'Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Roboto e Roboto Slab para mimetizar o look da NBC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;800&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
   <style>
-    :root{
-      --bg:#f5f5f5;
-      --text:#222;
-      --muted:#666;
-      --red:#b80000;
-      --darkred:#850506;
-      --card:#ffffff;
-      --max:860px;
-      --radius:10px;
-      --shadow:0 6px 20px rgba(0,0,0,.08);
+    body {
+      background-color: #ffffff;
+      color: #1a1a1a;
+      -webkit-font-smoothing: antialiased;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.55;
-      overflow-x:hidden;
+    /* Animação Pulse para botões CTA */
+    @keyframes ctaPulse {
+      0% { transform: scale(1); box-shadow: 0 4px 10px rgba(213, 0, 0, 0.2); }
+      50% { transform: scale(1.02); box-shadow: 0 8px 20px rgba(213, 0, 0, 0.4); }
+      100% { transform: scale(1); box-shadow: 0 4px 10px rgba(213, 0, 0, 0.2); }
+    }
+    .cta-pulse {
+      animation: ctaPulse 2s infinite ease-in-out;
+    }
+    .cta-pulse:hover {
+      animation: none;
+      transform: translateY(-2px);
     }
 
-    img{max-width:100%;height:auto;display:block}
-    a{text-decoration:none;color:inherit}
-    .topbar{
-      background:var(--darkred);
-      color:#fff;
-      overflow:hidden;
-      white-space:nowrap;
-      font-size:12px;
-      letter-spacing:2px;
-      padding:8px 0;
+    /* Ticker / Top Bar Animada */
+    .topbar {
+      background: #b80000;
+      color: #fff;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 8px 0;
     }
-    .topbar-track{
-      display:inline-block;
-      padding-left:100%;
-      animation:marquee 24s linear infinite;
+    .topbar-track {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 24s linear infinite;
     }
-    @keyframes marquee{
-      from{transform:translateX(0)}
-      to{transform:translateX(-100%)}
-    }
-
-    .wrap{
-      width:min(100%, var(--max));
-      margin:0 auto;
-      padding:14px;
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
     }
 
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:20px 16px 28px;
+    /* Estilização do corpo do texto */
+    .article-content p {
+      margin-bottom: 1.4rem;
+      font-size: 1.15rem; /* ~18.4px */
+      line-height: 1.65;
+      color: #222222;
     }
-
-    h1,h2,h3,p{margin:0 0 16px}
-    h1{
-      font-size:clamp(1.7rem, 5vw, 2.4rem);
-      line-height:1.15;
-      font-weight:800;
+    .article-content strong {
+      font-weight: 700;
+      color: #000000;
     }
-    h2{
-      font-size:clamp(1.2rem, 4vw, 1.55rem);
-      line-height:1.3;
-      font-weight:700;
-    }
-    h3{
-      font-size:clamp(1.05rem, 3.8vw, 1.35rem);
-      line-height:1.35;
-      font-weight:700;
-    }
-    p{
-      font-size:clamp(1rem, 3.8vw, 1.08rem);
-    }
-
-    .lead{font-size:clamp(1.05rem,4.1vw,1.2rem)}
-    .red{color:var(--red)}
-    .divider{
-      border:0;
-      height:1px;
-      background:#111;
-      margin:22px 0;
-    }
-    .media{
-      margin:18px 0;
-      border-radius:8px;
-      overflow:hidden;
-    }
-    .media img,.media gif{width:100%}
-    .center{text-align:center}
-
-    .cta{
-      display:block;
-      width:100%;
-      text-align:center;
-      background:var(--red);
-      color:#fff;
-      font-weight:800;
-      font-size:clamp(1.1rem,4.5vw,1.8rem);
-      padding:16px 14px;
-      border-radius:8px;
-      margin:20px 0 14px;
-      box-shadow:0 8px 18px rgba(184,0,0,.22);
-    }
-
-    .quote-block{
-      text-align:center;
-      font-style:italic;
-      font-weight:700;
-      font-size:clamp(1.05rem,4vw,1.35rem);
-      margin:20px 0;
-    }
-
-    .stack-images{
-      display:grid;
-      gap:22px;
-      margin:10px 0 20px;
-    }
-
-    .footer{
-      color:#8c8c8c;
-      font-size:.83rem;
-      text-align:center;
-      padding:28px 14px 40px;
-    }
-    .footer-links{
-      display:flex;
-      justify-content:center;
-      gap:28px;
-      flex-wrap:wrap;
-      margin-top:18px;
-    }
-
-    @media (min-width:768px){
-      .wrap{padding:22px}
-      .card{padding:32px 42px 40px}
-      .narrow-img{max-width:80%;margin-inline:auto}
-      .portrait-img{max-width:32%;margin-inline:auto}
-      .cta{max-width:640px;margin-inline:auto;margin-top:26px;margin-bottom:18px}
-    }
-
-    @media (max-width:480px){
-      .wrap{padding:10px}
-      .card{padding:16px 12px 22px;border-radius:0;box-shadow:none}
-      body{background:#fff}
-      .topbar{font-size:10px;padding:6px 0}
-      .media{margin:14px 0}
+    .article-content h3 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #000000;
     }
   </style>
+
+  <!-- Script UTM (Repassa parâmetros da URL para os links) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const LINKS_CONFIG = {
+        "CTA_LINK": "https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&rtkck=1770902641"
+      };
+
+      document.querySelectorAll("[data-link]").forEach(el => {
+        const key = el.getAttribute("data-link");
+        const url = LINKS_CONFIG[key] || LINKS_CONFIG["CTA_LINK"];
+        if (!url) return;
+
+        if (el.tagName.toLowerCase() === "a") {
+          el.setAttribute("href", url);
+        } else {
+          el.addEventListener("click", () => { window.location.href = url; });
+        }
+        el.classList.add("cursor-pointer");
+        el.setAttribute("rel", "nofollow");
+      });
+
+      const qs = window.location.search;
+      if (qs) {
+        document.querySelectorAll('a[href^="http"]').forEach(a => {
+          const href = a.getAttribute("href");
+          if (!href) return;
+          const sep = href.includes("?") ? "&" : "?";
+          a.setAttribute("href", href + sep + qs.slice(1));
+        });
+      }
+    });
+  </script>
 </head>
-<body>
+
+<body class="font-sans">
+
+  <!-- BREAKING NEWS BAR -->
   <div class="topbar">
-    <div class="topbar-track">LATEST NEWS - LATEST NEWS - LATEST NEWS - LATEST NEWS - LATEST NEWS</div>
+    <div class="topbar-track">BREAKING NEWS - LATEST NEWS - BREAKING NEWS - LATEST NEWS - BREAKING NEWS - LATEST NEWS - BREAKING NEWS</div>
   </div>
 
-  <main class="wrap">
-    <article class="card">
-      <h1><span class="red">More potent than Viagra?</span> Hollywood Insider Exposes The “Golden Root Trick” That’s Making Men Perform Like Animals Again</h1>
-
-      <h2><strong>Miracle?</strong> Or the biggest secret men were never supposed to find out?</h2>
-
-      <p class="lead">Over the last few months, something strange has been happening.</p>
-      <p>Thousands of men across the U.S. — many over 40, some even over 60 — are quietly reporting something they hadn’t felt in years:</p>
-      <p>Rock-solid erections.<br>Explosive stamina.<br>Unshakable confidence in bed.</p>
-      <p>And no…</p>
-      <p>It’s not Viagra.<br>Not Cialis.<br>Not prescriptions.<br>Not awkward pharmacy visits.</p>
-      <p>It’s a natural “Golden Root” method that costs less than a cheap fast-food meal.</p>
-      <p>And the reason you haven’t heard about it?</p>
-      <p>Because it doesn’t make billions for Big Pharma.</p>
-
-      <hr class="divider">
-
-      <a class="media narrow-img" href="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&rtkck=1770902641">
-        <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/16.png?quality=73#483703" alt="Feature image">
-      </a>
-
-      <h3>The Moment This Went Viral</h3>
-      <p>It all exploded after a controversial podcast episode featuring Jason Statham.</p>
-      <p>Yes — that Jason Statham.</p>
-      <p>Action legend.<br>Elite-level physique.<br>Masculine presence.</p>
-      <p>He sat down with wellness expert Dr. Amanda Keller… and what came out shocked the audience.</p>
-      <p>Because according to her:</p>
-      <p>Most men aren’t losing performance because of age.</p>
-      <p>They’re losing it because their <strong>blood flow signaling system is silently shutting down after 30.</strong></p>
-      <p>Not hormones.<br>Not “low T”.<br>Not stress.</p>
-      <p>Circulation failure.</p>
-      <p>And once that pathway weakens…</p>
-      <p>So does everything else.</p>
-
-      <h2 class="center red">Joe Rogan Asked The Question Every Man Was Thinking</h2>
-
-      <p>Joe looked at Statham and said:</p>
-      <p>“So this thing went viral… guys are lasting longer… feeling stronger… is this actually real?”</p>
-      <p>Statham paused.</p>
-      <p>Then said something almost no Hollywood actor would ever admit publicly.</p>
-      <p>“After long filming schedules… yeah, energy drops. You try supplements. You try prescriptions. But nothing feels natural.”</p>
-      <p>Then he revealed:</p>
-      <p>A colleague introduced him to a simple root compound combined with a common mineral most people already have at home.</p>
-      <p>No injections.<br>No pills.<br>No weird devices.</p>
-      <p>Just a specific activation method.</p>
-      <p>Within weeks?</p>
-      <p>“More control. More energy. Confidence came back.”</p>
-      <p>Confidence.</p>
-      <p>That word hit hard.</p>
-      <p>Because every man knows…</p>
-      <p>Performance isn’t just physical.</p>
-      <p>It’s psychological.</p>
-      <p>Once doubt creeps in — it spirals.</p>
-
-      <div class="media">
-        <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/19.png?quality=83#709603" alt="Podcast image">
+  <!-- CABEÇALHO (Mimetizando NBC News) -->
+  <header class="w-full bg-white border-b-4 border-nbc-blue sticky top-0 z-50 shadow-sm">
+    <div class="max-w-[1200px] mx-auto px-4 py-4 flex items-center justify-between">
+      
+      <!-- Esquerda: Menu Sanduíche -->
+      <div class="flex items-center gap-4">
+        <button class="p-1 text-nbc-blue hover:text-nbc-black transition">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
       </div>
 
-      <h3>Here’s What Most Men Don’t Understand</h3>
-      <p>Dr. Keller explained something that made the studio go silent:</p>
-      <p>“When blood flow pathways weaken, the body forgets how to respond properly.”</p>
-      <p>Meaning…</p>
-      <p>You can still want it.<br>You can still feel desire.<br>But the physical response won’t match the intention.</p>
-      <p>That gap?<br>That’s what destroys confidence.</p>
-      <p>But when circulation pathways are reactivated…</p>
-      <p>The body remembers.</p>
-
-      <div class="media">
-        <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/17.png?quality=71#171761" alt="Diagram image">
+      <!-- Centro: Logotipo NBC NEWS Oficial -->
+      <div class="flex items-center justify-center gap-2 cursor-pointer absolute left-1/2 transform -translate-x-1/2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/NBC_logo_%282022%29.svg/512px-NBC_logo_%282022%29.svg.png" alt="NBC Logo" class="w-8 h-8 object-contain">
+        <span class="font-black text-2xl tracking-tighter text-nbc-blue">NBC NEWS</span>
       </div>
 
-      <h3>Why Adult Film Professionals Use Similar Protocols</h3>
-      <p>According to insiders in performance-based industries:</p>
-      <p>Endurance isn’t about testosterone spikes.</p>
-      <p>It’s about nitric oxide signaling.</p>
-      <p>When nitric oxide production increases:</p>
-      <p>• Blood flow intensifies<br>• Firmness improves<br>• Recovery speeds up<br>• Duration extends</p>
-      <p>And unlike pills that force a temporary reaction…</p>
-      <p>This works with your natural biology.</p>
-      <p>That’s why many performers use circulation-supporting natural compounds before demanding shoots.</p>
-      <p>Not because it’s trendy.</p>
-      <p>Because it works.</p>
+      <!-- Direita: Pesquisa e Redes -->
+      <div class="flex items-center gap-4 text-nbc-blue">
+        <span class="hidden md:block font-bold text-sm hover:underline cursor-pointer">Live TV</span>
+        <button class="p-1 hover:text-nbc-black transition">
+          <svg class="w-6 h-6 font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </button>
+      </div>
+    </div>
 
-      <div class="media">
-        <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/19.png?quality=88#454532" alt="Video frame">
+    <!-- Submenus -->
+    <div class="hidden md:flex max-w-[1200px] mx-auto px-4 py-2.5 items-center justify-center gap-8 text-[14px] font-bold text-nbc-dark border-t border-nbc-lightgray">
+      <a href="#" class="hover:text-nbc-blue">U.S. News</a>
+      <a href="#" class="hover:text-nbc-blue">World</a>
+      <a href="#" class="hover:text-nbc-blue">Politics</a>
+      <a href="#" class="hover:text-nbc-blue border-b-2 border-nbc-red pb-1 text-nbc-red">Health</a>
+      <a href="#" class="hover:text-nbc-blue">Business</a>
+      <a href="#" class="hover:text-nbc-blue">Science</a>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="max-w-[1200px] mx-auto px-4 lg:px-6 pt-8 pb-20 lg:grid lg:grid-cols-12 lg:gap-12">
+    
+    <!-- COLUNA PRINCIPAL (Artigo) -->
+    <main class="lg:col-span-8">
+      <article>
+        
+        <!-- Headline -->
+        <header class="mb-6">
+          <div class="text-nbc-red font-bold text-[13px] uppercase tracking-widest mb-3 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-nbc-red animate-pulse"></span>
+            Special Report
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl font-headline font-extrabold text-nbc-black leading-[1.1] mb-5">
+            <span class="text-nbc-red">More potent than Viagra?</span> Hollywood Insider Exposes The “Golden Root Trick” That’s Making Men Perform Like Animals Again
+          </h1>
+          
+          <h2 class="text-xl sm:text-2xl font-medium text-nbc-gray leading-snug mb-6">
+            <strong>Miracle?</strong> Or the biggest secret men were never supposed to find out?
+          </h2>
+
+          <!-- Linha do Autor e Data (Estilo NBC) -->
+          <div class="flex items-center gap-4 py-4 border-t border-b border-nbc-lightgray mb-8">
+            <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden">
+              <img src="https://ui-avatars.com/api/?name=Dr.+Julia&background=002f6c&color=fff&size=100" alt="Author" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <p class="text-sm font-bold text-nbc-black uppercase">By Dr. Julia Fischer</p>
+              <p id="dynamic-date" class="text-[13px] text-nbc-gray font-medium"></p>
+            </div>
+            
+            <div class="ml-auto flex gap-2">
+              <!-- Ícones sociais falsos -->
+              <button class="w-8 h-8 rounded bg-[#1DA1F2] text-white flex items-center justify-center hover:opacity-80"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></button>
+              <button class="w-8 h-8 rounded bg-[#1877F2] text-white flex items-center justify-center hover:opacity-80"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></button>
+            </div>
+          </div>
+        </header>
+
+        <div class="article-content">
+          
+          <p class="text-xl sm:text-2xl font-medium leading-relaxed mb-8 border-l-4 border-nbc-red pl-5 bg-gray-50 p-4 rounded-r">
+            Over the last few months, something strange has been happening. Thousands of men across the U.S. — many over 40, some even over 60 — are quietly reporting something they hadn’t felt in years.
+          </p>
+
+          <p>
+            Rock-solid erections.<br>Explosive stamina.<br>Unshakable confidence in bed.
+          </p>
+
+          <p>
+            And no… It’s not Viagra. Not Cialis. Not prescriptions. Not awkward pharmacy visits.
+          </p>
+
+          <p>
+            It’s a natural “Golden Root” method that costs less than a cheap fast-food meal. And the reason you haven’t heard about it? Because it doesn’t make billions for Big Pharma.
+          </p>
+
+          <!-- Imagem 1 -->
+          <a data-link="CTA_LINK" class="block mb-10 mt-6 relative group">
+            <img
+              src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/16.png?quality=73#483703"
+              srcset="
+                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/puLvFW4048972.png?width=300&height=160&quality=80#459272 300w,
+                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/puLvFW4048972.png?width=768&height=409&quality=70#649992 768w,
+                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/puLvFW4048972.png?width=1024&height=545&quality=77#369844 1024w,
+                https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/16.png?quality=73#483703 1200w
+              "
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              width="1200"
+              height="765"
+              alt="Main Story Image"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              class="w-full rounded shadow-md group-hover:opacity-95 transition"
+            />
+            <div class="absolute bottom-0 left-0 bg-black/70 text-white text-xs px-3 py-1.5 rounded-tr">
+              Getty Images / Illustrative
+            </div>
+          </a>
+
+          <h3>The Moment This Went Viral</h3>
+          
+          <p>
+            It all exploded after a controversial podcast episode featuring Jason Statham. Yes — that Jason Statham. Action legend. Elite-level physique. Masculine presence.
+          </p>
+
+          <p>
+            He sat down with wellness expert Dr. Amanda Keller… and what came out shocked the audience. Because according to her:
+          </p>
+
+          <p>
+            Most men aren’t losing performance because of age. They’re losing it because their <strong>blood flow signaling system is silently shutting down after 30.</strong>
+          </p>
+
+          <p>
+            Not hormones.<br>Not “low T”.<br>Not stress.<br>Circulation failure.
+          </p>
+
+          <p>
+            And once that pathway weakens… So does everything else.
+          </p>
+
+          <h3 class="text-nbc-red text-3xl font-headline font-bold mt-12 mb-6">Joe Rogan Asked The Question Every Man Was Thinking</h3>
+
+          <p>
+            Joe looked at Statham and said:
+          </p>
+
+          <blockquote class="border-l-4 border-nbc-blue pl-4 py-2 my-6 bg-blue-50 text-xl font-medium italic">
+            “So this thing went viral… guys are lasting longer… feeling stronger… is this actually real?”
+          </blockquote>
+
+          <p>
+            Statham paused. Then said something almost no Hollywood actor would ever admit publicly.
+          </p>
+
+          <p>
+            “After long filming schedules… yeah, energy drops. You try supplements. You try prescriptions. But nothing feels natural.”
+          </p>
+
+          <!-- Imagem 2 (Joe Rogan / Statham) -->
+          <a data-link="CTA_LINK" class="block mb-8 mt-6">
+            <img
+              src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/19.png?quality=83#709603"
+              srcset="
+                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/kcEQtg0644944.webp?width=300&height=160&quality=75#720311 300w,
+                https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/19.png?quality=83#709603 692w
+              "
+              sizes="(max-width: 692px) 100vw, 692px"
+              width="692"
+              height="389"
+              alt="Podcast Interview"
+              loading="lazy"
+              decoding="async"
+              class="w-full rounded shadow hover:opacity-95 transition"
+            />
+          </a>
+
+          <p>
+            Then he revealed: A colleague introduced him to a simple root compound combined with a common mineral most people already have at home.
+          </p>
+
+          <p>
+            No injections. No pills. No weird devices. Just a specific activation method.
+          </p>
+
+          <p>
+            Within weeks? <strong>“More control. More energy. Confidence came back.”</strong>
+          </p>
+
+          <p>
+            Confidence. That word hit hard. Because every man knows… Performance isn’t just physical. It’s psychological. Once doubt creeps in — it spirals.
+          </p>
+
+          <h3>Here’s What Most Men Don’t Understand</h3>
+          
+          <p>
+            Dr. Keller explained something that made the studio go silent:
+          </p>
+
+          <p class="font-bold text-xl mb-6">
+            “When blood flow pathways weaken, the body forgets how to respond properly.”
+          </p>
+
+          <p>
+            Meaning… You can still want it. You can still feel desire. But the physical response won’t match the intention.
+          </p>
+
+          <p>
+            That gap? That’s what destroys confidence. But when circulation pathways are reactivated… The body remembers.
+          </p>
+
+          <!-- Imagem 3 (Diagrama/Especialista) -->
+          <a data-link="CTA_LINK" class="block mb-8 mt-6">
+            <img
+              src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/17.png?quality=71#171761"
+              srcset="
+                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/DalIGN1805855.jpeg?width=300&height=160&quality=87#647863 300w,
+                https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/17.png?quality=71#171761 663w
+              "
+              sizes="(max-width: 663px) 100vw, 663px"
+              width="663"
+              height="372"
+              alt="Medical Explanation"
+              loading="lazy"
+              decoding="async"
+              class="w-full rounded shadow hover:opacity-95 transition"
+            />
+          </a>
+
+          <h3>Why Adult Film Professionals Use Similar Protocols</h3>
+          
+          <p>
+            According to insiders in performance-based industries: Endurance isn’t about testosterone spikes. It’s about nitric oxide signaling.
+          </p>
+
+          <p>
+            When nitric oxide production increases:
+          </p>
+          <ul class="list-disc pl-6 mb-6 space-y-2 font-bold text-[#1a1a1a]">
+            <li>Blood flow intensifies</li>
+            <li>Firmness improves</li>
+            <li>Recovery speeds up</li>
+            <li>Duration extends</li>
+          </ul>
+
+          <p>
+            And unlike pills that force a temporary reaction… This works with your natural biology. That’s why many performers use circulation-supporting natural compounds before demanding shoots. Not because it’s trendy. Because it works.
+          </p>
+
+          <!-- Imagem 4 (Studio) -->
+          <a data-link="CTA_LINK" class="block mb-8 mt-8">
+            <img
+              src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/18.png?quality=71#207715"
+              srcset="
+                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/tbMQsA1937746.jpeg?width=300&height=160&quality=71#811599 300w,
+                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/tbMQsA1937746.jpeg?width=768&height=409&quality=83#390066 768w,
+                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/tbMQsA1937746.jpeg?width=1024&height=545&quality=72#771835 1024w,
+                https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/18.png?quality=71#207715 1280w
+              "
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              width="1280"
+              height="720"
+              alt="Reaction"
+              loading="lazy"
+              decoding="async"
+              class="w-full rounded shadow hover:opacity-95 transition"
+            />
+          </a>
+
+          <h3>And Here’s The Part That Made Joe Rogan Laugh</h3>
+          
+          <p>
+            “So you’re telling me this costs less than five bucks… and guys are choosing pills?”
+          </p>
+
+          <p>
+            The room erupted. Because when something that simple works… It threatens billion-dollar industries.
+          </p>
+
+          <h3>What Doctors Are Quietly Discussing</h3>
+          
+          <p>
+            Recent research into plant compounds that support nitric oxide pathways is gaining attention. Men using similar protocols report stronger natural erections, faster response, longer stamina, and more confidence.
+          </p>
+
+          <p>
+            And here’s the real transformation: They stop fearing the moment. No more hesitation. No more mental countdown. No more hoping things “cooperate.” Instead? Control.
+          </p>
+
+          <h3>This Isn’t About Becoming 20 Again</h3>
+          
+          <p>
+            It’s about not feeling broken. It’s about walking into the bedroom without anxiety. It’s about your partner noticing the difference. It’s about waking up with that natural morning firmness you haven’t felt in years.
+          </p>
+
+          <div class="bg-[#fef2f2] border-l-4 border-nbc-red p-6 rounded my-10">
+            <h3 class="text-nbc-red font-bold text-2xl mt-0 mb-3">The Full Discussion Is Still Online (For Now)</h3>
+            <p class="mb-4">
+              Because of the nature of what was revealed… The clip has already faced pressure.
+            </p>
+            <p class="font-bold text-lg">
+              If you want to see the exact explanation of the “Golden Root” method and how it activates blood flow naturally… You can still watch it. 👇
+            </p>
+          </div>
+
+          <!-- GIF CTA -->
+          <a data-link="CTA_LINK" class="block mb-8 relative">
+            <img
+              src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/Native%20%5BKF%5D%20(3).gif?quality=87#976408"
+              srcset="
+                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/LDjwAE4218880.gif?width=300&height=160&quality=73#990191 300w,
+                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/LDjwAE4218880.gif?width=768&height=409&quality=88#840213 768w,
+                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/LDjwAE4218880.gif?width=1024&height=545&quality=84#59434 1024w,
+                https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/Native%20%5BKF%5D%20(3).gif?quality=87#976408 1200w
+              "
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              width="1200"
+              height="765"
+              alt="Watch Video Now"
+              loading="lazy"
+              decoding="async"
+              class="w-full rounded shadow-lg hover:opacity-90 transition"
+            />
+            <!-- Fake Play Button Overlay -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+               <div class="w-20 h-20 bg-black/60 rounded-full flex items-center justify-center">
+                 <svg class="w-10 h-10 text-white ml-2" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+               </div>
+            </div>
+          </a>
+
+          <!-- BIG CTA BUTTON -->
+          <div class="text-center mt-10 mb-16 border-b border-nbc-lightgray pb-16">
+            <a data-link="CTA_LINK" class="inline-block w-full sm:w-[80%] bg-nbc-red hover:bg-red-800 text-white font-bold text-xl sm:text-2xl py-6 px-10 rounded shadow-xl cta-pulse transition">
+              ► WATCH THE VIDEO NOW
+            </a>
+          </div>
+
+          <!-- Stack Images (User Request - Reconstruído como Quotes Visuais) -->
+          <h3 class="text-center font-headline text-3xl mb-10 text-nbc-blue">What people are saying</h3>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+            
+            <a data-link="CTA_LINK" class="block group">
+              <div class="rounded-lg overflow-hidden shadow-md mb-4 bg-gray-100">
+                <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dYFuWr2021288.webp?quality=78#140768" alt="Quote 1" loading="lazy" class="w-full h-auto group-hover:scale-105 transition duration-500">
+              </div>
+              <p class="text-center italic font-medium text-lg text-nbc-black leading-snug">
+                "You can keep guessing, Keep blaming age, Keep hoping pills will solve it. Or…"
+              </p>
+            </a>
+
+            <a data-link="CTA_LINK" class="block group">
+              <div class="rounded-lg overflow-hidden shadow-md mb-4 bg-gray-100">
+                <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dsNPCd2021288.webp?quality=81#765011" alt="Quote 2" loading="lazy" class="w-full h-auto group-hover:scale-105 transition duration-500">
+              </div>
+              <p class="text-center italic font-medium text-lg text-nbc-black leading-snug">
+                "You can see what thousands of men are already trying quietly."
+              </p>
+            </a>
+
+            <a data-link="CTA_LINK" class="block group">
+              <div class="rounded-lg overflow-hidden shadow-md mb-4 bg-gray-100">
+                <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/qLzMgh2021288.webp?quality=89#293852" alt="Quote 3" loading="lazy" class="w-full h-auto group-hover:scale-105 transition duration-500">
+              </div>
+              <p class="text-center italic font-medium text-lg text-nbc-black leading-snug">
+                "The choice is yours. One path restores confidence. The other keeps you dependent."
+              </p>
+            </a>
+
+          </div>
+
+          <div class="text-center">
+            <a data-link="CTA_LINK" class="inline-block bg-nbc-blue hover:bg-[#001c40] text-white font-bold text-lg py-4 px-12 rounded shadow transition cta-pulse">
+              Click and decide
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+    </main>
+
+    <!-- SIDEBAR (Mimetizando NBC Trending Right Rail) -->
+    <aside class="hidden lg:block lg:col-span-4">
+      <div class="sticky top-[100px]">
+        
+        <div class="border-t-4 border-nbc-black pt-4 mb-8">
+          <h3 class="font-black text-2xl uppercase tracking-tight text-nbc-black mb-6">Trending</h3>
+          
+          <div class="space-y-6">
+            <a data-link="CTA_LINK" class="flex gap-4 group">
+              <span class="text-4xl font-black text-nbc-lightgray group-hover:text-nbc-red transition">1</span>
+              <p class="font-bold text-[17px] text-nbc-dark group-hover:underline leading-snug pt-1">New medical study links common household mineral to better blood flow.</p>
+            </a>
+            
+            <a data-link="CTA_LINK" class="flex gap-4 group">
+              <span class="text-4xl font-black text-nbc-lightgray group-hover:text-nbc-red transition">2</span>
+              <p class="font-bold text-[17px] text-nbc-dark group-hover:underline leading-snug pt-1">Why men over 40 are ditching blue pills for natural root extracts.</p>
+            </a>
+
+            <a data-link="CTA_LINK" class="flex gap-4 group">
+              <span class="text-4xl font-black text-nbc-lightgray group-hover:text-nbc-red transition">3</span>
+              <p class="font-bold text-[17px] text-nbc-dark group-hover:underline leading-snug pt-1">The controversial podcast clip that had to be censored online.</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Ad Placeholder -->
+        <div class="w-full h-[600px] bg-gray-100 border border-gray-200 flex flex-col items-center justify-center text-gray-400">
+          <span class="text-[10px] uppercase tracking-widest font-bold mb-2">Advertisement</span>
+          <span>Ad Space</span>
+        </div>
+
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- RODAPÉ (Estilo NBC) -->
+  <footer class="bg-nbc-dark py-12 mt-10 text-white font-sans border-t-[8px] border-nbc-blue">
+    <div class="max-w-[1200px] mx-auto px-4 flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+      
+      <!-- Footer Logo -->
+      <div class="flex flex-col items-center md:items-start">
+        <div class="flex items-center gap-2 mb-1">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/NBC_logo_%282022%29.svg/512px-NBC_logo_%282022%29.svg.png" alt="NBC Logo" class="w-8 h-8 object-contain opacity-90">
+          <span class="font-black text-2xl tracking-tighter text-white">NBC NEWS</span>
+        </div>
       </div>
 
-      <h3>And Here’s The Part That Made Joe Rogan Laugh</h3>
-      <p>“So you’re telling me this costs less than five bucks… and guys are choosing pills?”</p>
-      <p>The room erupted.</p>
-      <p>Because when something that simple works…</p>
-      <p>It threatens billion-dollar industries.</p>
-
-      <div class="media narrow-img">
-        <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/18.png?quality=71#207715" alt="Studio image">
+      <div class="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4 text-[13px] font-bold uppercase tracking-wider text-gray-300">
+        <a href="#" class="hover:text-white transition">About</a>
+        <a href="#" class="hover:text-white transition">Contact</a>
+        <a href="#" class="hover:text-white transition">Careers</a>
+        <a href="#" class="hover:text-white transition">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition">Terms of Service</a>
       </div>
+      
+    </div>
+    
+    <div class="max-w-[1200px] mx-auto px-4 mt-12 pt-8 border-t border-gray-700 text-center md:text-left">
+      <p class="text-xs text-gray-500 leading-relaxed max-w-4xl mx-auto md:mx-0">
+        © <span id="ano-footer"></span> NBC UNIVERSAL. ALL RIGHTS RESERVED. <br><br>
+        This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. This is an advertorial/promotional page. The information provided here does not substitute professional medical advice. Results may vary.
+      </p>
+    </div>
+  </footer>
 
-      <h3>What Doctors Are Quietly Discussing</h3>
-      <p>Recent research into plant compounds that support nitric oxide pathways is gaining attention.</p>
-      <p>Men using similar protocols report:</p>
-      <p>Stronger natural erections<br>Faster response<br>Longer stamina<br>Harder firmness<br>More confidence</p>
-      <p>And here’s the real transformation:</p>
-      <p>They stop fearing the moment.</p>
-      <p>No more hesitation.<br>No more mental countdown.<br>No more hoping things “cooperate.”</p>
-      <p>Instead?</p>
-      <p>Control.</p>
+  <!-- Script da Data Dinâmica (Formato EUA: March 17, 2026) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hoje = new Date();
+      
+      // Atualizar Ano no Rodapé
+      document.getElementById('ano-footer').textContent = hoje.getFullYear();
 
-      <div class="media">
-        <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/19.png?quality=80#983499" alt="Discussion image">
-      </div>
-
-      <h3>This Isn’t About Becoming 20 Again</h3>
-      <p>It’s about not feeling broken.</p>
-      <p>It’s about walking into the bedroom without anxiety.</p>
-      <p>It’s about your partner noticing the difference.</p>
-      <p>It’s about not avoiding intimacy.</p>
-      <p>It’s about waking up with that natural morning firmness you haven’t felt in years.</p>
-      <p><strong>The Full Discussion Is Still Online (For Now)</strong></p>
-      <p>Because of the nature of what was revealed…</p>
-      <p>The clip has already faced pressure.</p>
-      <p>If you want to see the exact explanation of the “Golden Root” method and how it activates blood flow naturally…</p>
-      <p>You can still watch it.<br>👇</p>
-      <p><strong>Click below to watch the full video breakdown before it’s taken down.</strong></p>
-
-      <a class="media narrow-img" href="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&rtkck=1770902641">
-        <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/Native%20%5BKF%5D%20(3).gif?quality=87#976408" alt="Watch the video now gif">
-      </a>
-
-      <a class="cta" href="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&rtkck=1770902641">🔴 WATCH THE VIDEO NOW</a>
-
-      <section class="stack-images">
-        <a class="media portrait-img" href="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&rtkck=1770902641">
-          <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dYFuWr2021288.webp?quality=78#140768" alt="Quote image 1">
-        </a>
-        <div class="quote-block">"Final Question, You can keep guessing, Keep blaming age, Keep hoping pills will solve it. Or…"</div>
-
-        <a class="media portrait-img" href="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&rtkck=1770902641">
-          <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dsNPCd2021288.webp?quality=81#765011" alt="Quote image 2">
-        </a>
-        <div class="quote-block">"You can see what thousands of men are already trying quietly."</div>
-
-        <a class="media portrait-img" href="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&rtkck=1770902641">
-          <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/qLzMgh2021288.webp?quality=89#293852" alt="Quote image 3">
-        </a>
-        <div class="quote-block">"The choice is yours. But one path restores confidence. The other keeps you dependent."</div>
-      </section>
-
-      <a class="cta" href="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&rtkck=1770902641">Click and decide</a>
-    </article>
-  </main>
+      // Formatar Data (Inglês) para o Artigo
+      const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZoneName: 'short' };
+      const dateFormatted = hoje.toLocaleDateString('en-US', options);
+      
+      const articleDateEl = document.getElementById('dynamic-date');
+      if (articleDateEl) {
+        articleDateEl.textContent = `Published ${dateFormatted}`;
+      }
+    });
+  </script>
 
 </body>
 </html>

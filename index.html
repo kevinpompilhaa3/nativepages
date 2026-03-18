@@ -42,7 +42,7 @@ color:var(--text);
 }
 
 .container{
-max-width:1100px;
+max-width:1400px;
 margin:auto;
 padding:40px 20px;
 }
@@ -126,15 +126,20 @@ font-size:13px;
 color:var(--muted);
 }
 
-/* GRID */
+/* LAYOUT */
+
+.layout{
+display:grid;
+grid-template-columns:1fr 420px;
+gap:25px;
+align-items:start;
+}
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
 gap:16px;
 }
-
-/* CARD */
 
 .card{
 background:var(--card);
@@ -149,8 +154,6 @@ transform:translateY(-3px);
 border-color:var(--accent);
 }
 
-/* BADGE */
-
 .badge{
 display:inline-flex;
 align-items:center;
@@ -163,17 +166,9 @@ color:white;
 margin-bottom:12px;
 }
 
-.badge-ed{
-background:linear-gradient(135deg,#c084fc,#9333ea);
-}
-
-.badge-diabetes{
-background:linear-gradient(135deg,#f87171,#ef4444);
-}
-
-.badge-memoria{
-background:linear-gradient(135deg,#60a5fa,#3b82f6);
-}
+.badge-ed{background:linear-gradient(135deg,#c084fc,#9333ea);}
+.badge-diabetes{background:linear-gradient(135deg,#f87171,#ef4444);}
+.badge-memoria{background:linear-gradient(135deg,#60a5fa,#3b82f6);}
 
 .name{
 font-weight:500;
@@ -208,8 +203,6 @@ border:none;
 color:white;
 }
 
-/* PAGINATION */
-
 .pagination{
 margin-top:25px;
 display:flex;
@@ -234,31 +227,22 @@ color:white;
 
 /* PREVIEW */
 
-.preview{
-position:fixed;
-width:340px;
-height:420px;
-border-radius:10px;
-overflow:hidden;
+.preview-panel{
+position:sticky;
+top:40px;
 border:1px solid var(--border);
-box-shadow:0 10px 30px rgba(0,0,0,.35);
+border-radius:12px;
+overflow:hidden;
 background:#fff;
-pointer-events:none;
-opacity:0;
-z-index:999;
+height:520px;
 }
 
-.preview-inner{
-width:1200px;
-height:900px;
-transform:scale(.28);
-transform-origin:top left;
-}
-
-.preview iframe{
+.preview-panel iframe{
 width:1200px;
 height:900px;
 border:none;
+transform:scale(.36);
+transform-origin:top left;
 }
 
 /* TOAST */
@@ -318,42 +302,44 @@ color:var(--muted);
 
 </div>
 
-<div class="stats" id="stats"></div>
+<div class="stats" id="stats">Carregando...</div>
 
+<div class="layout">
+
+<div>
 <div id="grid" class="grid"></div>
-
 <div id="pagination" class="pagination"></div>
-
-<div class="footer">
-nativehub.space
 </div>
+
+<div class="preview-panel">
+<iframe id="previewFrame"></iframe>
+</div>
+
+</div>
+
+<div class="footer">nativehub.space</div>
 
 </div>
 
 <div id="toast" class="toast">Link copiado</div>
 
-<div id="preview" class="preview">
-<div class="preview-inner">
-<iframe id="previewFrame"></iframe>
-</div>
-</div>
-
 <script>
 
 const BASE_URL="https://nativehub.space/"
+const API_URL="https://api.github.com/repos/kevinpompilhaa3/nativepages/contents/"
 const CARDS_PER_PAGE=25
 
-const folders=[
-"CBS",
-"CNN",
-"edv2",
-"edv2loira",
-"edv3",
-"edv1loira",
-"edv1mix",
-"edv3loira",
-"foxnews"
-]
+let pages=[]
+let activeTag="all"
+let currentPage=1
+let timer=null
+
+const grid=document.getElementById("grid")
+const search=document.getElementById("search")
+const stats=document.getElementById("stats")
+const pagination=document.getElementById("pagination")
+const frame=document.getElementById("previewFrame")
+const toast=document.getElementById("toast")
 
 function detectTag(name){
 
@@ -367,7 +353,24 @@ return {tag:"",emoji:"",class:""}
 
 }
 
-const pages=folders.map(f=>{
+/* 🔥 AUTO DETECT PASTAS */
+
+async function loadFolders(){
+
+const res=await fetch(API_URL)
+const data=await res.json()
+
+return data
+.filter(item=>item.type==="dir" && !item.name.startsWith("."))
+.map(item=>item.name)
+
+}
+
+async function init(){
+
+const folders=await loadFolders()
+
+pages=folders.map(f=>{
 const tag=detectTag(f)
 return{
 name:f,
@@ -378,18 +381,11 @@ tagClass:tag.class
 }
 })
 
-const grid=document.getElementById("grid")
-const search=document.getElementById("search")
-const stats=document.getElementById("stats")
-const pagination=document.getElementById("pagination")
+render()
 
-const preview=document.getElementById("preview")
-const frame=document.getElementById("previewFrame")
-const toast=document.getElementById("toast")
+}
 
-let activeTag="all"
-let timer=null
-let currentPage=1
+/* UI */
 
 document.querySelectorAll(".chip").forEach(chip=>{
 chip.onclick=()=>{
@@ -431,7 +427,6 @@ const el=document.createElement("div")
 el.className="card"
 
 el.innerHTML=`
-
 <div class="badge ${p.tagClass}">
 ${p.emoji} ${p.tag}
 </div>
@@ -451,21 +446,10 @@ showToast()
 }
 
 el.onmouseenter=()=>{
+clearTimeout(timer)
 timer=setTimeout(()=>{
 frame.src=BASE_URL+p.path
-preview.style.opacity=1
-},300)
-}
-
-el.onmousemove=(e)=>{
-preview.style.left=(e.clientX+20)+"px"
-preview.style.top=(e.clientY+20)+"px"
-}
-
-el.onmouseleave=()=>{
-clearTimeout(timer)
-preview.style.opacity=0
-frame.src=""
+},250)
 }
 
 grid.appendChild(el)
@@ -498,7 +482,7 @@ currentPage=1
 render()
 }
 
-render()
+/* THEME */
 
 const themeBtn=document.getElementById("theme")
 
@@ -514,6 +498,8 @@ setTheme(t==="light"?"dark":"light")
 }
 
 setTheme(localStorage.getItem("theme")||"dark")
+
+init()
 
 </script>
 
