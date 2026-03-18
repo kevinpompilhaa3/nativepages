@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Páginas Native</title>
 
 <link rel="icon" href="a3.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -97,13 +101,15 @@ border:none;
 color:white;
 }
 
-/* GRID */
+/* LAYOUT */
 
 .layout{
 display:grid;
 grid-template-columns:1fr 420px;
 gap:25px;
 }
+
+/* GRID */
 
 .grid{
 display:grid;
@@ -300,19 +306,30 @@ function saveFav(){
 localStorage.setItem("favorites",JSON.stringify(favorites))
 }
 
+/* 🔥 DETECÇÃO INTELIGENTE */
+
 function detectTag(name){
 
 const n=name.toLowerCase()
 
-if(n.includes("ed")) return {tag:"ED",emoji:"⚡",class:"badge-ed"}
-if(n.includes("cnn")||n.includes("fox")) return {tag:"Diabetes",emoji:"🩸",class:"badge-diabetes"}
-if(n.includes("cbs")) return {tag:"Memória",emoji:"🧠",class:"badge-memoria"}
-if(n.includes("white")||n.includes("fit")||n.includes("slim"))
+// prioridade
+if(n.includes("ed"))
+return {tag:"ED",emoji:"⚡",class:"badge-ed"}
+
+if(n.includes("white")||n.includes("emag")||n.includes("slim")||n.includes("fit"))
 return {tag:"Emagrecimento",emoji:"🔥",class:"badge-weight"}
+
+if(n.includes("diabetes")||n.includes("cnn")||n.includes("fox")||n.includes("nbc"))
+return {tag:"Diabetes",emoji:"🩸",class:"badge-diabetes"}
+
+if(n.includes("cbs")||n.includes("memory"))
+return {tag:"Memória",emoji:"🧠",class:"badge-memoria"}
 
 return {tag:"",emoji:"",class:""}
 
 }
+
+/* AUTO DETECT */
 
 async function loadFolders(){
 const res=await fetch(API_URL)
@@ -338,6 +355,8 @@ tagClass:tag.class
 render()
 
 }
+
+/* RENDER */
 
 function render(){
 
@@ -451,6 +470,8 @@ currentPage=1
 render()
 }
 })
+
+/* THEME */
 
 const themeBtn=document.getElementById("theme")
 
