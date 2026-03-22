@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
@@ -124,11 +123,16 @@ border:1px solid var(--border);
 border-radius:14px;
 padding:18px;
 transition:.2s;
+cursor:pointer;
 }
 
 .card:hover{
 transform:translateY(-3px);
 border-color:var(--accent);
+}
+
+.card.active{
+border:2px solid var(--accent);
 }
 
 /* FAVORITE */
@@ -299,6 +303,7 @@ const CARDS_PER_PAGE=25
 let pages=[]
 let currentPage=1
 let activeTag="all"
+let selected=null
 
 let favorites=JSON.parse(localStorage.getItem("favorites")||"[]")
 
@@ -306,15 +311,11 @@ function saveFav(){
 localStorage.setItem("favorites",JSON.stringify(favorites))
 }
 
-/* 🔥 DETECÇÃO INTELIGENTE */
-
 function detectTag(name){
 
 const n=name.toLowerCase()
 
-// prioridade
-if(n.includes("ed"))
-return {tag:"ED",emoji:"⚡",class:"badge-ed"}
+if(n.includes("ed")) return {tag:"ED",emoji:"⚡",class:"badge-ed"}
 
 if(n.includes("white")||n.includes("emag")||n.includes("slim")||n.includes("fit"))
 return {tag:"Emagrecimento",emoji:"🔥",class:"badge-weight"}
@@ -326,10 +327,7 @@ if(n.includes("cbs")||n.includes("memory"))
 return {tag:"Memória",emoji:"🧠",class:"badge-memoria"}
 
 return {tag:"",emoji:"",class:""}
-
 }
-
-/* AUTO DETECT */
 
 async function loadFolders(){
 const res=await fetch(API_URL)
@@ -338,7 +336,6 @@ return data.filter(i=>i.type==="dir").map(i=>i.name)
 }
 
 async function init(){
-
 const folders=await loadFolders()
 
 pages=folders.map(f=>{
@@ -353,10 +350,7 @@ tagClass:tag.class
 })
 
 render()
-
 }
-
-/* RENDER */
 
 function render(){
 
@@ -369,12 +363,6 @@ filtered=filtered.filter(p=>favorites.includes(p.name))
 }else if(activeTag!=="all"){
 filtered=filtered.filter(p=>p.tag===activeTag)
 }
-
-filtered.sort((a,b)=>{
-const fa=favorites.includes(a.name)?-1:1
-const fb=favorites.includes(b.name)?-1:1
-return fa-fb
-})
 
 const totalPages=Math.ceil(filtered.length/CARDS_PER_PAGE)
 const start=(currentPage-1)*CARDS_PER_PAGE
@@ -390,7 +378,7 @@ list.forEach(p=>{
 const isFav=favorites.includes(p.name)
 
 const el=document.createElement("div")
-el.className="card"
+el.className="card"+(selected===p.name?" active":"")
 
 el.innerHTML=`
 <div class="star ${isFav?"active":""}">⭐</div>
@@ -408,7 +396,14 @@ ${p.emoji} ${p.tag}
 </div>
 `
 
-el.querySelector(".copy").onclick=()=>{
+el.onclick=()=>{
+selected=p.name
+document.getElementById("frame").src=BASE_URL+p.path
+render()
+}
+
+el.querySelector(".copy").onclick=(e)=>{
+e.stopPropagation()
 navigator.clipboard.writeText(BASE_URL+p.path)
 showToast()
 }
@@ -424,10 +419,6 @@ favorites.push(p.name)
 
 saveFav()
 render()
-}
-
-el.onmouseenter=()=>{
-document.getElementById("frame").src=BASE_URL+p.path
 }
 
 grid.appendChild(el)
@@ -470,8 +461,6 @@ currentPage=1
 render()
 }
 })
-
-/* THEME */
 
 const themeBtn=document.getElementById("theme")
 
