@@ -1,584 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Men's Wellness Expert Reveals The "Baking Soda Trick" - NBC News</title>
-  <meta name="description" content="A wellness expert reveals the baking soda trick men over 40 are using to restore performance." />
-  <meta name="robots" content="index, follow" />
+  <meta name="description" content="A wellness expert reveals the baking soda trick men over 40 are using to restore performance.">
+  <meta name="robots" content="index, follow">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            nbc: {
-              black: '#000000',
-              dark: '#1a1a1a',
-              gray: '#555555',
-              lightgray: '#e6e6e6',
-              bg: '#f4f4f4',
-              blue: '#002f6c',
-              red: '#d50000'
-            }
-          },
-          fontFamily: {
-            sans: ['"Roboto"', 'Helvetica', 'Arial', 'sans-serif'],
-            headline: ['"Roboto Slab"', 'Georgia', 'serif'],
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Preload critical font files (only the weights actually used above the fold) -->
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/robotoslab/v34/BngMUXZYTXPIvIBgJJSb6ufN5qWr4xCC.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/roboto/v47/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YDC.woff2" crossorigin>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;800&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="https://pub-ff7c25df06274393a3d7b80038b373d7.r2.dev/baking%20soda.webp" fetchpriority="high">
+
+  <!-- Non-blocking font stylesheet -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;800&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;800&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap"></noscript>
 
   <style>
-    body {
-      background-color: #ffffff;
-      color: #1a1a1a;
-      -webkit-font-smoothing: antialiased;
+    /* ===== CRITICAL CSS — replaces Tailwind CDN entirely ===== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    img,svg{display:block;max-width:100%;height:auto}
+
+    :root{
+      --nbc-black:#000;--nbc-dark:#1a1a1a;--nbc-gray:#555;
+      --nbc-lightgray:#e6e6e6;--nbc-bg:#f4f4f4;
+      --nbc-blue:#002f6c;--nbc-red:#d50000;
     }
 
-    /* Animação Pulse para botões CTA */
-    @keyframes ctaPulse {
-      0% { transform: scale(1); box-shadow: 0 4px 10px rgba(213, 0, 0, 0.2); }
-      50% { transform: scale(1.02); box-shadow: 0 8px 20px rgba(213, 0, 0, 0.4); }
-      100% { transform: scale(1); box-shadow: 0 4px 10px rgba(213, 0, 0, 0.2); }
+    body{font-family:'Roboto',Helvetica,Arial,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased;line-height:1.5}
+
+    /* Utility classes (only what's actually used) */
+    .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .block{display:block}.flex{display:flex}.hidden{display:none}
+    .inline-block{display:inline-block}.grid{display:grid}
+    .relative{position:relative}.absolute{position:absolute}.sticky{position:sticky}
+    .top-0{top:0}.inset-0{inset:0}.bottom-0{bottom:0}.left-0{left:0}
+    .z-50{z-index:50}
+    .items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}
+    .flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}
+    .gap-2{gap:.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}
+    .w-full{width:100%}.w-2{width:.5rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-8{width:2rem}.w-10{width:2.5rem}.w-12{width:3rem}.w-20{width:5rem}
+    .h-2{height:.5rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-10{height:2.5rem}.h-12{height:3rem}.h-20{height:5rem}
+    .max-w-4xl{max-width:56rem}
+    .mx-auto{margin-left:auto;margin-right:auto}
+    .ml-auto{margin-left:auto}.ml-2{margin-left:.5rem}
+    .mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}
+    .mt-0{margin-top:0}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-10{margin-top:2.5rem}.mt-12{margin-top:3rem}
+    .px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}.px-12{padding-left:3rem;padding-right:3rem}
+    .py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}
+    .p-1{padding:.25rem}.p-4{padding:1rem}.p-6{padding:1.5rem}
+    .pl-4{padding-left:1rem}.pl-5{padding-left:1.25rem}.pl-6{padding-left:1.5rem}
+    .pt-1{padding-top:.25rem}.pt-4{padding-top:1rem}.pt-8{padding-top:2rem}.pb-1{padding-bottom:.25rem}.pb-16{padding-bottom:4rem}.pb-20{padding-bottom:5rem}
+    .rounded{border-radius:.25rem}.rounded-lg{border-radius:.5rem}.rounded-full{border-radius:9999px}.rounded-tr{border-top-right-radius:.25rem}.rounded-r{border-top-right-radius:.25rem;border-bottom-right-radius:.25rem}
+    .border-t{border-top:1px solid var(--nbc-lightgray)}.border-b{border-bottom:1px solid var(--nbc-lightgray)}
+    .border-t-4{border-top:4px solid}.border-b-4{border-bottom:4px solid}.border-l-4{border-left:4px solid}
+    .border-nbc-blue{border-color:var(--nbc-blue)}.border-nbc-red{border-color:var(--nbc-red)}.border-nbc-lightgray{border-color:var(--nbc-lightgray)}.border-nbc-black{border-color:var(--nbc-black)}
+    .border{border:1px solid}.border-gray-200{border-color:#e5e7eb}.border-gray-700{border-color:#374151}
+    .bg-white{background:#fff}.bg-black\/60{background:rgba(0,0,0,.6)}.bg-black\/70{background:rgba(0,0,0,.7)}
+    .bg-gray-50{background:#f9fafb}.bg-gray-100{background:#f3f4f6}.bg-gray-200{background:#e5e7eb}
+    .text-white{color:#fff}.text-nbc-black{color:var(--nbc-black)}.text-nbc-dark{color:var(--nbc-dark)}.text-nbc-gray{color:var(--nbc-gray)}.text-nbc-blue{color:var(--nbc-blue)}.text-nbc-red{color:var(--nbc-red)}
+    .text-gray-300{color:#d1d5db}.text-gray-400{color:#9ca3af}.text-gray-500{color:#6b7280}
+    .text-xs{font-size:.75rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.text-xl{font-size:1.25rem}.text-2xl{font-size:1.5rem}.text-3xl{font-size:1.875rem}.text-4xl{font-size:2.25rem}
+    .font-medium{font-weight:500}.font-bold{font-weight:700}.font-black{font-weight:900}.font-extrabold{font-weight:800}
+    .font-headline{font-family:'Roboto Slab',Georgia,serif}
+    .italic{font-style:italic}
+    .uppercase{text-transform:uppercase}
+    .tracking-tight{letter-spacing:-.025em}.tracking-tighter{letter-spacing:-.05em}.tracking-widest{letter-spacing:.1em}.tracking-wider{letter-spacing:.05em}
+    .leading-snug{line-height:1.375}.leading-relaxed{line-height:1.625}
+    .text-center{text-align:center}
+    .overflow-hidden{overflow:hidden}.object-cover{object-fit:cover}.object-contain{object-fit:contain}
+    .shadow-sm{box-shadow:0 1px 2px rgba(0,0,0,.05)}.shadow-md{box-shadow:0 4px 6px rgba(0,0,0,.1)}.shadow{box-shadow:0 1px 3px rgba(0,0,0,.1)}.shadow-lg{box-shadow:0 10px 15px rgba(0,0,0,.1)}.shadow-xl{box-shadow:0 20px 25px rgba(0,0,0,.1)}
+    .list-disc{list-style-type:disc}
+    .space-y-2>*+*{margin-top:.5rem}.space-y-6>*+*{margin-top:1.5rem}
+    .pointer-events-none{pointer-events:none}
+    .cursor-pointer{cursor:pointer}
+    .transition{transition:all .15s ease}
+
+    /* Hover states */
+    a:hover .group-hover\:underline,a.group:hover .group-hover\:underline{text-decoration:underline}
+    a:hover .group-hover\:scale-105,a.group:hover .group-hover\:scale-105{transform:scale(1.05)}
+    .hover\:opacity-80:hover{opacity:.8}.hover\:opacity-90:hover{opacity:.9}.hover\:opacity-95:hover{opacity:.95}
+    .hover\:text-nbc-blue:hover{color:var(--nbc-blue)}.hover\:text-nbc-black:hover{color:var(--nbc-black)}.hover\:text-white:hover{color:#fff}
+    .hover\:underline:hover{text-decoration:underline}
+
+    /* Responsive */
+    @media(min-width:640px){
+      .sm\:w-\[80\%\]{width:80%}
+      .sm\:text-2xl{font-size:1.5rem}
+      .sm\:text-5xl{font-size:3rem}
+      .sm\:grid-cols-3{grid-template-columns:repeat(3,1fr)}
     }
-    .cta-pulse {
-      animation: ctaPulse 2s infinite ease-in-out;
+    @media(min-width:768px){
+      .md\:flex{display:flex}
+      .md\:block{display:block}
+      .md\:w-14{width:3.5rem}.md\:h-14{height:3.5rem}
+      .md\:w-16{width:4rem}.md\:h-16{height:4rem}
+      .md\:gap-3{gap:.75rem}
+      .md\:text-3xl{font-size:1.875rem}
+      .md\:mb-2{margin-bottom:.5rem}
+      .md\:items-start{align-items:flex-start}
+      .md\:justify-end{justify-content:flex-end}
+      .md\:text-left{text-align:left}
+      .md\:mx-0{margin-left:0;margin-right:0}
     }
-    .cta-pulse:hover {
-      animation: none;
-      transform: translateY(-2px);
+    @media(min-width:1024px){
+      .lg\:block{display:block}
+      .lg\:grid{display:grid}
+      .lg\:grid-cols-12{grid-template-columns:repeat(12,1fr)}
+      .lg\:col-span-8{grid-column:span 8}
+      .lg\:col-span-4{grid-column:span 4}
+      .lg\:gap-12{gap:3rem}
+      .lg\:px-6{padding-left:1.5rem;padding-right:1.5rem}
     }
 
-    /* Ticker / Top Bar Animada */
-    .topbar {
-      background: #b80000;
-      color: #fff;
-      overflow: hidden;
-      white-space: nowrap;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      padding: 8px 0;
-    }
-    .topbar-track {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 24s linear infinite;
-    }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-100%); }
-    }
+    /* ===== Component styles ===== */
+    .topbar{background:#b80000;color:#fff;overflow:hidden;white-space:nowrap;font-size:13px;font-weight:700;letter-spacing:2px;padding:8px 0}
+    .topbar-track{display:inline-block;padding-left:100%;will-change:transform;animation:marquee 24s linear infinite}
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
 
-    /* Estilização do corpo do texto */
-    .article-content p {
-      margin-bottom: 1.4rem;
-      font-size: 1.15rem; /* ~18.4px */
-      line-height: 1.65;
-      color: #222222;
+    /* Reduce GPU paint on low-power — pause marquee when not visible */
+    @media(prefers-reduced-motion:reduce){.topbar-track{animation:none;padding-left:0}}
+
+    .article-content p{margin-bottom:1.4rem;font-size:1.15rem;line-height:1.65;color:#222}
+    .article-content strong{font-weight:700;color:#000}
+    .article-content h3{font-family:'Roboto Slab',serif;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem;color:#000}
+
+    @keyframes ctaPulse{
+      0%{transform:scale(1);box-shadow:0 4px 10px rgba(213,0,0,.2)}
+      50%{transform:scale(1.02);box-shadow:0 8px 20px rgba(213,0,0,.4)}
+      100%{transform:scale(1);box-shadow:0 4px 10px rgba(213,0,0,.2)}
     }
-    .article-content strong {
-      font-weight: 700;
-      color: #000000;
-    }
-    .article-content h3 {
-      font-family: 'Roboto Slab', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      color: #000000;
-    }
+    .cta-pulse{animation:ctaPulse 2s infinite ease-in-out}
+    .cta-pulse:hover{animation:none;transform:translateY(-2px)}
+
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+    .animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}
+
+    /* Colored button backgrounds */
+    .bg-nbc-red{background:var(--nbc-red)}.bg-nbc-blue{background:var(--nbc-blue)}.bg-nbc-dark{background:var(--nbc-dark)}
+    .hover\:bg-red-800:hover{background:#991b1b}.hover\:bg-\[001c40\]:hover{background:#001c40}
+    .bg-\[\#fef2f2\]{background:#fef2f2}.bg-blue-50{background:#eff6ff}
+    .bg-\[\#1DA1F2\]{background:#1DA1F2}.bg-\[\#1877F2\]{background:#1877F2}
+
+    /* Logo centering */
+    .logo-center{position:absolute;left:50%;transform:translateX(-50%)}
+
+    /* Sidebar ad placeholder */
+    .ad-placeholder{width:100%;height:600px;background:#f3f4f6;border:1px solid #e5e7eb;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#9ca3af}
+
+    /* Font-size overrides */
+    .text-\[13px\]{font-size:13px}.text-\[14px\]{font-size:14px}.text-\[17px\]{font-size:17px}.text-\[10px\]{font-size:10px}
+    .text-\[\#1a1a1a\]{color:#1a1a1a}
+    .max-w-\[1200px\]{max-width:1200px}
+    .top-\[100px\]{top:100px}
+    .leading-\[1\.1\]{line-height:1.1}
+    .border-t-\[8px\]{border-top:8px solid var(--nbc-blue)}
+    .w-\[80\%\]{width:80%}
   </style>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const LINKS_CONFIG = {
-        "CTA_LINK": "https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&rtkck=1770902641"
-      };
-
-      document.querySelectorAll("[data-link]").forEach(el => {
-        const key = el.getAttribute("data-link");
-        const url = LINKS_CONFIG[key] || LINKS_CONFIG["CTA_LINK"];
-        if (!url) return;
-
-        if (el.tagName.toLowerCase() === "a") {
-          el.setAttribute("href", url);
-        } else {
-          el.addEventListener("click", () => { window.location.href = url; });
-        }
-        el.classList.add("cursor-pointer");
-        el.setAttribute("rel", "nofollow");
-      });
-
-      const qs = window.location.search;
-      if (qs) {
-        document.querySelectorAll('a[href^="http"]').forEach(a => {
-          const href = a.getAttribute("href");
-          if (!href) return;
-          const sep = href.includes("?") ? "&" : "?";
-          a.setAttribute("href", href + sep + qs.slice(1));
-        });
-      }
-    });
-  </script>
 </head>
 
-<body class="font-sans">
+<body>
 
-  <div class="topbar">
+  <!-- Ticker -->
+  <div class="topbar" aria-hidden="true">
     <div class="topbar-track">BREAKING NEWS - LATEST NEWS - BREAKING NEWS - LATEST NEWS - BREAKING NEWS - LATEST NEWS - BREAKING NEWS</div>
   </div>
 
+  <!-- Header -->
   <header class="w-full bg-white border-b-4 border-nbc-blue sticky top-0 z-50 shadow-sm">
     <div class="max-w-[1200px] mx-auto px-4 py-4 flex items-center justify-between">
-      
       <div class="flex items-center gap-4">
-        <button class="p-1 text-nbc-blue hover:text-nbc-black transition">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <button class="p-1 text-nbc-blue" aria-label="Menu">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="28" height="28"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
-
-      <div class="flex items-center justify-center gap-2 md:gap-3 cursor-pointer absolute left-1/2 transform -translate-x-1/2">
-        <img src="https://pub-7447f7c8efdc4af5ba9d3e5cd8e1744b.r2.dev/nbc%20logo.png" alt="NBC Logo" class="w-8 h-8 md:w-14 md:h-14 object-contain">
+      <div class="flex items-center justify-center gap-2 md:gap-3 cursor-pointer logo-center">
+        <img src="https://pub-7447f7c8efdc4af5ba9d3e5cd8e1744b.r2.dev/nbc%20logo.png" alt="NBC Logo" class="w-8 h-8 md:w-14 md:h-14 object-contain" width="56" height="56" loading="eager">
         <span class="font-black text-xl md:text-3xl tracking-tighter text-nbc-blue">NBC NEWS</span>
       </div>
-
       <div class="flex items-center gap-4 text-nbc-blue">
-        <span class="hidden md:block font-bold text-sm hover:underline cursor-pointer">Live TV</span>
-        <button class="p-1 hover:text-nbc-black transition">
-          <svg class="w-6 h-6 font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <span class="hidden md:block font-bold text-sm cursor-pointer">Live TV</span>
+        <button class="p-1" aria-label="Search">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         </button>
       </div>
     </div>
-
-    <div class="hidden md:flex max-w-[1200px] mx-auto px-4 py-2.5 items-center justify-center gap-8 text-[14px] font-bold text-nbc-dark border-t border-nbc-lightgray">
-      <a href="#" class="hover:text-nbc-blue">U.S. News</a>
-      <a href="#" class="hover:text-nbc-blue">World</a>
-      <a href="#" class="hover:text-nbc-blue">Politics</a>
-      <a href="#" class="hover:text-nbc-blue border-b-2 border-nbc-red pb-1 text-nbc-red">Health</a>
-      <a href="#" class="hover:text-nbc-blue">Business</a>
-      <a href="#" class="hover:text-nbc-blue">Science</a>
-    </div>
+    <nav class="hidden md:flex max-w-[1200px] mx-auto px-4 py-2.5 items-center justify-center gap-8 text-[14px] font-bold text-nbc-dark border-t border-nbc-lightgray">
+      <a href="#">U.S. News</a><a href="#">World</a><a href="#">Politics</a>
+      <a href="#" class="border-b-4 border-nbc-red pb-1 text-nbc-red">Health</a>
+      <a href="#">Business</a><a href="#">Science</a>
+    </nav>
   </header>
 
+  <!-- Main Layout -->
   <div class="max-w-[1200px] mx-auto px-4 lg:px-6 pt-8 pb-20 lg:grid lg:grid-cols-12 lg:gap-12">
-    
+
     <main class="lg:col-span-8">
       <article>
-        
+
+        <!-- Article Header -->
         <header class="mb-6">
           <div class="text-nbc-red font-bold text-[13px] uppercase tracking-widest mb-3 flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-nbc-red animate-pulse"></span>
-            Special Report
+            <span class="w-2 h-2 rounded-full bg-nbc-red animate-pulse"></span>Special Report
           </div>
-          
           <h1 class="text-4xl sm:text-5xl font-headline font-extrabold text-nbc-black leading-[1.1] mb-5">
             <span class="text-nbc-red">More potent than Viagra?</span> Men's Wellness Expert Reveals The "Baking Soda Trick" That's Making Men Perform Like Animals Again
           </h1>
-          
           <h2 class="text-xl sm:text-2xl font-medium text-nbc-gray leading-snug mb-6">
             <strong>Miracle?</strong> Or the biggest secret men were never supposed to find out?
           </h2>
-
           <div class="flex items-center gap-4 py-4 border-t border-b border-nbc-lightgray mb-8">
             <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden">
-              <img src="https://ui-avatars.com/api/?name=Dr.+M.+Carlson&background=002f6c&color=fff&size=100" alt="Author" class="w-full h-full object-cover">
+              <img src="https://ui-avatars.com/api/?name=Dr.+M.+Carlson&background=002f6c&color=fff&size=100" alt="Author" class="w-full h-full object-cover" width="48" height="48" loading="eager">
             </div>
             <div>
               <p class="text-sm font-bold text-nbc-black uppercase">By Men's Wellness Digest • Reviewed by Dr. M. Carlson</p>
               <p id="dynamic-date" class="text-[13px] text-nbc-gray font-medium"></p>
             </div>
-            
             <div class="ml-auto flex gap-2">
-              <button class="w-8 h-8 rounded bg-[#1DA1F2] text-white flex items-center justify-center hover:opacity-80"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></button>
-              <button class="w-8 h-8 rounded bg-[#1877F2] text-white flex items-center justify-center hover:opacity-80"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></button>
+              <button class="w-8 h-8 rounded bg-[#1DA1F2] text-white flex items-center justify-center" aria-label="Share on Twitter"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" width="16" height="16"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></button>
+              <button class="w-8 h-8 rounded bg-[#1877F2] text-white flex items-center justify-center" aria-label="Share on Facebook"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" width="16" height="16"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></button>
             </div>
           </div>
         </header>
 
+        <!-- Article Body -->
         <div class="article-content">
-          
+
           <p class="text-xl sm:text-2xl font-medium leading-relaxed mb-8 border-l-4 border-nbc-red pl-5 bg-gray-50 p-4 rounded-r">
             It began quietly — just a few men experimenting with a simple kitchen ingredient. Today, thousands of men over 40 are discovering what some call the "Baking Soda Trick" to reignite performance, stamina, and confidence in bed.
           </p>
 
-          <p>
-            Rock-solid erections.<br>Explosive stamina.<br>Unshakable confidence in bed.
-          </p>
+          <p>Rock-solid erections.<br>Explosive stamina.<br>Unshakable confidence in bed.</p>
+          <p>And no… It's not Viagra. Not Cialis. Not prescriptions. Not awkward pharmacy visits.</p>
+          <p>It's a simple natural method based on something sitting in your kitchen right now — sodium bicarbonate. And the reason you haven't heard about it? Because it doesn't make billions for Big Pharma.</p>
 
-          <p>
-            And no… It's not Viagra. Not Cialis. Not prescriptions. Not awkward pharmacy visits.
-          </p>
-
-          <p>
-            It's a simple natural method based on something sitting in your kitchen right now — sodium bicarbonate. And the reason you haven't heard about it? Because it doesn't make billions for Big Pharma.
-          </p>
-
-          <a data-link="CTA_LINK" class="block mb-10 mt-6 relative group">
+          <a data-link="CTA_LINK" class="block mb-10 mt-6 relative">
             <img
               src="https://pub-ff7c25df06274393a3d7b80038b373d7.r2.dev/baking%20soda.webp"
-              srcset="
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/puLvFW4048972.png?width=300&height=160&quality=80#459272 300w,
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/puLvFW4048972.png?width=768&height=409&quality=70#649992 768w,
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/puLvFW4048972.png?width=1024&height=545&quality=77#369844 1024w,
-                https://pub-ff7c25df06274393a3d7b80038b373d7.r2.dev/baking%20soda.webp 1200w
-              "
-              sizes="(max-width: 1200px) 100vw, 1200px"
-              width="1200"
-              height="765"
+              width="1200" height="765"
               alt="Main Story Image"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-              class="w-full rounded shadow-md group-hover:opacity-95 transition"
-            />
-            <div class="absolute bottom-0 left-0 bg-black/70 text-white text-xs px-3 py-1.5 rounded-tr">
-              Getty Images / Illustrative
-            </div>
+              loading="eager" fetchpriority="high" decoding="async"
+              class="w-full rounded shadow-md">
+            <div class="absolute bottom-0 left-0 bg-black/70 text-white text-xs px-3 py-1.5 rounded-tr">Getty Images / Illustrative</div>
           </a>
 
           <h3>The Moment This Went Viral</h3>
-          
-          <p>
-            It all started after a podcast episode featuring wellness researcher Dr. Mark Jensen. He sat down with biohacker and performance coach Dave Holloway… and what came out shocked the audience. Because according to him:
-          </p>
-
-          <p>
-            Most men aren't losing performance because of age. They're losing it because their <strong>body's acid-base balance is silently deteriorating after 30 — choking blood flow where it matters most.</strong>
-          </p>
-
-          <p>
-            Not hormones.<br>Not "low T".<br>Not stress.<br>Circulation failure caused by chronic acidity.
-          </p>
-
-          <p>
-            And once that pH balance shifts… So does everything else.
-          </p>
+          <p>It all started after a podcast episode featuring wellness researcher Dr. Mark Jensen. He sat down with biohacker and performance coach Dave Holloway… and what came out shocked the audience. Because according to him:</p>
+          <p>Most men aren't losing performance because of age. They're losing it because their <strong>body's acid-base balance is silently deteriorating after 30 — choking blood flow where it matters most.</strong></p>
+          <p>Not hormones.<br>Not "low T".<br>Not stress.<br>Circulation failure caused by chronic acidity.</p>
+          <p>And once that pH balance shifts… So does everything else.</p>
 
           <h3 class="text-nbc-red text-3xl font-headline font-bold mt-12 mb-6">The Host Asked The Question Every Man Was Thinking</h3>
-
-          <p>
-            Dave looked at Dr. Jensen and said:
-          </p>
-
-          <blockquote class="border-l-4 border-nbc-blue pl-4 py-2 my-6 bg-blue-50 text-xl font-medium italic">
-            "So this thing went viral… guys are lasting longer… feeling stronger… is this actually real?"
-          </blockquote>
-
-          <p>
-            Dr. Jensen paused. Then said something almost no wellness expert would ever admit publicly.
-          </p>
-
-          <p>
-            "After years of research… what we found is that most men over 40 are running on a body that's too acidic. Blood flow weakens. You try supplements. You try prescriptions. But nothing feels natural."
-          </p>
+          <p>Dave looked at Dr. Jensen and said:</p>
+          <blockquote class="border-l-4 border-nbc-blue pl-4 py-2 my-6 bg-blue-50 text-xl font-medium italic">"So this thing went viral… guys are lasting longer… feeling stronger… is this actually real?"</blockquote>
+          <p>Dr. Jensen paused. Then said something almost no wellness expert would ever admit publicly.</p>
+          <p>"After years of research… what we found is that most men over 40 are running on a body that's too acidic. Blood flow weakens. You try supplements. You try prescriptions. But nothing feels natural."</p>
 
           <a data-link="CTA_LINK" class="block mb-8 mt-6">
-            <img
-              src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/19.png?quality=83#709603"
-              srcset="
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/kcEQtg0644944.webp?width=300&height=160&quality=75#720311 300w,
-                https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/19.png?quality=83#709603 692w
-              "
-              sizes="(max-width: 692px) 100vw, 692px"
-              width="692"
-              height="389"
-              alt="Podcast Interview"
-              loading="lazy"
-              decoding="async"
-              class="w-full rounded shadow hover:opacity-95 transition"
-            />
+            <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/19.png?quality=83#709603"
+              width="692" height="389" alt="Podcast Interview" loading="lazy" decoding="async"
+              class="w-full rounded shadow">
           </a>
 
-          <p>
-            Then he revealed: A colleague introduced him to a simple baking soda protocol combined with a common mineral most people already have at home.
-          </p>
-
-          <p>
-            No injections. No pills. No weird devices. Just a specific activation method.
-          </p>
-
-          <p>
-            Within weeks? <strong>"More control. More energy. Confidence came back."</strong>
-          </p>
-
-          <p>
-            Confidence. That word hit hard. Because every man knows… Performance isn't just physical. It's psychological. Once doubt creeps in — it spirals.
-          </p>
+          <p>Then he revealed: A colleague introduced him to a simple baking soda protocol combined with a common mineral most people already have at home.</p>
+          <p>No injections. No pills. No weird devices. Just a specific activation method.</p>
+          <p>Within weeks? <strong>"More control. More energy. Confidence came back."</strong></p>
+          <p>Confidence. That word hit hard. Because every man knows… Performance isn't just physical. It's psychological. Once doubt creeps in — it spirals.</p>
 
           <h3>Here's What Most Men Don't Understand</h3>
-          
-          <p>
-            Dr. Jensen explained something that made the audience go silent:
-          </p>
-
-          <p class="font-bold text-xl mb-6">
-            "When your body's pH drops into chronic acidity, blood vessels constrict. The body forgets how to respond properly where it matters most."
-          </p>
-
-          <p>
-            Meaning… You can still want it. You can still feel desire. But the physical response won't match the intention.
-          </p>
-
-          <p>
-            That gap? That's what destroys confidence. But when pH balance is restored and blood flow pathways reopen… The body remembers.
-          </p>
+          <p>Dr. Jensen explained something that made the audience go silent:</p>
+          <p class="font-bold text-xl mb-6">"When your body's pH drops into chronic acidity, blood vessels constrict. The body forgets how to respond properly where it matters most."</p>
+          <p>Meaning… You can still want it. You can still feel desire. But the physical response won't match the intention.</p>
+          <p>That gap? That's what destroys confidence. But when pH balance is restored and blood flow pathways reopen… The body remembers.</p>
 
           <a data-link="CTA_LINK" class="block mb-8 mt-6">
-            <img
-              src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/17.png?quality=71#171761"
-              srcset="
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/DalIGN1805855.jpeg?width=300&height=160&quality=87#647863 300w,
-                https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/17.png?quality=71#171761 663w
-              "
-              sizes="(max-width: 663px) 100vw, 663px"
-              width="663"
-              height="372"
-              alt="Medical Explanation"
-              loading="lazy"
-              decoding="async"
-              class="w-full rounded shadow hover:opacity-95 transition"
-            />
+            <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/17.png?quality=71#171761"
+              width="663" height="372" alt="Medical Explanation" loading="lazy" decoding="async"
+              class="w-full rounded shadow">
           </a>
 
           <h3>Why Adult Film Professionals Use Similar Protocols</h3>
-          
-          <p>
-            According to insiders in performance-based industries: Endurance isn't about testosterone spikes. It's about blood flow and acid-base balance.
-          </p>
-
-          <p>
-            When sodium bicarbonate restores optimal pH:
-          </p>
+          <p>According to insiders in performance-based industries: Endurance isn't about testosterone spikes. It's about blood flow and acid-base balance.</p>
+          <p>When sodium bicarbonate restores optimal pH:</p>
           <ul class="list-disc pl-6 mb-6 space-y-2 font-bold text-[#1a1a1a]">
-            <li>Blood flow intensifies</li>
-            <li>Firmness improves</li>
-            <li>Recovery speeds up</li>
-            <li>Duration extends</li>
+            <li>Blood flow intensifies</li><li>Firmness improves</li><li>Recovery speeds up</li><li>Duration extends</li>
           </ul>
-
-          <p>
-            And unlike pills that force a temporary reaction… This works with your natural biology. That's why many performers use pH-balancing protocols before demanding shoots. Not because it's trendy. Because it works.
-          </p>
+          <p>And unlike pills that force a temporary reaction… This works with your natural biology. That's why many performers use pH-balancing protocols before demanding shoots. Not because it's trendy. Because it works.</p>
 
           <a data-link="CTA_LINK" class="block mb-8 mt-8">
-            <img
-              src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/18.png?quality=71#207715"
-              srcset="
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/tbMQsA1937746.jpeg?width=300&height=160&quality=71#811599 300w,
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/tbMQsA1937746.jpeg?width=768&height=409&quality=83#390066 768w,
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/tbMQsA1937746.jpeg?width=1024&height=545&quality=72#771835 1024w,
-                https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/18.png?quality=71#207715 1280w
-              "
-              sizes="(max-width: 1280px) 100vw, 1280px"
-              width="1280"
-              height="720"
-              alt="Reaction"
-              loading="lazy"
-              decoding="async"
-              class="w-full rounded shadow hover:opacity-95 transition"
-            />
+            <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/18.png?quality=71#207715"
+              width="1280" height="720" alt="Reaction" loading="lazy" decoding="async"
+              class="w-full rounded shadow">
           </a>
 
           <h3>And Here's The Part That Made The Host Laugh</h3>
-          
-          <p>
-            "So you're telling me this costs less than a dollar… and guys are choosing pills?"
-          </p>
-
-          <p>
-            The room erupted. Because when something that simple works… It threatens billion-dollar industries.
-          </p>
+          <p>"So you're telling me this costs less than a dollar… and guys are choosing pills?"</p>
+          <p>The room erupted. Because when something that simple works… It threatens billion-dollar industries.</p>
 
           <h3>What Researchers Are Quietly Discussing</h3>
-          
-          <p>
-            Recent research into sodium bicarbonate's role in blood flow and vascular health is gaining serious attention. Men using similar protocols report stronger natural erections, faster response, longer stamina, and more confidence.
-          </p>
-
-          <p>
-            And here's the real transformation: They stop fearing the moment. No more hesitation. No more mental countdown. No more hoping things "cooperate." Instead? Control.
-          </p>
+          <p>Recent research into sodium bicarbonate's role in blood flow and vascular health is gaining serious attention. Men using similar protocols report stronger natural erections, faster response, longer stamina, and more confidence.</p>
+          <p>And here's the real transformation: They stop fearing the moment. No more hesitation. No more mental countdown. No more hoping things "cooperate." Instead? Control.</p>
 
           <h3>This Isn't About Becoming 20 Again</h3>
-          
-          <p>
-            It's about not feeling broken. It's about walking into the bedroom without anxiety. It's about your partner noticing the difference. It's about waking up with that natural morning firmness you haven't felt in years.
-          </p>
+          <p>It's about not feeling broken. It's about walking into the bedroom without anxiety. It's about your partner noticing the difference. It's about waking up with that natural morning firmness you haven't felt in years.</p>
 
           <div class="bg-[#fef2f2] border-l-4 border-nbc-red p-6 rounded my-10">
             <h3 class="text-nbc-red font-bold text-2xl mt-0 mb-3">The Full Discussion Is Still Online (For Now)</h3>
-            <p class="mb-4">
-              Because of the nature of what was revealed… The clip has already faced pressure.
-            </p>
-            <p class="font-bold text-lg">
-              If you want to see the exact explanation of the "Baking Soda Trick" and how it activates blood flow naturally… You can still watch it. 👇
-            </p>
+            <p class="mb-4">Because of the nature of what was revealed… The clip has already faced pressure.</p>
+            <p class="font-bold text-lg">If you want to see the exact explanation of the "Baking Soda Trick" and how it activates blood flow naturally… You can still watch it. 👇</p>
           </div>
 
           <a data-link="CTA_LINK" class="block mb-8 relative">
-            <img
-              src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/Native%20%5BKF%5D%20(3).gif?quality=87#976408"
-              srcset="
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/LDjwAE4218880.gif?width=300&height=160&quality=73#990191 300w,
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/LDjwAE4218880.gif?width=768&height=409&quality=88#840213 768w,
-                https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/LDjwAE4218880.gif?width=1024&height=545&quality=84#59434 1024w,
-                https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/Native%20%5BKF%5D%20(3).gif?quality=87#976408 1200w
-              "
-              sizes="(max-width: 1200px) 100vw, 1200px"
-              width="1200"
-              height="765"
-              alt="Watch Video Now"
-              loading="lazy"
-              decoding="async"
-              class="w-full rounded shadow-lg hover:opacity-90 transition"
-            />
+            <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/Native%20%5BKF%5D%20(3).gif?quality=87#976408"
+              width="1200" height="765" alt="Watch Video Now" loading="lazy" decoding="async"
+              class="w-full rounded shadow-lg">
             <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-               <div class="w-20 h-20 bg-black/60 rounded-full flex items-center justify-center">
-                 <svg class="w-10 h-10 text-white ml-2" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-               </div>
+              <div class="w-20 h-20 bg-black/60 rounded-full flex items-center justify-center">
+                <svg class="w-10 h-10 text-white ml-2" fill="currentColor" viewBox="0 0 24 24" width="40" height="40"><path d="M8 5v14l11-7z"/></svg>
+              </div>
             </div>
           </a>
 
           <div class="text-center mt-10 mb-16 border-b border-nbc-lightgray pb-16">
-            <a data-link="CTA_LINK" class="inline-block w-full sm:w-[80%] bg-nbc-red hover:bg-red-800 text-white font-bold text-xl sm:text-2xl py-6 px-10 rounded shadow-xl cta-pulse transition">
-              ► WATCH THE VIDEO NOW
-            </a>
+            <a data-link="CTA_LINK" class="inline-block w-full sm:w-[80%] bg-nbc-red text-white font-bold text-xl sm:text-2xl py-6 px-10 rounded shadow-xl cta-pulse transition hover:bg-red-800">► WATCH THE VIDEO NOW</a>
           </div>
 
           <h3 class="text-center font-headline text-3xl mb-10 text-nbc-blue">What people are saying</h3>
-          
+
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-            
             <a data-link="CTA_LINK" class="block group">
               <div class="rounded-lg overflow-hidden shadow-md mb-4 bg-gray-100">
-                <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dYFuWr2021288.webp?quality=78#140768" alt="Quote 1" loading="lazy" class="w-full h-auto group-hover:scale-105 transition duration-500">
+                <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dYFuWr2021288.webp?quality=78#140768" alt="Quote 1" loading="lazy" decoding="async" width="400" height="400" class="w-full transition">
               </div>
-              <p class="text-center italic font-medium text-lg text-nbc-black leading-snug">
-                "You can keep guessing, Keep blaming age, Keep hoping pills will solve it. Or…"
-              </p>
+              <p class="text-center italic font-medium text-lg text-nbc-black leading-snug">"You can keep guessing, Keep blaming age, Keep hoping pills will solve it. Or…"</p>
             </a>
-
             <a data-link="CTA_LINK" class="block group">
               <div class="rounded-lg overflow-hidden shadow-md mb-4 bg-gray-100">
-                <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dsNPCd2021288.webp?quality=81#765011" alt="Quote 2" loading="lazy" class="w-full h-auto group-hover:scale-105 transition duration-500">
+                <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/dsNPCd2021288.webp?quality=81#765011" alt="Quote 2" loading="lazy" decoding="async" width="400" height="400" class="w-full transition">
               </div>
-              <p class="text-center italic font-medium text-lg text-nbc-black leading-snug">
-                "You can see what thousands of men are already trying quietly."
-              </p>
+              <p class="text-center italic font-medium text-lg text-nbc-black leading-snug">"You can see what thousands of men are already trying quietly."</p>
             </a>
-
             <a data-link="CTA_LINK" class="block group">
               <div class="rounded-lg overflow-hidden shadow-md mb-4 bg-gray-100">
-                <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/qLzMgh2021288.webp?quality=89#293852" alt="Quote 3" loading="lazy" class="w-full h-auto group-hover:scale-105 transition duration-500">
+                <img src="https://media.atomicatpages.net/u/cdMeHfbrO7bVZ0G41D7YnGdFZmG3/Pictures/qLzMgh2021288.webp?quality=89#293852" alt="Quote 3" loading="lazy" decoding="async" width="400" height="400" class="w-full transition">
               </div>
-              <p class="text-center italic font-medium text-lg text-nbc-black leading-snug">
-                "The choice is yours. One path restores confidence. The other keeps you dependent."
-              </p>
+              <p class="text-center italic font-medium text-lg text-nbc-black leading-snug">"The choice is yours. One path restores confidence. The other keeps you dependent."</p>
             </a>
-
           </div>
 
           <div class="text-center">
-            <a data-link="CTA_LINK" class="inline-block bg-nbc-blue hover:bg-[#001c40] text-white font-bold text-lg py-4 px-12 rounded shadow transition cta-pulse">
-              Click and decide
-            </a>
+            <a data-link="CTA_LINK" class="inline-block bg-nbc-blue text-white font-bold text-lg py-4 px-12 rounded shadow transition cta-pulse hover:bg-[001c40]">Click and decide</a>
           </div>
 
         </div>
-
       </article>
     </main>
 
+    <!-- Sidebar -->
     <aside class="hidden lg:block lg:col-span-4">
       <div class="sticky top-[100px]">
-        
         <div class="border-t-4 border-nbc-black pt-4 mb-8">
           <h3 class="font-black text-2xl uppercase tracking-tight text-nbc-black mb-6">Trending</h3>
-          
           <div class="space-y-6">
             <a data-link="CTA_LINK" class="flex gap-4 group">
-              <span class="text-4xl font-black text-nbc-lightgray group-hover:text-nbc-red transition">1</span>
-              <p class="font-bold text-[17px] text-nbc-dark group-hover:underline leading-snug pt-1">New study links sodium bicarbonate to improved blood flow and vascular health.</p>
+              <span class="text-4xl font-black text-nbc-lightgray transition">1</span>
+              <p class="font-bold text-[17px] text-nbc-dark leading-snug pt-1">New study links sodium bicarbonate to improved blood flow and vascular health.</p>
             </a>
-            
             <a data-link="CTA_LINK" class="flex gap-4 group">
-              <span class="text-4xl font-black text-nbc-lightgray group-hover:text-nbc-red transition">2</span>
-              <p class="font-bold text-[17px] text-nbc-dark group-hover:underline leading-snug pt-1">Why men over 40 are ditching blue pills for a kitchen staple.</p>
+              <span class="text-4xl font-black text-nbc-lightgray transition">2</span>
+              <p class="font-bold text-[17px] text-nbc-dark leading-snug pt-1">Why men over 40 are ditching blue pills for a kitchen staple.</p>
             </a>
-
             <a data-link="CTA_LINK" class="flex gap-4 group">
-              <span class="text-4xl font-black text-nbc-lightgray group-hover:text-nbc-red transition">3</span>
-              <p class="font-bold text-[17px] text-nbc-dark group-hover:underline leading-snug pt-1">The controversial wellness clip that Big Pharma wants removed.</p>
+              <span class="text-4xl font-black text-nbc-lightgray transition">3</span>
+              <p class="font-bold text-[17px] text-nbc-dark leading-snug pt-1">The controversial wellness clip that Big Pharma wants removed.</p>
             </a>
           </div>
         </div>
-
-        <div class="w-full h-[600px] bg-gray-100 border border-gray-200 flex flex-col items-center justify-center text-gray-400">
+        <div class="ad-placeholder">
           <span class="text-[10px] uppercase tracking-widest font-bold mb-2">Advertisement</span>
           <span>Ad Space</span>
         </div>
-
       </div>
     </aside>
 
   </div>
 
-  <footer class="bg-nbc-dark py-12 mt-10 text-white font-sans border-t-[8px] border-nbc-blue">
+  <!-- Footer -->
+  <footer class="bg-nbc-dark py-12 mt-10 text-white border-t-[8px]">
     <div class="max-w-[1200px] mx-auto px-4 flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
-      
       <div class="flex flex-col items-center md:items-start">
         <div class="flex items-center gap-2 md:gap-3 mb-1 md:mb-2">
-          <img src="https://pub-7447f7c8efdc4af5ba9d3e5cd8e1744b.r2.dev/nbc%20logo.png" alt="NBC Logo" class="w-10 h-10 md:w-16 md:h-16 object-contain opacity-100">
+          <img src="https://pub-7447f7c8efdc4af5ba9d3e5cd8e1744b.r2.dev/nbc%20logo.png" alt="NBC Logo" class="w-10 h-10 md:w-16 md:h-16 object-contain" width="64" height="64" loading="lazy">
           <span class="font-black text-2xl md:text-3xl tracking-tighter text-white">NBC NEWS</span>
         </div>
       </div>
-
-      <div class="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4 text-[13px] font-bold uppercase tracking-wider text-gray-300">
-        <a href="#" class="hover:text-white transition">About</a>
-        <a href="#" class="hover:text-white transition">Contact</a>
-        <a href="#" class="hover:text-white transition">Careers</a>
-        <a href="#" class="hover:text-white transition">Privacy Policy</a>
-        <a href="#" class="hover:text-white transition">Terms of Service</a>
+      <div class="flex flex-wrap justify-center md:justify-end gap-8 text-[13px] font-bold uppercase tracking-wider text-gray-300">
+        <a href="#">About</a><a href="#">Contact</a><a href="#">Careers</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a>
       </div>
-      
     </div>
-    
     <div class="max-w-[1200px] mx-auto px-4 mt-12 pt-8 border-t border-gray-700 text-center md:text-left">
       <p class="text-xs text-gray-500 leading-relaxed max-w-4xl mx-auto md:mx-0">
-        © <span id="ano-footer"></span> NBC UNIVERSAL. ALL RIGHTS RESERVED. <br><br>
+        © <span id="ano-footer"></span> NBC UNIVERSAL. ALL RIGHTS RESERVED.<br><br>
         This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. This is an advertorial/promotional page. The information provided here does not substitute professional medical advice. Results may vary.
       </p>
     </div>
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const hoje = new Date();
-      
-      // Atualizar Ano no Rodapé
-      document.getElementById('ano-footer').textContent = hoje.getFullYear();
+  <!-- All JS deferred to after paint -->
+  <script defer>
+    (function(){
+      var hoje=new Date();
+      document.getElementById('ano-footer').textContent=hoje.getFullYear();
+      var d=document.getElementById('dynamic-date');
+      if(d)d.textContent='Published '+hoje.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',hour:'numeric',minute:'numeric',timeZoneName:'short'});
 
-      // Formatar Data (Inglês) para o Artigo
-      const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZoneName: 'short' };
-      const dateFormatted = hoje.toLocaleDateString('en-US', options);
-      
-      const articleDateEl = document.getElementById('dynamic-date');
-      if (articleDateEl) {
-        articleDateEl.textContent = `Published ${dateFormatted}`;
-      }
-    });
+      var CTA="https://wiw.infotodayz.online/preclick?clickid=6988e32c65e363f58eb2fa54&rtkck=1770902641";
+      var qs=window.location.search;
+      document.querySelectorAll('[data-link]').forEach(function(el){
+        var url=CTA;
+        if(qs)url+=url.indexOf('?')>-1?'&'+qs.slice(1):'?'+qs.slice(1);
+        if(el.tagName==='A'){el.href=url}else{el.onclick=function(){window.location.href=url}}
+        el.classList.add('cursor-pointer');
+        el.rel='nofollow';
+      });
+    })();
   </script>
-
 </body>
 </html>
