@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>NBC News Health – Memory Breakthrough for Adults Over 50</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"></noscript>
+
+
+  <style>
+    /* ===========================
+       RESET
+    =========================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; }
+    html { font-family: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif; line-height: 1.5; -webkit-text-size-adjust: 100%; }
+    body { background: #fff; color: #111; }
+    img, video { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; background: transparent; font: inherit; border: none; }
+    sup { font-size: .6em; vertical-align: super; }
+
+    /* ===========================
+       VARIABLES
+    =========================== */
+    :root {
+      --nbc-blue:    #0084d1;
+      --nbc-dark:    #0a0a0a;
+      --red:         #cc1f36;
+      --red-dark:    #a8172b;
+      --gold:        #FCD34D;
+      --navy:        #07184a;
+      --gray-900:    #111827;
+      --gray-700:    #374151;
+      --gray-500:    #6b7280;
+      --gray-300:    #d1d5db;
+      --gray-100:    #f3f4f6;
+      --white:       #ffffff;
+    }
+
+    /* ===========================
+       LAYOUT
+    =========================== */
+    .container { width: 100%; max-width: 860px; margin-inline: auto; padding-inline: 1rem; }
+    .full-bleed { width: 100vw; margin-inline: calc(-50vw + 50%); }
+
+    /* ===========================
+       HEADER
+    =========================== */
+    .site-header {
+      background: var(--nbc-dark);
+      color: var(--white);
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      height: 52px;
+    }
+    .header-inner {
+      height: 100%;
+      max-width: 100%;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    /* Peacock logo */
+    .logo-wrap { display: flex; align-items: center; gap: .5rem; position: absolute; left: 50%; transform: translateX(-50%); }
+    .logo-wrap .peacock { width: 32px; height: 20px; flex-shrink: 0; }
+    .logo-wrap .wordmark { font-size: 1.1rem; font-weight: 800; letter-spacing: -.01em; color: var(--white); white-space: nowrap; }
+    .logo-wrap .wordmark span { color: var(--white); opacity: .85; font-weight: 400; }
+
+    .header-nav { display: none; }
+    @media (min-width: 768px) {
+      .site-header { height: 60px; }
+      .logo-wrap { position: static; transform: none; }
+      .header-nav {
+        display: flex;
+        align-items: center;
+        gap: .1rem;
+        font-size: .875rem;
+        font-weight: 600;
+      }
+      .header-nav a {
+        padding: .4rem .75rem;
+        color: var(--white);
+        border-radius: .25rem;
+        transition: background .15s;
+        white-space: nowrap;
+      }
+      .header-nav a:hover { background: rgba(255,255,255,.1); }
+    }
+    .header-icon { padding: .5rem; color: var(--white); display: flex; align-items: center; }
+
+    /* ===========================
+       SUB-NAV
+    =========================== */
+    .sub-nav {
+      background: var(--nbc-dark);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      margin-top: 52px;
+    }
+    @media (min-width: 768px) { .sub-nav { margin-top: 60px; } }
+    .sub-nav ul {
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: .1rem;
+      padding: .4rem 1rem;
+    }
+    .sub-nav ul::-webkit-scrollbar { display: none; }
+    .sub-nav a {
+      white-space: nowrap;
+      font-size: .8rem;
+      font-weight: 600;
+      padding: .45rem .75rem;
+      color: rgba(255,255,255,.8);
+      border-radius: .25rem;
+      transition: background .15s, color .15s;
+    }
+    .sub-nav a:hover { background: rgba(255,255,255,.1); color: var(--white); }
+    .sub-nav a.active { color: var(--white); border-bottom: 2px solid var(--white); }
+
+    /* ===========================
+       BREAKING BAR
+    =========================== */
+    .breaking-bar {
+      background: var(--red);
+      color: var(--white);
+      font-size: .75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .4rem 1rem;
+      overflow: hidden;
+    }
+    .breaking-bar .label {
+      background: var(--white);
+      color: var(--red);
+      font-size: .65rem;
+      font-weight: 800;
+      padding: .15rem .5rem;
+      border-radius: 2px;
+      letter-spacing: .06em;
+      flex-shrink: 0;
+      text-transform: uppercase;
+    }
+    .breaking-bar .text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    /* ===========================
+       HERO
+    =========================== */
+    .hero { background: var(--nbc-dark); color: var(--white); padding: 1.25rem 1rem .5rem; }
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      margin-bottom: .75rem;
+      flex-wrap: wrap;
+    }
+    .hero-meta .section-tag {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--nbc-blue);
+      background: rgba(0,132,209,.12);
+      padding: .2rem .6rem;
+      border-radius: 2px;
+    }
+    .hero-meta .byline { font-size: .8rem; color: rgba(255,255,255,.55); }
+    .hero h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: .75rem;
+    }
+    .hero h1 em { font-style: normal; color: #5bc4f5; }
+    .hero .sub { font-size: .95rem; color: rgba(255,255,255,.7); line-height: 1.6; }
+    @media (min-width: 768px) {
+      .hero { padding: 2rem 1.5rem 1rem; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero .sub { font-size: 1.1rem; }
+    }
+
+    /* ===========================
+       VIDEO — VERTICAL (9:16)
+    =========================== */
+    .video-section { background: #000; }
+    .video-wrap {
+      max-width: 404px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* ===========================
+       ARTICLE BODY (before offer)
+    =========================== */
+    .article-body {
+      background: var(--white);
+      padding: 1.5rem 1rem;
+      max-width: 680px;
+      margin-inline: auto;
+    }
+    .article-body p {
+      font-size: .95rem;
+      line-height: 1.75;
+      color: var(--gray-700);
+      margin-bottom: 1rem;
+    }
+    .article-body strong { color: var(--gray-900); }
+    .pull-quote {
+      border-left: 4px solid var(--nbc-blue);
+      padding: .75rem 1rem;
+      margin: 1.25rem 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      font-style: italic;
+      background: var(--gray-100);
+      border-radius: 0 .5rem .5rem 0;
+    }
+
+    /* ===========================
+       DELAY / OFFER
+    =========================== */
+    .esconder { display: none; }
+
+    /* ===========================
+       COUNTDOWN BANNER
+    =========================== */
+    .countdown-banner {
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      color: var(--white);
+      text-align: center;
+      padding: 2.5rem 1rem 3rem;
+      position: relative;
+    }
+    .countdown-banner h2 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      max-width: 580px;
+      margin-inline: auto;
+      line-height: 1.3;
+    }
+    @media (min-width: 768px) { .countdown-banner h2 { font-size: 1.65rem; } }
+    .countdown-banner .gold { color: var(--gold); }
+    #countdown-timer {
+      font-size: 2.75rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      margin-top: 1rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .notch-down {
+      position: absolute;
+      bottom: 8px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 28px solid transparent;
+      border-right: 28px solid transparent;
+      border-top: 16px solid var(--white);
+    }
+
+    /* ===========================
+       PRODUCT CARDS
+    =========================== */
+    .offers-section { background: var(--white); padding: 2.5rem 1rem; }
+    .cards-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 400px;
+      margin-inline: auto;
+    }
+    @media (min-width: 720px) {
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 820px;
+        gap: 1.25rem;
+      }
+    }
+    .product-card {
+      background: var(--white);
+      border: 1px solid #e5e7eb;
+      border-radius: 1rem;
+      padding: 1.25rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,.09);
+      position: relative;
+      transition: transform .25s, box-shadow .25s;
+    }
+    @media (hover: hover) { .product-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(0,0,0,.14); } }
+    .product-card.best { border-color: var(--nbc-blue); background: #f0f8ff; }
+    .product-card.best::before {
+      content: 'BEST VALUE';
+      position: absolute;
+      top: -13px; left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #0084d1, #005f9e);
+      color: var(--white);
+      padding: 3px 14px;
+      border-radius: 20px;
+      font-size: .65rem;
+      font-weight: 800;
+      white-space: nowrap;
+      letter-spacing: .06em;
+    }
+    .card-qty { text-align: center; font-weight: 700; color: var(--gray-700); margin-bottom: .75rem; font-size: .95rem; }
+    .card-img { width: 150px; height: 150px; object-fit: contain; margin: 0 auto 1rem; }
+    .card-title { text-align: center; font-weight: 700; color: var(--gray-900); margin-bottom: .75rem; font-size: .9rem; }
+    .card-pricing { text-align: center; margin-bottom: 1rem; }
+    .original { text-decoration: line-through; color: #9ca3af; font-size: .82rem; }
+    .price { font-size: 1.85rem; font-weight: 900; color: var(--red); }
+    .per-unit { font-size: .78rem; color: var(--gray-500); }
+    .savings { font-size: .82rem; color: var(--nbc-blue); font-weight: 700; margin-top: .25rem; }
+    .ship { text-align: center; font-size: .78rem; margin-bottom: 1rem; color: var(--gray-500); }
+    .ship.free { color: var(--nbc-blue); font-weight: 700; }
+    .card-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background: linear-gradient(135deg, var(--nbc-blue), #005f9e);
+      color: var(--white);
+      text-align: center;
+      padding: .9rem;
+      border-radius: .5rem;
+      font-weight: 700;
+      font-size: .95rem;
+      margin-bottom: .75rem;
+      min-height: 48px;
+      transition: filter .2s;
+    }
+    @media (hover: hover) { .card-cta:hover { filter: brightness(1.12); } }
+    .card-guarantee { text-align: center; font-size: .72rem; color: var(--gray-500); margin-bottom: .45rem; }
+    .card-bonus { text-align: center; font-size: .78rem; color: var(--nbc-blue); font-weight: 700; margin-bottom: .75rem; }
+    .card-badges img { max-width: 100%; height: auto; margin: 0 auto; }
+
+    /* ===========================
+       GUARANTEE
+    =========================== */
+    .guarantee-section { max-width: 860px; margin: 0 auto; padding: .5rem 1rem 2rem; }
+    .guarantee-box {
+      border: 2px solid var(--nbc-blue);
+      border-radius: 1.5rem;
+      background: var(--white);
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,.07);
+    }
+    @media (min-width: 768px) { .guarantee-box { padding: 2.5rem; } }
+    .guarantee-box .seal { width: 80px; margin: 0 auto 1rem; }
+    @media (min-width: 768px) { .guarantee-box .seal { width: 130px; } }
+    .guarantee-box h2 { font-size: 1.3rem; font-weight: 800; color: var(--nbc-blue); }
+    @media (min-width: 768px) { .guarantee-box h2 { font-size: 1.65rem; } }
+    .guarantee-box .days { font-weight: 700; text-decoration: underline; margin-top: .3rem; font-size: .95rem; }
+    .guarantee-box p { font-size: .875rem; color: var(--gray-700); line-height: 1.7; margin-top: 1.25rem; text-align: left; max-width: 660px; margin-inline: auto; }
+    .trust-row { display: flex; justify-content: center; margin-top: 1.5rem; }
+    .trust-row img { height: 46px; }
+    @media (min-width: 768px) { .trust-row img { height: 58px; } }
+
+    /* ===========================
+       QUALITY
+    =========================== */
+    .quality-section { background: var(--white); padding: 2.5rem 1rem; }
+    .quality-box {
+      max-width: 860px;
+      margin-inline: auto;
+      background: var(--nbc-blue);
+      border-radius: 1.5rem;
+      color: var(--white);
+      text-align: center;
+      padding: 2.5rem 1.25rem;
+    }
+    @media (min-width: 768px) { .quality-box { padding: 3rem 2.5rem; } }
+    .stars { color: var(--gold); font-size: 1.2rem; margin-bottom: .75rem; letter-spacing: .1em; }
+    .quality-box h2 { font-size: 1.45rem; font-weight: 800; margin-bottom: 1rem; }
+    @media (min-width: 768px) { .quality-box h2 { font-size: 2rem; } }
+    .quality-box p { font-size: .875rem; color: rgba(255,255,255,.88); line-height: 1.7; max-width: 620px; margin-inline: auto; }
+    .badge-row { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: 1.5rem; }
+    .badge-row img { height: 42px; }
+    .quality-cta {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 2rem;
+      background: var(--gold);
+      color: var(--nbc-dark);
+      font-weight: 800;
+      font-size: .95rem;
+      padding: .9rem 2rem;
+      border-radius: 9999px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.2);
+      min-height: 52px;
+      transition: background .15s;
+    }
+    @media (hover: hover) { .quality-cta:hover { background: #fde68a; } }
+
+    /* ===========================
+       TESTIMONIALS
+    =========================== */
+    .testimonials-section { background: var(--white); padding: 2.5rem 1rem; }
+    .section-title { font-size: 1.35rem; font-weight: 800; color: var(--nbc-dark); text-align: center; }
+    @media (min-width: 768px) { .section-title { font-size: 1.7rem; } }
+    .badge-tag {
+      display: inline-block;
+      margin: .75rem auto 0;
+      padding: .4rem 1.5rem;
+      border-radius: .5rem;
+      background: linear-gradient(135deg, var(--nbc-blue), var(--navy));
+      color: var(--white);
+      font-weight: 700;
+      font-size: .8rem;
+    }
+    .testimonials-wrap { max-width: 860px; margin: 1.75rem auto 0; display: flex; flex-direction: column; gap: 1.1rem; }
+    .testimonial {
+      border: 2px solid var(--nbc-blue);
+      border-radius: 1rem;
+      background: var(--gray-100);
+      padding: 1.1rem;
+      display: flex;
+      gap: .875rem;
+      align-items: flex-start;
+    }
+    .testimonial img { width: 68px; height: 68px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    @media (min-width: 480px) { .testimonial img { width: 78px; height: 78px; } }
+    .t-stars { color: #eab308; font-size: .95rem; margin-bottom: .35rem; }
+    .t-text { font-size: .875rem; color: var(--gray-700); line-height: 1.65; }
+    .t-name { margin-top: .65rem; font-weight: 700; color: var(--gray-900); font-size: .875rem; }
+    .t-verified { display: flex; align-items: center; gap: .3rem; font-size: .78rem; font-weight: 600; color: var(--gray-500); margin-top: .25rem; }
+    .t-verified .check { color: #16a34a; }
+
+    /* ===========================
+       FAQ
+    =========================== */
+    .faq-section { background: #eef2f7; padding: 2.5rem 1rem; }
+    .faq-section .section-title { margin-bottom: 1.5rem; }
+    .faq-icon {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 2px solid var(--nbc-blue);
+      color: var(--nbc-blue);
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto .6rem;
+    }
+    .faq-list { max-width: 800px; margin-inline: auto; display: flex; flex-direction: column; gap: .6rem; }
+    .faq-item { background: var(--white); border-radius: .75rem; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .faq-toggle {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.1rem;
+      text-align: left;
+      font-weight: 600;
+      color: var(--gray-900);
+      font-size: .9rem;
+      min-height: 52px;
+    }
+    .faq-icon-btn { font-size: 1.4rem; line-height: 1; flex-shrink: 0; color: var(--nbc-blue); transition: transform .2s; }
+    .faq-toggle[aria-expanded="true"] .faq-icon-btn { transform: rotate(45deg); }
+    .faq-body { display: none; padding: 0 1.1rem 1rem; font-size: .875rem; color: var(--gray-700); line-height: 1.7; }
+    .faq-body.open { display: block; }
+
+    /* ===========================
+       SCIENTIFIC REFS
+    =========================== */
+    .refs-section { background: var(--white); padding: 1.5rem 1rem 2.5rem; }
+    .refs-title { font-size: .875rem; color: #9ca3af; font-weight: 500; text-align: center; margin-bottom: 1rem; }
+    .refs-cols { display: flex; flex-direction: column; gap: .75rem; max-width: 1000px; margin-inline: auto; }
+    @media (min-width: 768px) { .refs-cols { flex-direction: row; } }
+    .refs-cols ul { list-style: disc; padding-left: 1.25rem; font-size: .68rem; color: #b0b0a8; line-height: 1.6; flex: 1; display: flex; flex-direction: column; gap: .3rem; }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    .site-footer { background: var(--nbc-dark); color: var(--white); padding: 2rem 1rem; }
+    .footer-inner { max-width: 1100px; margin-inline: auto; display: flex; flex-direction: column; gap: 1.75rem; }
+    .footer-logo { display: flex; align-items: center; gap: .5rem; font-size: 1.1rem; font-weight: 800; }
+    .footer-logo .peacock { width: 28px; height: 18px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(5, 1fr); } }
+    .footer-col dt { font-size: .78rem; font-weight: 700; margin-bottom: .6rem; color: var(--white); }
+    .footer-col dd a { font-size: .78rem; color: var(--gray-300); display: block; padding: .15rem 0; }
+    @media (hover: hover) { .footer-col dd a:hover { color: var(--white); text-decoration: underline; } }
+    .footer-bottom { font-size: .75rem; color: var(--gray-500); border-top: 1px solid rgba(255,255,255,.08); padding-top: 1rem; }
+  </style>
+</head>
+<body>
+  <script>document.title="NBC News Health – Memory Breakthrough for Adults Over 50";</script>
+  <script>
+  (function(){
+    document.querySelectorAll('link[rel*="icon"]').forEach(function(el){ el.remove(); });
+    var canvas = document.createElement('canvas');
+    canvas.width = 32; canvas.height = 32;
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#0a0a0a';
+    ctx.fillRect(0, 0, 32, 32);
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 22px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('N', 16, 17);
+    var link = document.createElement('link');
+    link.rel = 'icon';
+    link.href = canvas.toDataURL('image/png');
+    document.head.appendChild(link);
+  })();
+</script>
+
+  <!-- ========================
+       HEADER
+  ========================= -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Mobile hamburger -->
+      <button class="header-icon" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><rect y="4" width="24" height="2" rx="1"/><rect y="11" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+      </button>
+
+      <!-- Logo -->
+      <div class="logo-wrap">
+        <svg class="peacock" viewBox="0 0 35 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M15.495 21.445L5.679 14.491C3.18 12.718.71 14.526.184 16.392c-.77 2.757.958 5.053 3.675 5.053H15.495z" fill="#FCCC12"/>
+          <path d="M30.941 21.445c2.717 0 4.445-2.296 3.675-5.053-.524-1.869-2.996-3.677-5.496-1.901L19.305 21.445h11.636z" fill="#05AC3F"/>
+          <path d="M24.852 5.262L19.815 17.488l-1.439-10.625c-.184-1.445 2.128-2.333 2.128-2.333-.211-.499-.941-.49-.941-.49h-1.563c-.25-2.613 1.984-4.517 4.394-3.934 2.372.565 3.229 3.302 2.461 5.156z" fill="#6E55DC"/>
+          <path d="M16.784 4.212c.364-2.699-1.913-4.698-4.374-4.104C9.038.671 8.18 3.408 8.948 5.265l5.037 12.226L16.784 4.212z" fill="#EF1541"/>
+          <path d="M14.583 19.495L9.75 7.786C8.619 5.072 5.623 4.734 3.965 6.326 2.8 7.448 1.894 10.503 4.502 12.354l10.081 7.141z" fill="#FF7112"/>
+          <path d="M30.298 12.354c2.608-1.849 1.702-4.906.538-6.028C29.18 4.734 26.184 5.072 25.05 7.786L20.217 19.495l10.081-7.141z" fill="#069DE0"/>
+        </svg>
+        <div class="wordmark">NBC <span>NEWS</span></div>
+      </div>
+
+      <!-- Desktop nav -->
+      <nav class="header-nav" aria-label="Main">
+        <a href="#">U.S. News</a>
+        <a href="#">Politics</a>
+        <a href="#">World</a>
+        <a href="#">Health</a>
+        <a href="#">Science</a>
+      </nav>
+
+      <!-- Search -->
+      <button class="header-icon" aria-label="Search">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none" stroke="white" stroke-width="2.2"><circle cx="14" cy="14" r="7"/><path d="M20 20l6 6"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================
+       SUB-NAV
+  ========================= -->
+  <nav class="sub-nav" aria-label="Topics">
+    <ul>
+      <li><a href="#" class="active">U.S. News</a></li>
+      <li><a href="#">Politics</a></li>
+      <li><a href="#">World</a></li>
+      <li><a href="#">Business</a></li>
+      <li><a href="#">Sports</a></li>
+      <li><a href="#">Investigations</a></li>
+      <li><a href="#">Health</a></li>
+      <li><a href="#">Science</a></li>
+      <li><a href="#">Culture &amp; Trends</a></li>
+      <li><a href="#">Tech</a></li>
+      <li><a href="#">Weather</a></li>
+      <li><a href="#">VIDEO</a></li>
+    </ul>
+  </nav>
+
+  <!-- Breaking bar -->
+  <div class="breaking-bar" role="banner" aria-label="Breaking news">
+    <span class="label">Breaking</span>
+    <span class="text">New Harvard findings reveal a hidden neurological trigger behind accelerated memory loss in adults over 50</span>
+  </div>
+
+  <!-- ========================
+       HERO
+  ========================= -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-meta">
+          <span class="section-tag">HealthWatch</span>
+          <span class="byline">NBC News Health Desk · Updated today</span>
+        </div>
+        <h1>
+          <em>URGENT:</em> Scientists Discover a Natural Way to Restore Memory That Can Be Done at Home
+        </h1>
+        <p class="sub">
+          Neurologist Dr. Richard Caldwell reveals how thousands of Americans over 50 sharpened their memory and reversed years of cognitive decline by following this simple morning ritual — with no prescription drugs required.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ========================
+         VIDEO — COLE SEU EMBED DO STRAPCAST ABAIXO
+    ========================= -->
+    <section class="video-section">
+      <div class="video-wrap">
+
+        
+  <div id="main-container-vplayer" style="margin: 0px auto;width: 100%;max-width: 404px;"> 
+      <div id="ctn_1774628642440" style="position: relative; width: 100%; padding: 177.77777777777777% 0px 0px;">
+        <div id="vid_019d261a-1e79-795c-9977-3eb4b88797fe" style="position: absolute;top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%;">
+          <img id="thumb_019d261a-1e79-795c-9977-3eb4b88797fe" src="https://get.wincdn.net/stream/019d261a-1e79-795c-9977-3eb4b88797fe/ThumbnailStart.jpg" async style="position: relative; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail" />  
+          <div id="backdrop_019d261a-1e79-795c-9977-3eb4b88797fe"style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div>
+        </div> 
+      </div> 
+  </div>   
+  <script type="text/javascript" id="scr_019d261a-1e79-795c-9977-3eb4b88797fe"> 
+    (function () {
+      var stpc = document.createElement("script"); stpc.async = !0, stpc.src = "https://get.wincdn.net/stream/019d261a-1e79-795c-9977-3eb4b88797fe/player.js", document.head.appendChild(stpc);
+    })();  
+  </script> 
+   
+
+
+      </div>
+    </section>
+
+
+    <!-- ========================
+         ARTICLE BODY
+    ========================= -->
+    <section class="article-body">
+      <p>
+        A growing body of research suggests that the root cause of memory decline in adults over 50 may not be aging alone — but a little-known neuroinflammatory process that accelerates during sleep, when the brain is supposed to be clearing toxic proteins and consolidating memories.
+      </p>
+      <blockquote class="pull-quote">
+        "We've been telling patients that memory loss is a normal part of aging. But for many people over 50, the problem isn't their age — it's how their brain clears waste at the cellular level." — Dr. Richard Caldwell, Neurology
+      </blockquote>
+      <p>
+        The discovery centers on a compound that disrupts the brain's glymphatic system — the network responsible for flushing beta-amyloid plaques and tau proteins from neural tissue during deep sleep. When glymphatic function is impaired, these neurotoxic proteins accumulate in the hippocampus, leading to the progressive memory lapses, brain fog, and difficulty concentrating that affect millions of Americans.
+      </p>
+      <p>
+        In the video above, Dr. Caldwell walks through the three specific everyday habits most commonly found to suppress glymphatic clearance — and the natural compound shown in early trials to help restore healthy brain detoxification without pharmaceutical intervention.
+      </p>
+    </section>
+  </main>
+
+  <!-- ========================
+       DELAYED OFFER (revealed by Stripecast player event)
+  ========================= -->
+  <div class="esconder">
+
+    <!-- Countdown Banner -->
+    <section class="countdown-banner full-bleed">
+      <h2>Claim Your Discounted <span class="gold">Memopezil</span> While Stock Lasts</h2>
+      <div id="countdown-timer" aria-live="polite"></div>
+      <div class="notch-down" aria-hidden="true"></div>
+    </section>
+
+    <!-- Product Cards #1 -->
+    <section class="offers-section" id="offer-cards">
+      <div class="cards-grid">
+
+        <div class="product-card best">
+          <div class="card-qty">6 Bottles</div>
+          <img src="https://pub-bb0645158bf34b548c83a97ed470c66c.r2.dev/memopezil-6.webp" alt="Memopezil 6-bottle pack" class="card-img" loading="lazy" width="150" height="150">
+          <div class="card-title">180 Day Supply</div>
+          <div class="card-pricing">
+            <div class="original">$768</div>
+            <div class="price">$294</div>
+            <div class="per-unit">$49 per bottle</div>
+            <div class="savings">Save $474</div>
+          </div>
+          <div class="ship free">FREE Shipping</div>
+          <a href="https://memopezil.pay.clickbank.net/?cbitems=CBIEMMPPP6UNITSAFF&template=mmp6units&cbfid=62088" class="card-cta" rel="nofollow">Order Now</a>
+          <div class="card-guarantee">60-Day Money Back Guarantee</div>
+          <div class="card-bonus">3 FREE BONUSES</div>
+          <div class="card-badges">
+            <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/bandeiras_card.png" alt="Accepted payment methods" loading="lazy">
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="card-qty">3 Bottles</div>
+          <img src="https://pub-bb0645158bf34b548c83a97ed470c66c.r2.dev/memopezil-3.webp" alt="Memopezil 3-bottle pack" class="card-img" loading="lazy" width="150" height="150">
+          <div class="card-title">90 Day Supply</div>
+          <div class="card-pricing">
+            <div class="original">$384</div>
+            <div class="price">$207</div>
+            <div class="per-unit">$69 per bottle</div>
+            <div class="savings">Save $177</div>
+          </div>
+          <div class="ship free">FREE Shipping</div>
+          <a href="https://memopezil.pay.clickbank.net/?cbitems=CBIEMMPPP3UNITSAFF&template=mmp3units&cbfid=62088" class="card-cta" rel="nofollow">Order Now</a>
+          <div class="card-guarantee">60-Day Money Back Guarantee</div>
+          <div class="card-bonus">3 FREE BONUSES</div>
+          <div class="card-badges">
+            <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/bandeiras_card.png" alt="Accepted payment methods" loading="lazy">
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="card-qty">2 Bottles</div>
+          <img src="https://pub-bb0645158bf34b548c83a97ed470c66c.r2.dev/memopezil-2.webp" alt="Memopezil 2-bottle pack" class="card-img" loading="lazy" width="150" height="150">
+          <div class="card-title">60 Day Supply</div>
+          <div class="card-pricing">
+            <div class="original">$394</div>
+            <div class="price">$158</div>
+            <div class="per-unit">$79 per bottle</div>
+            <div class="savings">Save $236</div>
+          </div>
+          <div class="ship">+ $19.99 shipping</div>
+          <a href="https://memopezil.pay.clickbank.net/?cbitems=CBIEMMPPP2UNITSAFF&template=mmp2units&cbfid=62088" class="card-cta" rel="nofollow">Order Now</a>
+          <div class="card-guarantee">60-Day Money Back Guarantee</div>
+          <div class="card-bonus">3 FREE BONUSES</div>
+          <div class="card-badges">
+            <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/bandeiras_card.png" alt="Accepted payment methods" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="guarantee-section">
+      <div class="guarantee-box">
+        <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/guarantee-100.webp" alt="100% Money Back Guarantee" class="seal" loading="lazy">
+        <h2>100% Satisfaction or Your Money Back</h2>
+        <p class="days">60-Day Guarantee</p>
+        <p>
+          We're so confident you'll experience meaningful cognitive improvement that we back Memopezil with a full 100% satisfaction guarantee for 60 days. Within the first few weeks, you may notice sharper recall, clearer thinking, and fewer "tip of the tongue" moments. As you continue, you could experience measurable improvements in focus, mental clarity, and overall brain performance. If for any reason you're not completely satisfied, we'll refund your full purchase — no questions asked.
+        </p>
+        <div class="trust-row">
+          <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/trust-badges.webp" alt="GMP FDA Natural USA Non-GMO" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality -->
+    <section class="quality-section">
+      <div class="quality-box">
+        <div class="stars">★★★★★</div>
+        <h2>100% Quality Assurance</h2>
+        <p>
+          Memopezil is manufactured to standards above and beyond what is required by the FDA and Good Manufacturing Practices. We third-party test every single batch to ensure you receive only the highest quality product possible. Our name is on the line and we stand behind every bottle of <strong>Memopezil</strong> we sell.
+        </p>
+        <div class="badge-row">
+          <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/made-in-usa.webp" alt="Made in USA" loading="lazy">
+          <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/fda-registered.webp" alt="FDA Registered" loading="lazy">
+          <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/3rd-party-tested.webp" alt="3rd Party Tested" loading="lazy">
+          <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/gmp-certified.webp" alt="GMP Certified" loading="lazy">
+        </div>
+        <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/quality-icons.webp" alt="Pure Natural Dairy Free Vegetarian" style="height:48px;margin:1.25rem auto 0;" loading="lazy">
+        <div>
+          <a href="#offer-cards" class="quality-cta">YES! I'm Ready To Try <strong style="margin-left:.3rem;">Memopezil</strong></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+      <div class="container">
+        <h2 class="section-title">Real Memopezil<sup>®</sup> Users.</h2>
+        <div style="text-align:center"><span class="badge-tag">Life-Changing Results</span></div>
+        <div class="testimonials-wrap">
+
+          <article class="testimonial">
+            <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/user-robert.webp" alt="Robert S." loading="lazy" width="78" height="78">
+            <div>
+              <div class="t-stars">★★★★★</div>
+              <p class="t-text">I'd been struggling with memory lapses for over a decade and felt like I was losing myself. My wife had to remind me of conversations we'd had the same day. Since starting Memopezil, my recall has improved dramatically. I can follow conversations without losing my train of thought, I remember names again, and I finally feel mentally sharp for the first time in years.</p>
+              <p class="t-name">Robert S., 71</p>
+              <p class="t-verified"><span class="check">✔</span> Verified Purchase</p>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/user-patricia.webp" alt="Patricia M." loading="lazy" width="78" height="78">
+            <div>
+              <div class="t-stars">★★★★★</div>
+              <p class="t-text">Alzheimer's runs in my family and I was terrified I was heading down that same path. I kept forgetting where I put my keys, missing appointments, and the brain fog was constant. Within a few weeks of Memopezil, the fog lifted and I could think clearly again. My doctor noticed the improvement at my next checkup and asked what I'd changed.</p>
+              <p class="t-name">Patricia M., 79</p>
+              <p class="t-verified"><span class="check">✔</span> Verified Purchase</p>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/user-linda.webp" alt="Linda K." loading="lazy" width="78" height="78">
+            <div>
+              <div class="t-stars">★★★★★</div>
+              <p class="t-text">I was dealing with worsening brain fog for three years and felt helpless. I tried crossword puzzles, brain games, supplements — nothing made a real difference. After a few months of Memopezil, my mental clarity came back. I can read a full book chapter and actually retain what I read. My focus is steady all day and I no longer feel that anxious dread every time I forget a word. My children noticed the difference before I even told them.</p>
+              <p class="t-name">Linda K., 58</p>
+              <p class="t-verified"><span class="check">✔</span> Verified Purchase</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Cards #2 -->
+    <section class="offers-section">
+      <div class="cards-grid">
+
+        <div class="product-card best">
+          <div class="card-qty">6 Bottles</div>
+          <img src="https://pub-bb0645158bf34b548c83a97ed470c66c.r2.dev/memopezil-6.webp" alt="Memopezil 6-bottle pack" class="card-img" loading="lazy" width="150" height="150">
+          <div class="card-title">180 Day Supply</div>
+          <div class="card-pricing">
+            <div class="original">$768</div>
+            <div class="price">$294</div>
+            <div class="per-unit">$49 per bottle</div>
+            <div class="savings">Save $474</div>
+          </div>
+          <div class="ship free">FREE Shipping</div>
+          <a href="https://memopezil.pay.clickbank.net/?cbitems=CBIEMMPPP6UNITSAFF&template=mmp6units&cbfid=62088" class="card-cta" rel="nofollow">Order Now</a>
+          <div class="card-guarantee">60-Day Money Back Guarantee</div>
+          <div class="card-bonus">3 FREE BONUSES</div>
+          <div class="card-badges">
+            <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/bandeiras_card.png" alt="Accepted payment methods" loading="lazy">
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="card-qty">3 Bottles</div>
+          <img src="https://pub-bb0645158bf34b548c83a97ed470c66c.r2.dev/memopezil-3.webp" alt="Memopezil 3-bottle pack" class="card-img" loading="lazy" width="150" height="150">
+          <div class="card-title">90 Day Supply</div>
+          <div class="card-pricing">
+            <div class="original">$384</div>
+            <div class="price">$207</div>
+            <div class="per-unit">$69 per bottle</div>
+            <div class="savings">Save $177</div>
+          </div>
+          <div class="ship free">FREE Shipping</div>
+          <a href="https://memopezil.pay.clickbank.net/?cbitems=CBIEMMPPP3UNITSAFF&template=mmp3units&cbfid=62088" class="card-cta" rel="nofollow">Order Now</a>
+          <div class="card-guarantee">60-Day Money Back Guarantee</div>
+          <div class="card-bonus">3 FREE BONUSES</div>
+          <div class="card-badges">
+            <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/bandeiras_card.png" alt="Accepted payment methods" loading="lazy">
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="card-qty">2 Bottles</div>
+          <img src="https://pub-bb0645158bf34b548c83a97ed470c66c.r2.dev/memopezil-2.webp" alt="Memopezil 2-bottle pack" class="card-img" loading="lazy" width="150" height="150">
+          <div class="card-title">60 Day Supply</div>
+          <div class="card-pricing">
+            <div class="original">$394</div>
+            <div class="price">$158</div>
+            <div class="per-unit">$79 per bottle</div>
+            <div class="savings">Save $236</div>
+          </div>
+          <div class="ship">+ $19.99 shipping</div>
+          <a href="https://memopezil.pay.clickbank.net/?cbitems=CBIEMMPPP2UNITSAFF&template=mmp2units&cbfid=62088" class="card-cta" rel="nofollow">Order Now</a>
+          <div class="card-guarantee">60-Day Money Back Guarantee</div>
+          <div class="card-bonus">3 FREE BONUSES</div>
+          <div class="card-badges">
+            <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/bandeiras_card.png" alt="Accepted payment methods" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /.esconder -->
+
+  <!-- Scientific References -->
+  <section class="refs-section">
+    <div style="max-width:1100px;margin:0 auto;">
+      <h2 class="refs-title">Scientific References:</h2>
+      <div class="refs-cols">
+        <ul>
+          <li>The Glymphatic System and Brain Waste Clearance — <em>Science Translational Medicine</em>, 2012</li>
+          <li>Omega-3 Fatty Acids and Cognitive Decline: A Systematic Review</li>
+          <li>Phosphatidylserine and Human Brain Function — <em>Nutrition</em>, 2015</li>
+          <li>Bacopa Monnieri and Memory Enhancement: A Meta-Analysis</li>
+          <li>Lion's Mane Mushroom and Nerve Growth Factor — <em>Journal of Agricultural and Food Chemistry</em>, 2009</li>
+          <li>Neuroinflammation and Age-Related Memory Loss — <em>Nature Reviews Neuroscience</em>, 2016</li>
+          <li>B Vitamins, Homocysteine, and Brain Atrophy — <em>PNAS</em>, 2010</li>
+        </ul>
+        <ul>
+          <li>Ginkgo Biloba and Cerebral Blood Flow — <em>Human Psychopharmacology</em>, 2007</li>
+          <li>Acetylcholine and Memory Formation: A Review — <em>Neuroscience &amp; Biobehavioral Reviews</em>, 2011</li>
+          <li>Alpha-GPC and Cognitive Function in Dementia Disorders — <em>Clinical Therapeutics</em>, 2003</li>
+          <li>Curcumin and Amyloid Plaque Reduction — <em>Journal of Biological Chemistry</em>, 2005</li>
+          <li>Resveratrol and Hippocampal Neurogenesis — <em>Scientific Reports</em>, 2017</li>
+          <li>Sleep Quality and Cognitive Performance in Older Adults — <em>Sleep Medicine Reviews</em>, 2018</li>
+          <li>Vitamin D Deficiency and Risk of Dementia — <em>Neurology</em>, 2014</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       FOOTER
+  ========================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-logo">
+        <svg class="peacock" viewBox="0 0 35 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M15.495 21.445L5.679 14.491C3.18 12.718.71 14.526.184 16.392c-.77 2.757.958 5.053 3.675 5.053H15.495z" fill="#FCCC12"/>
+          <path d="M30.941 21.445c2.717 0 4.445-2.296 3.675-5.053-.524-1.869-2.996-3.677-5.496-1.901L19.305 21.445h11.636z" fill="#05AC3F"/>
+          <path d="M24.852 5.262L19.815 17.488l-1.439-10.625c-.184-1.445 2.128-2.333 2.128-2.333-.211-.499-.941-.49-.941-.49h-1.563c-.25-2.613 1.984-4.517 4.394-3.934 2.372.565 3.229 3.302 2.461 5.156z" fill="#6E55DC"/>
+          <path d="M16.784 4.212c.364-2.699-1.913-4.698-4.374-4.104C9.038.671 8.18 3.408 8.948 5.265l5.037 12.226L16.784 4.212z" fill="#EF1541"/>
+          <path d="M14.583 19.495L9.75 7.786C8.619 5.072 5.623 4.734 3.965 6.326 2.8 7.448 1.894 10.503 4.502 12.354l10.081 7.141z" fill="#FF7112"/>
+          <path d="M30.298 12.354c2.608-1.849 1.702-4.906.538-6.028C29.18 4.734 26.184 5.072 25.05 7.786L20.217 19.495l10.081-7.141z" fill="#069DE0"/>
+        </svg>
+        NBC NEWS
+      </div>
+
+      <nav class="footer-grid" aria-label="Footer">
+        <dl class="footer-col">
+          <dt>Featured</dt>
+          <dd><a href="#">Brain Health Report 2025</a></dd>
+          <dd><a href="#">Flu Season 2025</a></dd>
+          <dd><a href="#">NFL Playoff Picture</a></dd>
+        </dl>
+        <dl class="footer-col">
+          <dt>Follow Us</dt>
+          <dd><a href="#" rel="nofollow noopener">YouTube</a></dd>
+          <dd><a href="#" rel="nofollow noopener">Facebook</a></dd>
+          <dd><a href="#" rel="nofollow noopener">Instagram</a></dd>
+          <dd><a href="#" rel="nofollow noopener">X</a></dd>
+        </dl>
+        <dl class="footer-col">
+          <dt>Privacy</dt>
+          <dd><a href="#" rel="nofollow noopener">Privacy Policy</a></dd>
+          <dd><a href="#" rel="nofollow noopener">Terms of Use</a></dd>
+          <dd><a href="#" rel="nofollow noopener">Cookie Settings</a></dd>
+        </dl>
+        <dl class="footer-col">
+          <dt>More from NBC</dt>
+          <dd><a href="#">Newsletters</a></dd>
+          <dd><a href="#">Podcasts</a></dd>
+          <dd><a href="#">Download Our App</a></dd>
+          <dd><a href="#">Sitemap</a></dd>
+        </dl>
+        <dl class="footer-col">
+          <dt>Company</dt>
+          <dd><a href="#" rel="nofollow noopener">About NBCUniversal</a></dd>
+          <dd><a href="#" rel="nofollow noopener">Advertise</a></dd>
+          <dd><a href="#" rel="nofollow noopener">Careers</a></dd>
+          <dd><a href="#" rel="nofollow noopener">Help</a></dd>
+        </dl>
+      </nav>
+
+      <p class="footer-bottom" id="footer-copy"></p>
+    </div>
+  </footer>
+
+
+  <!-- ========================
+       SCRIPTS
+  ========================= -->
+
+  <!-- Countdown -->
+  <script>
+    (function(){
+      var el = document.getElementById('countdown-timer');
+      if (!el) return;
+      var rem = 20 * 60;
+      function tick(){
+        var m = String(Math.floor(rem/60)).padStart(2,'0');
+        var s = String(rem%60).padStart(2,'0');
+        el.textContent = m+':'+s;
+        if (rem > 0) rem--;
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
+
+  <!-- FAQ accordion -->
+  <script>
+    document.querySelectorAll('.faq-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var open = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!open));
+        this.nextElementSibling.classList.toggle('open', !open);
+      });
+    });
+  </script>
+
+  <!-- UTM passthrough -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var qs = window.location.search;
+      if (!qs) return;
+      document.querySelectorAll('a[href^="http"]').forEach(function(a){
+        var h = a.getAttribute('href')||'';
+        a.setAttribute('href', h + (h.includes('?') ? '&' : '?') + qs.slice(1));
+      });
+    });
+  </script>
+
+  <!-- Footer year -->
+  <script>
+    document.getElementById('footer-copy').textContent =
+      'Copyright \u00A9 ' + new Date().getFullYear() + ' NBCUniversal Media, LLC. All Rights Reserved.';
+  </script>
+
+</body>
+</html>

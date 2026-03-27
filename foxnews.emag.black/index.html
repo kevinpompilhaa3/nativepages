@@ -6,20 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>"Gelatin Trick" – Health Report</title>
 
-  <!-- Generic Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📺</text></svg>">
 
-  <!-- PERFORMANCE OPTIMIZATION: Preconnect to image domains -->
   <link rel="preconnect" href="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev" crossorigin>
   <link rel="preconnect" href="https://pub-7447f7c8efdc4af5ba9d3e5cd8e1744b.r2.dev" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 
-  <!-- Preloads for Video -->
   <link rel="preload" as="image" href="https://delivery.i-cdn.net/stream/vidXYuYkNTmrUX4/ThumbnailStart.jpg" fetchpriority="high">
   <link rel="preconnect" href="https://delivery.i-cdn.net/">
   <link rel="preconnect" href="https://m3u8.strapcast.com/">
 
-  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -36,7 +32,6 @@
 
   <meta name="description" content="Oxford-Backed Doc Uncovers 7-Second Gelatin Trick That May Help Burn Stubborn Fat at Any Age.">
 
-  <!-- UTM Script & Checkout Links -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const LINKS_CONFIG = {
@@ -74,12 +69,11 @@
   </script>
 
   <style>
-    /* Reset e Configurações Básicas Tailwind */
     *, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; }
     html { line-height: 1.5; -webkit-text-size-adjust: 100%; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
     body { margin: 0; background-color: #ffffff; color: #171717; -webkit-font-smoothing: antialiased; }
     
-    #delay.is-hidden { display: none !important; }
+    .esconder { display: none; }
 
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #f1f1f1; }
@@ -159,7 +153,6 @@
       <div class="flex items-center">
         <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Captura%20de%20Tela%202026-02-25%20a%CC%80s%2012.43.26.png" alt="Fox News" class="h-8 w-auto object-contain" width="auto" height="32" loading="eager">
       </div>
-
       <nav class="flex items-center gap-6 text-sm font-semibold">
         <span class="hover:text-gray-300 cursor-default">U.S.</span>
         <span class="hover:text-gray-300 cursor-default">Politics</span>
@@ -171,7 +164,6 @@
         <span class="hover:text-gray-300 cursor-default">Science</span>
         <span class="hover:text-gray-300 cursor-default">Lifestyle</span>
       </nav>
-
       <div class="flex items-center gap-3">
         <div class="bg-[#1c4570] text-white text-xs font-semibold px-3 py-1.5 rounded cursor-default border border-[#2a659e]">Log In</div>
         <div class="bg-foxRed text-white text-xs font-semibold px-3 py-1.5 rounded cursor-default hover:bg-[#a30b24] transition">Watch TV</div>
@@ -187,7 +179,6 @@
       <div class="flex items-center">
         <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Captura%20de%20Tela%202026-02-25%20a%CC%80s%2012.43.26.png" alt="Fox News" class="h-6 w-auto object-contain" width="auto" height="24" loading="eager">
       </div>
-
       <div class="flex items-center gap-2">
         <div class="bg-[#1c4570] text-white text-[10px] font-semibold px-2 py-1 rounded border border-[#2a659e]">Log In</div>
         <div class="bg-foxRed text-white text-[10px] font-semibold px-2 py-1 rounded">Watch TV</div>
@@ -205,70 +196,32 @@
       <div class="relative">
         <button id="rec-prev" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-md w-9 h-9 rounded-full flex items-center justify-center hover:scale-110 transition border border-gray-200 text-foxBlue">❮</button>
         <button id="rec-next" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-md w-9 h-9 rounded-full flex items-center justify-center hover:scale-110 transition border border-gray-200 text-foxBlue">❯</button>
-
         <div class="overflow-hidden">
           <div id="rec-track" class="flex gap-4 transition-transform duration-500 ease-in-out" style="transform: translateX(-1024px); transition: transform 0.5s ease-in-out;">
-            
             <div class="min-w-[240px] h-[130px] bg-neutral-200 rounded-lg overflow-hidden relative group cursor-pointer border border-gray-200">
-              <picture>
-                <source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=300&q=70">
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Clinic" width="240" height="130">
-              </picture>
-              <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent">
-                <p class="text-white text-sm font-semibold leading-tight">Doctors issue warning over extreme diet trends</p>
-              </div>
+              <picture><source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=300&q=70"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Clinic" width="240" height="130"></picture>
+              <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent"><p class="text-white text-sm font-semibold leading-tight">Doctors issue warning over extreme diet trends</p></div>
             </div>
-            
             <div class="min-w-[240px] h-[130px] bg-neutral-200 rounded-lg overflow-hidden relative group cursor-pointer border border-gray-200">
-              <picture>
-                <source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=300&q=70">
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Lab" width="240" height="130">
-              </picture>
-              <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent">
-                <p class="text-white text-sm font-semibold leading-tight">New research links sleep quality to metabolic health</p>
-              </div>
+              <picture><source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=300&q=70"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Lab" width="240" height="130"></picture>
+              <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent"><p class="text-white text-sm font-semibold leading-tight">New research links sleep quality to metabolic health</p></div>
             </div>
-
             <div class="min-w-[240px] h-[130px] bg-neutral-200 rounded-lg overflow-hidden relative group cursor-pointer border border-gray-200">
-              <picture>
-                <source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=300&q=70">
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food" width="240" height="130">
-              </picture>
-              <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent">
-                <p class="text-white text-sm font-semibold leading-tight">5 superfoods that naturally boost energy levels</p>
-              </div>
+              <picture><source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=300&q=70"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food" width="240" height="130"></picture>
+              <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent"><p class="text-white text-sm font-semibold leading-tight">5 superfoods that naturally boost energy levels</p></div>
             </div>
-
             <div class="min-w-[240px] h-[130px] bg-neutral-200 rounded-lg overflow-hidden relative group cursor-pointer border border-gray-200">
-              <picture>
-                <source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1526424382096-74a93e105682?auto=format&fit=crop&w=300&q=70">
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Exercise" width="240" height="130">
-              </picture>
-              <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent">
-                <p class="text-white text-sm font-semibold leading-tight">Fitness experts reveal the best morning routine</p>
-              </div>
+              <picture><source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1526424382096-74a93e105682?auto=format&fit=crop&w=300&q=70"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Exercise" width="240" height="130"></picture>
+              <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent"><p class="text-white text-sm font-semibold leading-tight">Fitness experts reveal the best morning routine</p></div>
             </div>
-
             <div class="min-w-[240px] h-[130px] bg-neutral-200 rounded-lg overflow-hidden relative group cursor-pointer border border-gray-200">
-              <picture>
-                <source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=300&q=70">
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Doctor" width="240" height="130">
-              </picture>
-              <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent">
-                <p class="text-white text-sm font-semibold leading-tight">Breaking: Unprecedented rise in metabolic slowdown</p>
-              </div>
+              <picture><source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=300&q=70"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Doctor" width="240" height="130"></picture>
+              <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent"><p class="text-white text-sm font-semibold leading-tight">Breaking: Unprecedented rise in metabolic slowdown</p></div>
             </div>
-
             <div class="min-w-[240px] h-[130px] bg-neutral-200 rounded-lg overflow-hidden relative group cursor-pointer border border-gray-200">
-              <picture>
-                <source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=300&q=70">
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Health" width="240" height="130">
-              </picture>
-              <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent">
-                <p class="text-white text-sm font-semibold leading-tight">Why aging doesn't have to mean weight gain</p>
-              </div>
+              <picture><source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=300&q=70"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Health" width="240" height="130"></picture>
+              <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent"><p class="text-white text-sm font-semibold leading-tight">Why aging doesn't have to mean weight gain</p></div>
             </div>
-
           </div>
         </div>
       </div>
@@ -279,21 +232,15 @@
   <main class="max-w-4xl mx-auto px-4 lg:px-0 mt-8 md:mt-10">
 
     <div class="flex justify-center">
-      <span class="inline-flex items-center bg-foxRed text-white text-[12px] font-bold px-3 py-1 rounded-sm tracking-widest uppercase shadow-sm">
-        Health & Wellness
-      </span>
+      <span class="inline-flex items-center bg-foxRed text-white text-[12px] font-bold px-3 py-1 rounded-sm tracking-widest uppercase shadow-sm">Health & Wellness</span>
     </div>
 
-    <!-- Article Headline -->
     <h1 class="mt-5 text-center text-3xl md:text-[48px] font-extrabold leading-[1.15] md:leading-[1.05] text-neutral-900 max-w-5xl mx-auto tracking-tight">
       Oxford-Backed Doc Uncovers 7-Second <span class="text-foxRed">"Gelatin Trick"</span> That May Help Burn Stubborn Fat at Any Age
     </h1>
 
-    <p class="mt-5 text-center text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto font-medium">
-      (Watch how to activate it below)
-    </p>
+    <p class="mt-5 text-center text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto font-medium">(Watch how to activate it below)</p>
 
-    <!-- Author & Date -->
     <div class="mt-6 flex flex-col items-center gap-3">
       <div class="flex items-center gap-3">
         <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/ben.jpg" alt="Author" class="h-12 w-12 rounded-full object-cover bg-neutral-200 border border-gray-300" loading="eager" fetchpriority="high" width="48" height="48">
@@ -304,7 +251,6 @@
           <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Captura%20de%20Tela%202026-02-25%20a%CC%80s%2012.43.26.png" alt="Fox News" class="h-4 w-auto object-contain" width="auto" height="16" loading="eager">
         </div>
       </div>
-
       <div class="text-center text-xs md:text-sm text-neutral-500 font-medium">
         <span id="published-time" class="text-gray-500 uppercase tracking-wider"></span>
       </div>
@@ -312,7 +258,6 @@
 
     <div class="mt-6 border-t border-gray-200"></div>
     
-    <!-- Social Share Buttons -->
     <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
       <button class="w-10 h-10 rounded-full bg-[#1877F2] text-white flex items-center justify-center font-bold text-lg shadow-sm hover:opacity-90 transition" aria-label="Facebook">f</button>
       <button class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-bold text-lg shadow-sm hover:opacity-90 transition" aria-label="X">X</button>
@@ -339,7 +284,6 @@
       </script>
     </section>
 
-    <!-- Context Text below Video -->
     <div class="mt-8 w-full max-w-4xl mx-auto px-2 md:px-6">
       <h4 class="text-[18px] md:text-[22px] font-bold text-foxBlue leading-snug mb-3">
         New study reveals hidden cause accelerating weight gain in millions of Americans
@@ -350,24 +294,12 @@
     </div>
 
     <!-- ============================================== -->
-    <!-- DELAY SECTION (HIDDEN INITIALLY)               -->
+    <!-- OFFER SECTION — Only .esconder, controlled by Strapcast -->
     <!-- ============================================== -->
-    <div id="delay" class="is-hidden mt-10">
-      
-      <!-- Countdown Header -->
-      <section id="offer-countdown" class="bg-foxRed text-white text-center py-8 px-4 rounded-t-3xl shadow-lg border-b-4 border-[#8f0013] relative overflow-hidden">
-        <div class="absolute top-0 left-[-100%] w-1/2 h-full bg-white opacity-10 transform skew-x-[-20deg] animate-[slide_3s_infinite]"></div>
-        <h2 class="text-2xl md:text-3xl font-extrabold max-w-4xl mx-auto uppercase tracking-wide drop-shadow-md">
-          Claim Your Discounted <span class="text-yellow-300">Gelatine Sculpt</span> While Stock Lasts
-        </h2>
-        <div id="countdown-timer" class="mt-3 text-5xl md:text-6xl font-black tracking-widest font-mono drop-shadow-lg">00:00</div>
-        <p class="mt-2 text-sm text-red-100 font-bold uppercase tracking-widest bg-black/20 inline-block px-4 py-1 rounded-full">
-          Limited-time availability
-        </p>
-      </section>
+    <div class="esconder mt-10">
 
       <!-- Pricing Cards -->
-      <section id="dtc-offer-section" class="bg-gray-50 border border-gray-200 border-t-0 shadow-md rounded-b-3xl">
+      <section id="dtc-offer-section" class="bg-gray-50 border border-gray-200 shadow-md rounded-3xl">
         <div class="dtc-wrap">
           <div class="product-cards-container">
             
@@ -377,21 +309,16 @@
               <h4 class="product-quantity">3 Bottles</h4>
               <p class="text-sm text-gray-500 text-center font-medium mb-4">90 Days Supply</p>
               <img src="https://pub-7447f7c8efdc4af5ba9d3e5cd8e1744b.r2.dev/3%20Bottle.webp" alt="3 Bottles Gelatine Sculpt" class="product-image" loading="lazy" width="200" height="180">
-              
               <div class="product-pricing">
                 <div class="original-price">Retail: $384</div>
                 <div class="current-price">$69<span class="per-bottle">/btl</span></div>
                 <div class="text-sm font-bold text-gray-800">Total: $207</div>
                 <div class="savings">Save $177</div>
               </div>
-              
               <div class="shipping-info shipping-free">FREE SHIPPING</div>
-              
               <a data-link="BOTTLES_3" class="product-cta" rel="nofollow">Order Now</a>
-              
               <div class="guarantee">60-Day Guarantee</div>
               <div class="free-bonuses">+ 3 FREE BONUSES</div>
-              
               <div class="payment-badges mt-6">
                 <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/bandeiras_card.png" alt="Payment Methods" loading="lazy" width="180" height="26">
               </div>
@@ -402,23 +329,17 @@
               <div class="product-subtitle !text-foxRed">Doctor Recommended</div>
               <h4 class="product-quantity text-foxRed !text-3xl">6 Bottles</h4>
               <p class="text-sm text-gray-600 text-center font-medium mb-4">180 Days Supply</p>
-              
               <img src="https://pub-7447f7c8efdc4af5ba9d3e5cd8e1744b.r2.dev/6%20Bottle.webp" alt="6 Bottles Gelatine Sculpt" class="product-image !max-h-[200px]" loading="lazy" width="200" height="200">
-              
               <div class="product-pricing">
                 <div class="original-price">Retail: $768</div>
                 <div class="current-price">$49<span class="per-bottle">/btl</span></div>
                 <div class="text-sm font-bold text-gray-800">Total: $294</div>
                 <div class="savings">Save $474</div>
               </div>
-              
               <div class="shipping-info shipping-free">FREE SHIPPING</div>
-              
               <a data-link="BOTTLES_6" class="product-cta" rel="nofollow">Order Now</a>
-              
               <div class="guarantee">60-Day Money Back Guarantee</div>
               <div class="free-bonuses">+ 3 FREE BONUSES</div>
-              
               <div class="payment-badges mt-4">
                 <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/bandeiras_card.png" alt="Payment Methods" loading="lazy" width="180" height="26">
               </div>
@@ -429,23 +350,17 @@
               <div class="product-subtitle">Basic</div>
               <h4 class="product-quantity">2 Bottles</h4>
               <p class="text-sm text-gray-500 text-center font-medium mb-4">60 Days Supply</p>
-              
               <img src="https://pub-7447f7c8efdc4af5ba9d3e5cd8e1744b.r2.dev/2%20Bottles.webp" alt="2 Bottles Gelatine Sculpt" class="product-image" loading="lazy" width="200" height="180">
-              
               <div class="product-pricing">
                 <div class="original-price">Retail: $394</div>
                 <div class="current-price">$79<span class="per-bottle">/btl</span></div>
                 <div class="text-sm font-bold text-gray-800">Total: $158</div>
                 <div class="savings">Save $236</div>
               </div>
-              
               <div class="shipping-info">+ $19.99 shipping</div>
-              
               <a data-link="BOTTLES_2" class="product-cta !bg-[#111] hover:!bg-[#000]" rel="nofollow">Order Now</a>
-              
               <div class="guarantee">60-Day Guarantee</div>
               <div class="text-xs text-gray-400 text-center mt-2 font-medium mb-3">No bonuses included</div>
-              
               <div class="payment-badges mt-6">
                 <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/bandeiras_card.png" alt="Payment Methods" loading="lazy" width="180" height="26">
               </div>
@@ -455,16 +370,14 @@
         </div>
       </section>
 
-      <!-- SEÇÃO REVELAÇÃO DOS BÔNUS (Adicionado para Aumentar Conversão) -->
+      <!-- Bonuses -->
       <section class="max-w-5xl mx-auto px-4 mt-8 mb-16">
         <div class="bg-white rounded-3xl border border-gray-200 shadow-md p-6 md:p-10">
           <div class="text-center mb-8">
             <h3 class="text-2xl md:text-3xl font-black text-foxBlue uppercase">Exclusive Free Bonuses</h3>
             <p class="text-gray-500 font-medium text-sm md:text-base mt-2">Included instantly when you order the 3 or 6 bottle package today.</p>
           </div>
-          
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Bonus 1 -->
             <div class="bg-gray-50 rounded-2xl p-6 text-center border border-gray-100 relative overflow-hidden">
               <div class="absolute top-0 left-0 w-full h-1 bg-foxRed"></div>
               <div class="text-foxRed font-black text-lg mb-1 tracking-wider uppercase">Bonus #1</div>
@@ -475,8 +388,6 @@
                 <span class="text-green-600 font-black uppercase bg-green-100 px-3 py-1 rounded-full text-xs">Yours Free</span>
               </div>
             </div>
-
-            <!-- Bonus 2 -->
             <div class="bg-gray-50 rounded-2xl p-6 text-center border border-gray-100 relative overflow-hidden">
               <div class="absolute top-0 left-0 w-full h-1 bg-foxRed"></div>
               <div class="text-foxRed font-black text-lg mb-1 tracking-wider uppercase">Bonus #2</div>
@@ -487,8 +398,6 @@
                 <span class="text-green-600 font-black uppercase bg-green-100 px-3 py-1 rounded-full text-xs">Yours Free</span>
               </div>
             </div>
-
-            <!-- Bonus 3 -->
             <div class="bg-gray-50 rounded-2xl p-6 text-center border border-gray-100 relative overflow-hidden">
               <div class="absolute top-0 left-0 w-full h-1 bg-foxRed"></div>
               <div class="text-foxRed font-black text-lg mb-1 tracking-wider uppercase">Bonus #3</div>
@@ -503,21 +412,16 @@
         </div>
       </section>
 
-      <!-- Guarantee Section -->
+      <!-- Guarantee -->
       <section class="max-w-5xl mx-auto px-4 mb-16">
         <div class="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-gray-200 flex flex-col md:flex-row items-center relative">
           <div class="absolute top-0 left-0 w-full h-2 bg-foxBlue"></div>
-          
           <div class="p-8 md:p-12 flex justify-center items-center w-full md:w-1/3 shrink-0 bg-gray-50 border-r border-gray-100">
             <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/guarantee-100.webp" alt="100% Money Back Guarantee" class="w-32 md:w-48 drop-shadow-md" loading="lazy" width="192" height="192">
           </div>
           <div class="p-8 md:p-12 md:pl-10 text-center md:text-left">
-            <h2 class="text-2xl md:text-3xl font-black mb-2 uppercase tracking-wide text-foxBlue">
-              100% Iron-Clad Guarantee
-            </h2>
-            <p class="text-lg md:text-xl font-bold mb-4 text-foxRed">
-              60-Day Satisfaction Promise
-            </p>
+            <h2 class="text-2xl md:text-3xl font-black mb-2 uppercase tracking-wide text-foxBlue">100% Iron-Clad Guarantee</h2>
+            <p class="text-lg md:text-xl font-bold mb-4 text-foxRed">60-Day Satisfaction Promise</p>
             <p class="text-base text-gray-600 leading-relaxed font-medium">
               We're so confident you'll achieve remarkable fat-melting results that we back Gelatine Sculpt with a 100% satisfaction guarantee for 60 days. Start using it as soon as it arrives, and within days, you may notice a spike in natural energy and a drop in unhealthy cravings. If after several weeks you're not completely thrilled with your reflection in the mirror, simply contact our U.S. based support team. We'll refund every penny, no questions asked.
             </p>
@@ -532,63 +436,38 @@
           <h2 class="text-3xl md:text-4xl font-black text-foxBlue uppercase tracking-tight text-center">Verified Success Stories</h2>
           <p class="text-gray-500 font-medium">See what our customers are saying about Gelatine Sculpt</p>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-8">
-          
           <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full border border-gray-100 relative">
             <div class="absolute top-4 right-4 text-5xl text-gray-100 font-serif leading-none">"</div>
             <div class="flex items-center gap-4 mb-5 relative z-10">
               <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/user-robert.webp" alt="Robert S." class="w-14 h-14 rounded-full object-cover border-2 border-gray-200 shadow-sm" loading="lazy" width="56" height="56">
-              <div>
-                <p class="font-bold text-gray-900 text-lg leading-none mb-1">Robert S., 62</p>
-                <div class="text-[#FCD34D] text-sm tracking-widest">★★★★★</div>
-              </div>
+              <div><p class="font-bold text-gray-900 text-lg leading-none mb-1">Robert S., 62</p><div class="text-[#FCD34D] text-sm tracking-widest">★★★★★</div></div>
             </div>
-            <p class="text-gray-700 italic text-[15px] leading-relaxed flex-grow relative z-10">
-              "I was terrified when my weight kept creeping up despite cutting carbs. I felt completely out of control. After just a few weeks using this 7-second trick, my clothes fit better and I finally feel like myself again. Gelatine Sculpt has given me energy I haven't felt in years."
-            </p>
-            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-center gap-1.5 text-[11px] font-bold text-green-700 bg-green-50 px-3 py-1.5 rounded-full mx-auto w-max border border-green-100">
-              VERIFIED BUYER
-            </div>
+            <p class="text-gray-700 italic text-[15px] leading-relaxed flex-grow relative z-10">"I was terrified when my weight kept creeping up despite cutting carbs. I felt completely out of control. After just a few weeks using this 7-second trick, my clothes fit better and I finally feel like myself again. Gelatine Sculpt has given me energy I haven't felt in years."</p>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-center gap-1.5 text-[11px] font-bold text-green-700 bg-green-50 px-3 py-1.5 rounded-full mx-auto w-max border border-green-100">VERIFIED BUYER</div>
           </div>
-
           <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full border border-gray-100 relative">
             <div class="absolute top-4 right-4 text-5xl text-gray-100 font-serif leading-none">"</div>
             <div class="flex items-center gap-4 mb-5 relative z-10">
               <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/user-patricia.webp" alt="Patricia M." class="w-14 h-14 rounded-full object-cover border-2 border-gray-200 shadow-sm" loading="lazy" width="56" height="56">
-              <div>
-                <p class="font-bold text-gray-900 text-lg leading-none mb-1">Patricia M., 55</p>
-                <div class="text-[#FCD34D] text-sm tracking-widest">★★★★★</div>
-              </div>
+              <div><p class="font-bold text-gray-900 text-lg leading-none mb-1">Patricia M., 55</p><div class="text-[#FCD34D] text-sm tracking-widest">★★★★★</div></div>
             </div>
-            <p class="text-gray-700 italic text-[15px] leading-relaxed flex-grow relative z-10">
-              "When my metabolism seemed to completely stall after 50, I was overwhelmed. It felt like no matter how much I exercised, nothing changed. But Gelatine Sculpt turned that around. Now my cravings are under control and the scale is finally moving down. Highly recommend!"
-            </p>
-            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-center gap-1.5 text-[11px] font-bold text-green-700 bg-green-50 px-3 py-1.5 rounded-full mx-auto w-max border border-green-100">
-              VERIFIED BUYER
-            </div>
+            <p class="text-gray-700 italic text-[15px] leading-relaxed flex-grow relative z-10">"When my metabolism seemed to completely stall after 50, I was overwhelmed. It felt like no matter how much I exercised, nothing changed. But Gelatine Sculpt turned that around. Now my cravings are under control and the scale is finally moving down. Highly recommend!"</p>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-center gap-1.5 text-[11px] font-bold text-green-700 bg-green-50 px-3 py-1.5 rounded-full mx-auto w-max border border-green-100">VERIFIED BUYER</div>
           </div>
-
           <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full border border-gray-100 relative">
             <div class="absolute top-4 right-4 text-5xl text-gray-100 font-serif leading-none">"</div>
             <div class="flex items-center gap-4 mb-5 relative z-10">
               <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Native%20%5BKF%5D%20(1)/user-linda.webp" alt="Linda K." class="w-14 h-14 rounded-full object-cover border-2 border-gray-200 shadow-sm" loading="lazy" width="56" height="56">
-              <div>
-                <p class="font-bold text-gray-900 text-lg leading-none mb-1">Linda K., 48</p>
-                <div class="text-[#FCD34D] text-sm tracking-widest">★★★★★</div>
-              </div>
+              <div><p class="font-bold text-gray-900 text-lg leading-none mb-1">Linda K., 48</p><div class="text-[#FCD34D] text-sm tracking-widest">★★★★★</div></div>
             </div>
-            <p class="text-gray-700 italic text-[15px] leading-relaxed flex-grow relative z-10">
-              "My energy levels used to be all over the place, and I struggled with late-night snacking. Now I'm seeing consistent progress and my tummy is visibly flatter. I feel stable, sharper, and finally in control of my body again. It's the easiest routine I've ever tried."
-            </p>
-            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-center gap-1.5 text-[11px] font-bold text-green-700 bg-green-50 px-3 py-1.5 rounded-full mx-auto w-max border border-green-100">
-              VERIFIED BUYER
-            </div>
+            <p class="text-gray-700 italic text-[15px] leading-relaxed flex-grow relative z-10">"My energy levels used to be all over the place, and I struggled with late-night snacking. Now I'm seeing consistent progress and my tummy is visibly flatter. I feel stable, sharper, and finally in control of my body again. It's the easiest routine I've ever tried."</p>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-center gap-1.5 text-[11px] font-bold text-green-700 bg-green-50 px-3 py-1.5 rounded-full mx-auto w-max border border-green-100">VERIFIED BUYER</div>
           </div>
-
         </div>
       </section>
 
+      <!-- Quality Badges -->
       <section class="max-w-5xl mx-auto px-4 mb-16 text-center">
         <h3 class="text-xs uppercase tracking-widest font-bold text-gray-400 mb-6">Uncompromising Quality Standards</h3>
         <div class="flex flex-wrap justify-center gap-6 md:gap-12 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition duration-500">
@@ -599,23 +478,25 @@
         </div>
       </section>
 
+      <!-- FAQ -->
       <section class="max-w-3xl mx-auto px-4 mb-16">
         <div class="text-center mb-10">
           <h2 class="text-3xl font-black text-foxBlue uppercase tracking-tight">Frequently Asked Questions</h2>
         </div>
         <div class="space-y-3">
-            <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
-                <button class="faq-toggle w-full flex justify-between items-center p-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition border-l-4 border-transparent hover:border-foxRed">
-                  <span class="text-[16px]">Is Gelatine Sculpt safe to use?</span>
-                  <span class="text-xl text-foxRed font-bold leading-none transition-transform duration-300 faq-icon">+</span>
-                </button>
-                <div class="faq-content px-6 text-[15px] text-gray-600 leading-relaxed bg-gray-50 border-t border-gray-100 hidden">
-                  <div class="py-4">Yes. Gelatine Sculpt is made with carefully selected, 100% natural ingredients and manufactured right here in the USA in an FDA-registered facility that follows Good Manufacturing Practices (GMP).</div>
-                </div>
+          <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
+            <button class="faq-toggle w-full flex justify-between items-center p-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition border-l-4 border-transparent hover:border-foxRed">
+              <span class="text-[16px]">Is Gelatine Sculpt safe to use?</span>
+              <span class="text-xl text-foxRed font-bold leading-none transition-transform duration-300 faq-icon">+</span>
+            </button>
+            <div class="faq-content px-6 text-[15px] text-gray-600 leading-relaxed bg-gray-50 border-t border-gray-100 hidden">
+              <div class="py-4">Yes. Gelatine Sculpt is made with carefully selected, 100% natural ingredients and manufactured right here in the USA in an FDA-registered facility that follows Good Manufacturing Practices (GMP).</div>
             </div>
+          </div>
         </div>
       </section>
 
+      <!-- Final CTA -->
       <section class="max-w-4xl mx-auto px-4 mb-16">
         <div class="bg-foxBlue rounded-3xl p-10 md:p-14 text-center shadow-2xl border-b-8 border-foxRed relative overflow-hidden">
           <div class="relative z-10">
@@ -630,8 +511,10 @@
         </div>
       </section>
 
-    </div> 
+    </div>
+    <!-- END .esconder -->
 
+    <!-- Scientific References (always visible) -->
     <section class="max-w-4xl mx-auto px-4 mt-16 pt-10 border-t border-gray-200">
       <h2 class="text-xl font-bold text-center text-gray-800 mb-8 uppercase tracking-wide">Scientific References</h2>
       <div class="flex justify-center mb-8">
@@ -651,102 +534,83 @@
         <img src="https://pub-4ae3cfbe1c5b4955be5fa6e63a098eac.r2.dev/Captura%20de%20Tela%202026-02-25%20a%CC%80s%2012.43.26.png" alt="Fox News" class="h-10 w-auto object-contain" loading="lazy" width="auto" height="40">
       </div>
       <div class="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        <p id="footer-year" class="text-xs text-gray-400">© 2026 Fox News. All Rights Reserved.</p>
+        <p id="footer-year" class="text-xs text-gray-400"></p>
       </div>
     </div>
   </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("footer-year").textContent = `© ${new Date().getFullYear()} Fox News. All Rights Reserved.`;
+      document.getElementById("footer-year").textContent = "\u00A9 " + new Date().getFullYear() + " Fox News. All Rights Reserved.";
 
-      function pad2(n) { return String(n).padStart(2, "0"); }
-      function updateDynamicDate() {
-        const now = new Date();
-        const offsetMs = (3 * 60 + 48) * 60 * 1000;
-        const publishedDate = new Date(now.getTime() - offsetMs);
-        const datePart = publishedDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
-        const hours24 = publishedDate.getHours();
-        const minutes = pad2(publishedDate.getMinutes());
-        const ampm = hours24 >= 12 ? "pm" : "am";
-        const hours12 = hours24 % 12 === 0 ? 12 : hours24 % 12;
-        const timePart = `${hours12}:${minutes}${ampm}`;
-        const el = document.getElementById("published-time");
-        if(el) el.textContent = `Published ${datePart} · ${timePart} ET`;
-      }
-      updateDynamicDate();
+      // Published date
+      (function () {
+        var now = new Date();
+        var offsetMs = (3 * 60 + 48) * 60 * 1000;
+        var pub = new Date(now.getTime() - offsetMs);
+        var datePart = pub.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+        var h = pub.getHours(), m = String(pub.getMinutes()).padStart(2, "0");
+        var ampm = h >= 12 ? "pm" : "am";
+        var h12 = h % 12 === 0 ? 12 : h % 12;
+        var el = document.getElementById("published-time");
+        if (el) el.textContent = "Published " + datePart + " \u00B7 " + h12 + ":" + m + ampm + " ET";
+      })();
 
-      // FAQ Logic
-      document.querySelectorAll('.faq-toggle').forEach(button => {
-        button.addEventListener('click', () => {
-          const content = button.nextElementSibling;
-          const icon = button.querySelector('.faq-icon');
-          const isOpen = content.classList.contains('hidden') === false;
-
-          document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
-          document.querySelectorAll('.faq-toggle .faq-icon').forEach(i => i.style.transform = "rotate(0deg)");
-
+      // FAQ
+      document.querySelectorAll('.faq-toggle').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var content = button.nextElementSibling;
+          var icon = button.querySelector('.faq-icon');
+          var isOpen = !content.classList.contains('hidden');
+          document.querySelectorAll('.faq-content').forEach(function (c) { c.classList.add('hidden'); });
+          document.querySelectorAll('.faq-toggle .faq-icon').forEach(function (i) { i.style.transform = "rotate(0deg)"; });
           if (!isOpen) {
             content.classList.remove('hidden');
             icon.style.transform = "rotate(45deg)";
           }
         });
       });
-      
-      // Carousel Logic (RESTORED!)
-      const track = document.getElementById('rec-track');
-      if(track) {
-        const cards = Array.from(track.children);
-        cards.forEach(card => {
-          const clone = card.cloneNode(true);
-          track.appendChild(clone);
-        });
 
-        let index = 0;
-        const cardWidth = 256;
-        let autoplay;
-
+      // Carousel
+      var track = document.getElementById('rec-track');
+      if (track) {
+        var cards = Array.from(track.children);
+        cards.forEach(function (card) { track.appendChild(card.cloneNode(true)); });
+        var index = 0, cardWidth = 256, autoplay;
         function moveSlide() {
           index++;
-          track.style.transform = `translateX(-${index * cardWidth}px)`;
-
+          track.style.transform = "translateX(-" + (index * cardWidth) + "px)";
           if (index >= cards.length) {
-            setTimeout(() => {
+            setTimeout(function () {
               track.style.transition = 'none';
               index = 0;
-              track.style.transform = `translateX(0px)`;
-              setTimeout(() => {
-                track.style.transition = 'transform .5s ease-in-out';
-              }, 50);
+              track.style.transform = "translateX(0px)";
+              setTimeout(function () { track.style.transition = 'transform .5s ease-in-out'; }, 50);
             }, 500);
           }
         }
-
         function startAutoplay() { autoplay = setInterval(moveSlide, 3500); }
         function stopAutoplay() { clearInterval(autoplay); }
-
         startAutoplay();
         track.addEventListener('mouseenter', stopAutoplay);
         track.addEventListener('mouseleave', startAutoplay);
-
-        const btnNext = document.getElementById('rec-next');
-        if(btnNext) btnNext.onclick = moveSlide;
-
-        const btnPrev = document.getElementById('rec-prev');
-        if(btnPrev) {
-          btnPrev.onclick = () => {
+        var btnNext = document.getElementById('rec-next');
+        if (btnNext) btnNext.onclick = moveSlide;
+        var btnPrev = document.getElementById('rec-prev');
+        if (btnPrev) {
+          btnPrev.onclick = function () {
             if (index <= 0) {
               index = cards.length;
               track.style.transition = 'none';
-              track.style.transform = `translateX(-${index * cardWidth}px)`;
-              setTimeout(() => {
+              track.style.transform = "translateX(-" + (index * cardWidth) + "px)";
+              setTimeout(function () {
                 track.style.transition = 'transform .5s ease-in-out';
                 index--;
-                track.style.transform = `translateX(-${index * cardWidth}px)`;
+                track.style.transform = "translateX(-" + (index * cardWidth) + "px)";
               }, 50);
             } else {
               index--;
-              track.style.transform = `translateX(-${index * cardWidth}px)`;
+              track.style.transform = "translateX(-" + (index * cardWidth) + "px)";
             }
           };
         }
@@ -755,108 +619,44 @@
   </script>
 
   <script type="text/javascript">
-    var SECONDS_TO_DISPLAY = 3511; 
-    var ELEMENT_ID = "delay";
-
     (function () {
-      var el;
-      var attempts = 0;
+      var SECONDS_TO_DISPLAY = 3510;
+      var esconderEl = document.querySelector('.esconder');
+      if (!esconderEl) return;
 
-      function init() {
-        attempts++;
-        el = document.getElementById(ELEMENT_ID);
-        if (!el && attempts < 100) {
-          setTimeout(init, 50);
-          return;
-        }
-        if (!el) return;
-        
-        el.classList.add("is-hidden");
-        
-        // Uso de setInterval com Date.now() em vez de setTimeout
-        // Isso previne que o timer congele se o telemóvel desligar o ecrã
-        var STORAGE_KEY_START = 'vsl_start_time_gelatine_fox';
-        var savedStart = localStorage.getItem(STORAGE_KEY_START);
-        var startTime;
-
-        // MODO DE TESTE: Adicione ?test=1 no fim do link para estourar o pitch na hora
-        var urlParams = new URLSearchParams(window.location.search);
-        var isTestMode = urlParams.has('test');
-
-        if (isTestMode) {
-           el.classList.remove("is-hidden");
-           startCountdown();
-           setTimeout(function() {
-               el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-           }, 150);
-           return;
-        }
-
-        if (savedStart) {
-            startTime = parseInt(savedStart, 10);
-            // Se já se passaram mais de 12 horas, reseta o timer
-            if (Date.now() - startTime > 12 * 60 * 60 * 1000) {
-                startTime = Date.now();
-                localStorage.setItem(STORAGE_KEY_START, startTime);
-            }
-        } else {
-            startTime = Date.now();
-            localStorage.setItem(STORAGE_KEY_START, startTime);
-        }
-
-        var delayInMilliseconds = SECONDS_TO_DISPLAY * 1000;
-
-        var timerCheck = setInterval(function() {
-          var timeElapsed = Date.now() - startTime;
-          
-          if (timeElapsed >= delayInMilliseconds) {
-            clearInterval(timerCheck);
-            el.classList.remove("is-hidden");
-            startCountdown(); 
-            
-            setTimeout(function() {
-               el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 150);
-          }
-        }, 1000);
+      var urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('test')) {
+        esconderEl.classList.remove('esconder');
+        setTimeout(function () {
+          esconderEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
+        return;
       }
 
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", init);
+      var STORAGE_KEY = 'vsl_start_time_gelatine_fox';
+      var savedStart = localStorage.getItem(STORAGE_KEY);
+      var startTime;
+
+      if (savedStart) {
+        startTime = parseInt(savedStart, 10);
+        if (Date.now() - startTime > 12 * 60 * 60 * 1000) {
+          startTime = Date.now();
+          localStorage.setItem(STORAGE_KEY, startTime);
+        }
       } else {
-        init();
+        startTime = Date.now();
+        localStorage.setItem(STORAGE_KEY, startTime);
       }
 
-      function startCountdown() {
-        const DURATION_MINUTES = 15;
-        const STORAGE_KEY = 'offerCountdownEnd_Fox_Gelatine';
-        const timerEl = document.getElementById('countdown-timer');
-        if (!timerEl) return;
-
-        let endTime = localStorage.getItem(STORAGE_KEY);
-        if (!endTime) {
-          endTime = Date.now() + DURATION_MINUTES * 60 * 1000;
-          localStorage.setItem(STORAGE_KEY, endTime);
-        } else {
-          endTime = parseInt(endTime, 10);
+      var check = setInterval(function () {
+        if (Date.now() - startTime >= SECONDS_TO_DISPLAY * 1000) {
+          clearInterval(check);
+          esconderEl.classList.remove('esconder');
+          setTimeout(function () {
+            esconderEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 150);
         }
-
-        function updateTimer() {
-          const now = Date.now();
-          const remaining = endTime - now;
-
-          if (remaining <= 0) {
-            timerEl.textContent = '00:00';
-            localStorage.removeItem(STORAGE_KEY);
-            return;
-          }
-          const minutes = Math.floor(remaining / 60000);
-          const seconds = Math.floor((remaining % 60000) / 1000);
-          timerEl.textContent = String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
-        }
-        updateTimer();
-        setInterval(updateTimer, 1000);
-      }
+      }, 1000);
     })();
   </script>
 </body>
